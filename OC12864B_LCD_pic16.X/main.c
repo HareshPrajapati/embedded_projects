@@ -333,7 +333,7 @@ void main(void) {
 
 
     while (1) {
-   
+        printf("this is simple interface \r\n");
     }
 }
 /**
