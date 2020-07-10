@@ -1,0 +1,26 @@
+Warning[215] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 37 : Processor superseded by command line.  Verify processor symbol.
+Message[301] C:\PROGRAM FILES (X86)\MICROCHIP\MPLABX\V5.20\MPASMX\P16F19156.INC 34 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[205] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 68 : Found directive in column 1. (CBLOCK)
+Warning[205] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 70 : Found directive in column 1. (ENDC)
+Warning[207] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 75 : Found label after column 1. (Mode)
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 119 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 123 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 128 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 133 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 137 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 141 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 146 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 150 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 155 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 163 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 164 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 166 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 167 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 275 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 281 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 285 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 290 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 294 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 298 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 303 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\PWM_PIC16_ASM.X\16F19156.ASM 306 : Register in operand not in bank 0.  Ensure that bank bits are correct.

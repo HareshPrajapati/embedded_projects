@@ -1,0 +1,187 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF19156 ]
+[d frameptr 6 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"55 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\main.c
+[v _lcdcmd lcdcmd `(v  1 e 1 0 ]
+"67
+[v _lcddata lcddata `(v  1 e 1 0 ]
+"108
+[v _glcd_SelectPage0 glcd_SelectPage0 `(v  1 e 1 0 ]
+"112
+[v _glcd_SelectPage1 glcd_SelectPage1 `(v  1 e 1 0 ]
+"115
+[v _GLCD_Init GLCD_Init `(v  1 e 1 0 ]
+"138
+[v _main main `(v  1 e 1 0 ]
+"50 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"57
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"75
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"87 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"446 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf19156.h
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+[s S103 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"525
+[u S112 . 1 `S103 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES112  1 e 1 @13 ]
+[s S76 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"587
+[u S85 . 1 `S76 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES85  1 e 1 @14 ]
+"648
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+"705
+[v _TRISB TRISB `VEuc  1 e 1 @19 ]
+"767
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+"824
+[v _LATA LATA `VEuc  1 e 1 @24 ]
+"881
+[v _LATB LATB `VEuc  1 e 1 @25 ]
+"943
+[v _LATC LATC `VEuc  1 e 1 @26 ]
+"13662
+[v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
+"13708
+[v _PMD1 PMD1 `VEuc  1 e 1 @1943 ]
+"13747
+[v _PMD2 PMD2 `VEuc  1 e 1 @1944 ]
+"13798
+[v _PMD3 PMD3 `VEuc  1 e 1 @1945 ]
+"13836
+[v _PMD4 PMD4 `VEuc  1 e 1 @1946 ]
+"13876
+[v _PMD5 PMD5 `VEuc  1 e 1 @1947 ]
+"14907
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
+"15047
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
+"15087
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @2192 ]
+"15144
+[v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
+"15195
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
+"15253
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"15293
+[v _ACTCON ACTCON `VEuc  1 e 1 @2196 ]
+"27120
+[v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+"27177
+[v _WPUA WPUA `VEuc  1 e 1 @7993 ]
+"27239
+[v _ODCONA ODCONA `VEuc  1 e 1 @7994 ]
+"27296
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @7995 ]
+"27353
+[v _INLVLA INLVLA `VEuc  1 e 1 @7996 ]
+"27601
+[v _ANSELB ANSELB `VEuc  1 e 1 @8003 ]
+"27663
+[v _WPUB WPUB `VEuc  1 e 1 @8004 ]
+"27725
+[v _ODCONB ODCONB `VEuc  1 e 1 @8005 ]
+"27787
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @8006 ]
+"27849
+[v _INLVLB INLVLB `VEuc  1 e 1 @8007 ]
+"28097
+[v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
+"28154
+[v _WPUC WPUC `VEuc  1 e 1 @8015 ]
+"28211
+[v _ODCONC ODCONC `VEuc  1 e 1 @8016 ]
+"28268
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
+"28325
+[v _INLVLC INLVLC `VEuc  1 e 1 @8018 ]
+"28553
+[v _WPUE WPUE `VEuc  1 e 1 @8037 ]
+"28591
+[v _INLVLE INLVLE `VEuc  1 e 1 @8040 ]
+"138 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"338
+} 0
+"67
+[v _lcddata lcddata `(v  1 e 1 0 ]
+{
+[v lcddata@data1 data1 `uc  1 a 1 wreg ]
+[v lcddata@data1 data1 `uc  1 a 1 wreg ]
+[v lcddata@data1 data1 `uc  1 a 1 1 ]
+"76
+} 0
+"50 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"55
+} 0
+"75
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"89
+} 0
+"87 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"146
+} 0
+"57 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"73
+} 0
+"115 C:\Users\Haesh_MikoToniks\MPLABXProjects\OC12864B_LCD_pic16.X\main.c
+[v _GLCD_Init GLCD_Init `(v  1 e 1 0 ]
+{
+"133
+} 0
+"55
+[v _lcdcmd lcdcmd `(v  1 e 1 0 ]
+{
+[v lcdcmd@value value `uc  1 a 1 wreg ]
+[v lcdcmd@value value `uc  1 a 1 wreg ]
+[v lcdcmd@value value `uc  1 a 1 1 ]
+"65
+} 0
+"112
+[v _glcd_SelectPage1 glcd_SelectPage1 `(v  1 e 1 0 ]
+{
+"114
+} 0
+"108
+[v _glcd_SelectPage0 glcd_SelectPage0 `(v  1 e 1 0 ]
+{
+"110
+} 0

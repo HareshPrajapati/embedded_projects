@@ -1,0 +1,347 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF19156 ]
+[d frameptr 6 ]
+"88 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/tmr2.c
+[e E10041 . `uc
+TMR2_ROP_STARTS_TMRON 0
+TMR2_ROP_STARTS_TMRON_ERSHIGH 1
+TMR2_ROP_STARTS_TMRON_ERSLOW 2
+TMR2_ROP_RESETS_ERSBOTHEDGE 3
+TMR2_ROP_RESETS_ERSRISINGEDGE 4
+TMR2_ROP_RESETS_ERSFALLINGEDGE 5
+TMR2_ROP_RESETS_ERSLOW 6
+TMR2_ROP_RESETS_ERSHIGH 7
+TMR2_OS_STARTS_TMRON 8
+TMR2_OS_STARTS_ERSRISINGEDGE 9
+TMR2_OS_STARTS_ERSFALLINGEDGE 10
+TMR2_OS_STARTS_ERSBOTHEDGE 11
+TMR2_OS_STARTS_ERSFIRSTRISINGEDGE 12
+TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE 13
+TMR2_OS_STARTS_ERSRISINGEDGEDETECT 14
+TMR2_OS_STARTS_ERSFALLINGEDGEDETECT 15
+TMR2_OS_STARTS_TMRON_ERSHIGH 22
+TMR2_OS_STARTS_TMRON_ERSLOW 23
+TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT 17
+TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT 18
+TMR2_MS_STARTS_TMRON_ERSBOTHEDGE 19
+]
+"94
+[e E10064 . `uc
+TMR2_T2INPPS 0
+TMR2_CCP1_OUT 1
+TMR2_CCP2_OUT 2
+TMR2_PWM3_OUT 3
+TMR2_PWM4_OUT 4
+TMR2_RTCC_seconds 5
+TMR2_T4POSTSCALED 6
+TMR2_C1_OUT_SYNC 7
+TMR2_C2_OUT_SYNC 8
+TMR2_ZCD_OUTPUT 9
+TMR2_CLC1_OUT 10
+TMR2_CLC2_OUT 11
+TMR2_CLC3_OUT 12
+TMR2_CLC4_OUT 13
+]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"52 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"50 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"59
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"77
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"87 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"64 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/pwm1.c
+[v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
+"62 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"100
+[v _TMR2_Start TMR2_Start `(v  1 e 1 0 ]
+"111
+[v _TMR2_Stop TMR2_Stop `(v  1 e 1 0 ]
+"122
+[v _TMR2_Counter8BitGet TMR2_Counter8BitGet `(uc  1 e 1 0 ]
+"136
+[v _TMR2_Counter8BitSet TMR2_Counter8BitSet `(v  1 e 1 0 ]
+"147
+[v _TMR2_Period8BitSet TMR2_Period8BitSet `(v  1 e 1 0 ]
+"648 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf19156.h
+[v _TRISA TRISA `VEuc  1 e 1 @18 ]
+"705
+[v _TRISB TRISB `VEuc  1 e 1 @19 ]
+"767
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+"824
+[v _LATA LATA `VEuc  1 e 1 @24 ]
+"881
+[v _LATB LATB `VEuc  1 e 1 @25 ]
+"943
+[v _LATC LATC `VEuc  1 e 1 @26 ]
+[s S138 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"960
+[u S147 . 1 `S138 1 . 1 0 ]
+[v _LATCbits LATCbits `VES147  1 e 1 @26 ]
+[s S25 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
+]
+"7615
+[s S30 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
+]
+[u S39 . 1 `S25 1 . 1 0 `S30 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES39  1 e 1 @542 ]
+"7680
+[v _T2TMR T2TMR `VEuc  1 e 1 @652 ]
+"7685
+[v _TMR2 TMR2 `VEuc  1 e 1 @652 ]
+"7718
+[v _T2PR T2PR `VEuc  1 e 1 @653 ]
+"7723
+[v _PR2 PR2 `VEuc  1 e 1 @653 ]
+"7756
+[v _T2CON T2CON `VEuc  1 e 1 @654 ]
+[s S322 . 1 `uc 1 OUTPS 1 0 :4:0 
+`uc 1 CKPS 1 0 :3:4 
+`uc 1 ON 1 0 :1:7 
+]
+"7792
+[s S326 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+`uc 1 T2CKPS 1 0 :3:4 
+`uc 1 T2ON 1 0 :1:7 
+]
+[s S330 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+`uc 1 T2OUTPS1 1 0 :1:1 
+`uc 1 T2OUTPS2 1 0 :1:2 
+`uc 1 T2OUTPS3 1 0 :1:3 
+`uc 1 T2CKPS0 1 0 :1:4 
+`uc 1 T2CKPS1 1 0 :1:5 
+`uc 1 T2CKPS2 1 0 :1:6 
+]
+[s S338 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+`uc 1 CKPS2 1 0 :1:6 
+`uc 1 TMR2ON 1 0 :1:7 
+]
+[u S347 . 1 `S322 1 . 1 0 `S326 1 . 1 0 `S330 1 . 1 0 `S338 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES347  1 e 1 @654 ]
+"7902
+[v _T2HLT T2HLT `VEuc  1 e 1 @655 ]
+[s S219 . 1 `uc 1 MODE 1 0 :5:0 
+`uc 1 CKSYNC 1 0 :1:5 
+`uc 1 CKPOL 1 0 :1:6 
+`uc 1 PSYNC 1 0 :1:7 
+]
+"7935
+[s S224 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+`uc 1 MODE4 1 0 :1:4 
+]
+[s S230 . 1 `uc 1 T2MODE 1 0 :5:0 
+`uc 1 T2CKSYNC 1 0 :1:5 
+`uc 1 T2CKPOL 1 0 :1:6 
+`uc 1 T2PSYNC 1 0 :1:7 
+]
+[s S235 . 1 `uc 1 T2MODE0 1 0 :1:0 
+`uc 1 T2MODE1 1 0 :1:1 
+`uc 1 T2MODE2 1 0 :1:2 
+`uc 1 T2MODE3 1 0 :1:3 
+`uc 1 T2MODE4 1 0 :1:4 
+]
+[u S241 . 1 `S219 1 . 1 0 `S224 1 . 1 0 `S230 1 . 1 0 `S235 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES241  1 e 1 @655 ]
+"8030
+[v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
+"8188
+[v _T2RST T2RST `VEuc  1 e 1 @657 ]
+[s S284 . 1 `uc 1 RSEL 1 0 :5:0 
+]
+"8215
+[s S286 . 1 `uc 1 RSEL0 1 0 :1:0 
+`uc 1 RSEL1 1 0 :1:1 
+`uc 1 RSEL2 1 0 :1:2 
+`uc 1 RSEL3 1 0 :1:3 
+`uc 1 RSEL4 1 0 :1:4 
+]
+[s S292 . 1 `uc 1 T2RSEL 1 0 :5:0 
+]
+[s S294 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+`uc 1 T2RSEL1 1 0 :1:1 
+`uc 1 T2RSEL2 1 0 :1:2 
+`uc 1 T2RSEL3 1 0 :1:3 
+`uc 1 T2RSEL4 1 0 :1:4 
+]
+[u S300 . 1 `S284 1 . 1 0 `S286 1 . 1 0 `S292 1 . 1 0 `S294 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES300  1 e 1 @657 ]
+"8887
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
+"8907
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
+"8927
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @782 ]
+[s S57 . 1 `uc 1 MODE 1 0 :4:0 
+`uc 1 FMT 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 OE 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"8965
+[s S63 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+]
+[s S68 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+`uc 1 CCP1FMT 1 0 :1:4 
+`uc 1 CCP1OUT 1 0 :1:5 
+`uc 1 CCP1OE 1 0 :1:6 
+`uc 1 CCP1EN 1 0 :1:7 
+]
+[s S74 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+`uc 1 CCP1MODE1 1 0 :1:1 
+`uc 1 CCP1MODE2 1 0 :1:2 
+`uc 1 CCP1MODE3 1 0 :1:3 
+]
+[s S79 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 P1M0 1 0 :1:6 
+`uc 1 P1M1 1 0 :1:7 
+]
+[u S83 . 1 `S57 1 . 1 0 `S63 1 . 1 0 `S68 1 . 1 0 `S74 1 . 1 0 `S79 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES83  1 e 1 @782 ]
+[s S183 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR4IF 1 0 :1:3 
+]
+"13153
+[u S188 . 1 `S183 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES188  1 e 1 @1808 ]
+"13662
+[v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
+"13708
+[v _PMD1 PMD1 `VEuc  1 e 1 @1943 ]
+"13747
+[v _PMD2 PMD2 `VEuc  1 e 1 @1944 ]
+"13798
+[v _PMD3 PMD3 `VEuc  1 e 1 @1945 ]
+"13836
+[v _PMD4 PMD4 `VEuc  1 e 1 @1946 ]
+"13876
+[v _PMD5 PMD5 `VEuc  1 e 1 @1947 ]
+"14907
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
+"15047
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
+"15087
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @2192 ]
+"15144
+[v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
+"15195
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
+"15253
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"15293
+[v _ACTCON ACTCON `VEuc  1 e 1 @2196 ]
+"26770
+[v _RC0PPS RC0PPS `VEuc  1 e 1 @7968 ]
+"27120
+[v _ANSELA ANSELA `VEuc  1 e 1 @7992 ]
+"27177
+[v _WPUA WPUA `VEuc  1 e 1 @7993 ]
+"27239
+[v _ODCONA ODCONA `VEuc  1 e 1 @7994 ]
+"27296
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @7995 ]
+"27353
+[v _INLVLA INLVLA `VEuc  1 e 1 @7996 ]
+"27601
+[v _ANSELB ANSELB `VEuc  1 e 1 @8003 ]
+"27663
+[v _WPUB WPUB `VEuc  1 e 1 @8004 ]
+"27725
+[v _ODCONB ODCONB `VEuc  1 e 1 @8005 ]
+"27787
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @8006 ]
+"27849
+[v _INLVLB INLVLB `VEuc  1 e 1 @8007 ]
+"28097
+[v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
+"28154
+[v _WPUC WPUC `VEuc  1 e 1 @8015 ]
+"28211
+[v _ODCONC ODCONC `VEuc  1 e 1 @8016 ]
+"28268
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
+"28325
+[v _INLVLC INLVLC `VEuc  1 e 1 @8018 ]
+"28553
+[v _WPUE WPUE `VEuc  1 e 1 @8037 ]
+"28591
+[v _INLVLE INLVLE `VEuc  1 e 1 @8040 ]
+"52 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"82
+} 0
+"50 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"62 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"86
+} 0
+"64 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/pwm1.c
+[v _PWM1_Initialize PWM1_Initialize `(v  1 e 1 0 ]
+{
+"80
+} 0
+"77 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/mcc.c
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"91
+} 0
+"87 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"148
+} 0
+"59 C:\Users\Haesh_MikoToniks\MPLABXProjects\PWM_PIC16_MCC.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"75
+} 0

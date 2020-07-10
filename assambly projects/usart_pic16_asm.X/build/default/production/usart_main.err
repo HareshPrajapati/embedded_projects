@@ -1,0 +1,17 @@
+Warning[215] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 38 : Processor superseded by command line.  Verify processor symbol.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 87 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 91 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 96 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 101 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 106 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 111 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 116 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 121 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 127 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 133 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 139 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 145 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 152 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 158 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 208 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\USERS\HAESH_MIKOTONIKS\MPLABXPROJECTS\USART_PIC16_ASM.X\USART_MAIN.ASM 212 : Register in operand not in bank 0.  Ensure that bank bits are correct.

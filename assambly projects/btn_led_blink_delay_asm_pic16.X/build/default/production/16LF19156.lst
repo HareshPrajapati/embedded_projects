@@ -1,0 +1,3925 @@
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;******************************************************************************
+                      00002 ;   This file is a basic code template for code generation on the             *
+                      00003 ;   PIC16F1937. This file contains the basic code building blocks to build    *
+                      00004 ;   upon.                                                                     *
+                      00005 ;                                                                             *
+                      00006 ;   Refer to the MPASM User's Guide for additional information on             *
+                      00007 ;   features of the assembler.                                                *
+                      00008 ;                                                                             *
+                      00009 ;   Refer to the respective data sheet for additional                         *
+                      00010 ;   information on the instruction set.                                       *
+                      00011 ;                                                                             *
+                      00012 ;******************************************************************************
+                      00013 ;                                                                             *
+                      00014 ;    Filename:        pic16lf19156.asm                                                 *
+                      00015 ;    Date:                                                                    *
+                      00016 ;    File Version:                                                            *
+                      00017 ;                                                                             *
+                      00018 ;    Author:                                                                  *
+                      00019 ;    Company:                                                                 *
+                      00020 ;                                                                             *
+                      00021 ;                                                                             *
+                      00022 ;******************************************************************************
+                      00023 ;                                                                             *
+                      00024 ;    Files Required: pic16lf19156.INC                                             *
+                      00025 ;                                                                             *
+                      00026 ;******************************************************************************
+                      00027 ;                                                                             *
+                      00028 ;    Notes:                                                                   *
+                      00029 ;                                                                             *
+                      00030 ;******************************************************************************
+                      00031 ;                                                                             *
+                      00032 ;    Revision History:                                                        *
+                      00033 ;                                                                             *
+                      00034 ;******************************************************************************
+                      00035 
+                      00036 
+Warning[215]: Processor superseded by command line.  Verify processor symbol.
+                      00037         list            p=16f19156      ; list directive to define processor
+                      00038         #include        <p16lf19156.inc> ; processor specific variable definitions
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ; Build date : Mar 17 2019
+                      00005 ;  MPASM PIC16LF19156 processor include
+                      00006 ; 
+                      00007 ;  (c) Copyright 1999-2019 Microchip Technology, All rights reserved
+                      00008 ;==========================================================================
+                      00009 
+                      05462         LIST
+                      00039 
+                      00040 ;------------------------------------------------------------------------------
+                      00041 ;
+                      00042 ; CONFIGURATION WORD SETUP
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00043 ;
+                      00044 ; The 'CONFIG' directive is used to embed the configuration word within the 
+                      00045 ; .asm file. The lables following the directive are located in the respective 
+                      00046 ; .inc file.  See the data sheet for additional information on configuration 
+                      00047 ; word settings.
+                      00048 ;
+                      00049 ;------------------------------------------------------------------------------    
+                      00050 
+                      00051 ; CONFIG1
+                      00052 ; __config 0xFEE8
+8007   3EE8           00053  __CONFIG _CONFIG1, _FEXTOSC_OFF & _RSTOSC_HFINT1 & _CLKOUTEN_ON & _VBATEN_OFF & _LCDPEN_ON & _CSWEN_ON 
+                            & _FCMEN_ON
+                      00054 ; CONFIG2
+                      00055 ; __config 0xFFFF
+8008   3FFF           00056  __CONFIG _CONFIG2, _MCLRE_ON & _PWRTE_OFF & _LPBOREN_OFF & _BOREN_ON & _BORV_LO & _ZCD_OFF & _PPS1WAY_O
+                            N & _STVREN_ON
+                      00057 ; CONFIG3
+                      00058 ; __config 0xFF9F
+8009   3F9F           00059  __CONFIG _CONFIG3, _WDTCPS_WDTCPS_31 & _WDTE_OFF & _WDTCWS_WDTCWS_7 & _WDTCCS_SC
+                      00060 ; CONFIG4
+                      00061 ; __config 0xFFFF
+800A   3FFF           00062  __CONFIG _CONFIG4, _BBSIZE_512 & _BBEN_OFF & _SAFEN_OFF & _WRTAPP_OFF & _WRTB_OFF & _WRTC_OFF & _WRTD_O
+                            FF & _WRTSAF_OFF & _LVP_ON
+                      00063 ; CONFIG5
+                      00064 ; __config 0xFFFF
+800B   3FFF           00065  __CONFIG _CONFIG5, _CP_OFF
+                      00066         
+                      00067 
+                      00068 
+                      00069 ;------------------------------------------------------------------------------
+                      00070 ; VARIABLE DEFINITIONS
+                      00071 ;
+                      00072 ; Available Data Memory divided into Bank 0-15.  Each Bank may contain 
+                      00073 ; Special Function Registers, General Purpose Registers, and Access RAM 
+                      00074 ;
+                      00075 ;------------------------------------------------------------------------------
+                      00076 
+                      00077 reg UDATA
+0000                  00078 REGA  res 1
+0001                  00079 REGB  res 1
+0002                  00080 REGC  res 1
+                      00081 
+                      00082  
+                      00083 
+                      00084 ;------------------------------------------------------------------------------
+                      00085 ; RESET VECTOR
+                      00086 ;------------------------------------------------------------------------------
+                      00087 
+                      00088     ORG     0x0000            ; processor reset vector
+0000   3180           00089     PAGESEL START
+0001   2???           00090     GOTO    START             ; When using debug header, first inst.
+                      00091     
+                      00092 
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00093  
+                      00094 
+                      00095 Main Code
+                      00096 ;org 0x04
+                      00097 
+                      00098 ;--------------------------Routines-------------------------------------
+                      00099 
+0000                  00100 Delay:
+                      00101                         ;249993 cycles
+0000   304E           00102         movlw   0x4E
+0001   00??           00103         movwf   REGA
+0002   30C4           00104         movlw   0xc4
+0003   00??           00105         movwf   REGB
+0004                  00106 oneSecondDelay_0
+0004   0B??           00107         decfsz  REGA, f
+0005   2???           00108         goto    $+2
+0006   0B??           00109         decfsz  REGB, f
+0007   2???           00110         goto    oneSecondDelay_0
+                      00111                         ;3 cycles
+0008   2???           00112         goto    $+1
+0009   0000           00113         nop
+                      00114 
+                      00115                         ;4 cycles (including call)
+000A   3400           00116         retlw 0    
+                      00117 
+                      00118 ;Delay2
+                      00119 ;movlw D'4'
+                      00120 ;movwf REGC
+                      00121 ;loop3
+                      00122 ;movlw D'50'
+                      00123 ;movwf REGB
+                      00124 ;loop2
+                      00125 ;movlw D'200'
+                      00126 ;movwf REGA
+                      00127 ;loop 
+                      00128 ;nop  ;1
+                      00129 ;nop ;1
+                      00130 ;decfsz REGA,F ;1
+                      00131 ;goto loop  ;2
+                      00132 ;decfsz REGB,F
+                      00133 ;goto loop2
+                      00134 ;decfsz REGC,F
+                      00135 ;goto loop3
+                      00136 ;return
+                      00137 
+                      00138         
+                      00139  ;------------------------------------------- software delay-------------------
+000B                  00140 Delaycounter:
+000B   0140           00141    BANKSEL      PORTC            ;Select bank 0, i.e. where PORTD is    
+000C   1A0E           00142    btfsc        PORTC,0x04       ;Check switch status, is it high or low ?
+000D   2???           00143    goto         startBlink       ;If high execute startBlinking
+000E   2???           00144    goto         stopBlink
+                      00145  
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00146 
+                      00147 
+                      00148 
+                      00149 ;------------------------------------------------------------------------------
+                      00150 ; MAIN PROGRAM
+                      00151 ;------------------------------------------------------------------------------
+                      00152 
+000F                  00153 START
+                      00154     
+                      00155  
+                      00156 
+000F   0140           00157     BANKSEL  TRISC
+0010   3010           00158     MOVLW    0x10     ;RC3 output ,RC4 input
+0011   0094           00159     MOVWF    TRISC
+                      00160     
+0012   017E           00161     banksel  INLVLC
+0013   30DF           00162     movlw    0xDf
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0014   00D2           00163     movwf    INLVLC
+                      00164     
+0015   017E           00165     BANKSEL  ANSELC
+0016   3000           00166     MOVLW    0x00
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0017   00CE           00167     MOVWF    ANSELC
+                      00168     
+                      00169     
+                      00170 
+                      00171     
+                      00172     
+                      00173               
+                      00174 
+                      00175 
+                      00176      
+                      00177     
+                      00178 
+                      00179     
+                      00180     
+                      00181    
+                      00182 ;--------------------Starting Main Program---------------------------
+                      00183      
+0018                  00184 checkSwitch:    
+0018   0140           00185                                 BANKSEL PORTC            ;Select bank 0, i.e. where PORTD is    
+0019   1E0E           00186                                 btfss   PORTC,0x04       ;Check switch status, is it high or low ? 
+001A   2???           00187                                 goto    Delaycounter
+                      00188 ;                               goto    startBlink
+001B   2???           00189                                 goto    stopBlink        ;If low execute stopBlinking
+                      00190                                 
+                      00191                                 
+                      00192                               
+                      00193                                 
+                      00194 
+                      00195                                 
+                      00196                         
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00197                                 
+                      00198 
+                      00199                                 
+001C                  00200 startBlink                      
+                      00201                                 
+                      00202                                 
+                      00203  
+001C   0140           00204                                 BANKSEL LATC             ;Select bank again, just to be sure
+001D   159A           00205                                 bsf LATC,0x03
+001E   3180           00206                                 PAGESEL Delay
+001F   2???           00207                                 call    Delay   ;Keep lit for 1s
+0020   0140           00208                                 BANKSEL LATC             ;Select bank again, just to be sure
+0021   119A           00209                                 bcf LATC,0x03
+                      00210                         
+0022   3180           00211                                 PAGESEL Delay
+0023   2???           00212                                 call    Delay   ;Keep off for 1s
+0024   2???           00213                                 goto startBlink
+                      00214                 
+                      00215 
+0025                  00216 stopBlink                      
+                      00217                                
+                      00218                                  
+0025   2???           00219                                 goto    checkSwitch     ;Goto to routine to determine status of switch
+                      00220 
+                      00221 ;--------------------------Program Termination----------------------------------
+3EE8 3FFF 3F9F 3FFF 3F00222                                 END         
+       FF 
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ABDEN                             00000000
+ABDOVF                            00000007
+ACC0                              00000000
+ACC1                              00000001
+ACC10                             00000002
+ACC11                             00000003
+ACC12                             00000004
+ACC13                             00000005
+ACC14                             00000006
+ACC15                             00000007
+ACC16                             00000000
+ACC17                             00000001
+ACC18                             00000002
+ACC19                             00000003
+ACC2                              00000002
+ACC20                             00000004
+ACC21                             00000005
+ACC22                             00000006
+ACC23                             00000007
+ACC3                              00000003
+ACC4                              00000004
+ACC5                              00000005
+ACC6                              00000006
+ACC7                              00000007
+ACC8                              00000000
+ACC9                              00000001
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ACKTIM                            00000007
+ACLR                              00000003
+ACQ0                              00000000
+ACQ1                              00000001
+ACQ10                             00000002
+ACQ11                             00000003
+ACQ12                             00000004
+ACQ2                              00000002
+ACQ3                              00000003
+ACQ4                              00000004
+ACQ5                              00000005
+ACQ6                              00000006
+ACQ7                              00000007
+ACQ8                              00000000
+ACQ9                              00000001
+ACT0                              00000000
+ACT1                              00000001
+ACT2                              00000002
+ACT3                              00000003
+ACT4                              00000004
+ACTCON                            00000894
+ACTEN                             00000007
+ACTLOCK                           00000003
+ACTMD                             00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ACTORS                            00000001
+ACTUD                             00000006
+ADACC                             00000096
+ADACC0                            00000000
+ADACC1                            00000001
+ADACC10                           00000002
+ADACC11                           00000003
+ADACC12                           00000004
+ADACC13                           00000005
+ADACC14                           00000006
+ADACC15                           00000007
+ADACC16                           00000000
+ADACC17                           00000001
+ADACC18                           00000002
+ADACC19                           00000003
+ADACC2                            00000002
+ADACC20                           00000004
+ADACC21                           00000005
+ADACC22                           00000006
+ADACC23                           00000007
+ADACC3                            00000003
+ADACC4                            00000004
+ADACC5                            00000005
+ADACC6                            00000006
+ADACC7                            00000007
+ADACC8                            00000000
+ADACC9                            00000001
+ADACCH                            00000097
+ADACCL                            00000096
+ADACCU                            00000098
+ADACLR                            00000003
+ADACQ                             0000010C
+ADACQ0                            00000000
+ADACQ1                            00000001
+ADACQ10                           00000002
+ADACQ11                           00000003
+ADACQ12                           00000004
+ADACQ2                            00000002
+ADACQ3                            00000003
+ADACQ4                            00000004
+ADACQ5                            00000005
+ADACQ6                            00000006
+ADACQ7                            00000007
+ADACQ8                            00000000
+ADACQ9                            00000001
+ADACQH                            0000010D
+ADACQL                            0000010C
+ADACT                             00000117
+ADACT0                            00000000
+ADACT1                            00000001
+ADACT2                            00000002
+ADACT3                            00000003
+ADACT4                            00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADAOV                             00000007
+ADCACTPPS                         00001EC3
+ADCACTPPS0                        00000000
+ADCACTPPS1                        00000001
+ADCACTPPS2                        00000002
+ADCACTPPS3                        00000003
+ADCACTPPS4                        00000004
+ADCALC0                           00000004
+ADCALC1                           00000005
+ADCALC2                           00000006
+ADCAP                             0000010E
+ADCAP0                            00000000
+ADCAP1                            00000001
+ADCAP2                            00000002
+ADCAP3                            00000003
+ADCAP4                            00000004
+ADCLK                             00000118
+ADCMD                             00000005
+ADCNT                             00000099
+ADCNT0                            00000000
+ADCNT1                            00000001
+ADCNT2                            00000002
+ADCNT3                            00000003
+ADCNT4                            00000004
+ADCNT5                            00000005
+ADCNT6                            00000006
+ADCNT7                            00000007
+ADCON0                            00000111
+ADCON1                            00000112
+ADCON2                            00000113
+ADCON3                            00000114
+ADCONT                            00000006
+ADCPCON0                          0000001F
+ADCPON                            00000007
+ADCPRDY                           00000000
+ADCRS0                            00000004
+ADCRS1                            00000005
+ADCRS2                            00000006
+ADCS                              00000004
+ADCS0                             00000000
+ADCS1                             00000001
+ADCS2                             00000002
+ADCS3                             00000003
+ADCS4                             00000004
+ADCS5                             00000005
+ADDEN                             00000003
+ADDSEN                            00000000
+ADERR                             00000090
+ADERR0                            00000000
+ADERR1                            00000001
+ADERR10                           00000002
+ADERR11                           00000003
+ADERR12                           00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADERR13                           00000005
+ADERR14                           00000006
+ADERR15                           00000007
+ADERR2                            00000002
+ADERR3                            00000003
+ADERR4                            00000004
+ADERR5                            00000005
+ADERR6                            00000006
+ADERR7                            00000007
+ADERR8                            00000000
+ADERR9                            00000001
+ADERRH                            00000091
+ADERRL                            00000090
+ADFLTR                            00000094
+ADFLTR0                           00000000
+ADFLTR1                           00000001
+ADFLTR10                          00000002
+ADFLTR11                          00000003
+ADFLTR12                          00000004
+ADFLTR13                          00000005
+ADFLTR14                          00000006
+ADFLTR15                          00000007
+ADFLTR2                           00000002
+ADFLTR3                           00000003
+ADFLTR4                           00000004
+ADFLTR5                           00000005
+ADFLTR6                           00000006
+ADFLTR7                           00000007
+ADFLTR8                           00000000
+ADFLTR9                           00000001
+ADFLTRH                           00000095
+ADFLTRL                           00000094
+ADFM                              00000002
+ADFVR0                            00000000
+ADFVR1                            00000001
+ADGO                              00000000
+ADGPOL                            00000005
+ADIE                              00000000
+ADIF                              00000000
+ADIPEN                            00000006
+ADLTH                             0000008C
+ADLTH0                            00000000
+ADLTH1                            00000001
+ADLTH10                           00000002
+ADLTH11                           00000003
+ADLTH12                           00000004
+ADLTH13                           00000005
+ADLTH14                           00000006
+ADLTH15                           00000007
+ADLTH2                            00000002
+ADLTH3                            00000003
+ADLTH4                            00000004
+ADLTH5                            00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADLTH6                            00000006
+ADLTH7                            00000007
+ADLTH8                            00000000
+ADLTH9                            00000001
+ADLTHH                            0000008D
+ADLTHL                            0000008C
+ADLTHR                            00000005
+ADMATH                            00000004
+ADMD0                             00000000
+ADMD1                             00000001
+ADMD2                             00000002
+ADMSK1                            00000001
+ADMSK2                            00000002
+ADMSK3                            00000003
+ADMSK4                            00000004
+ADMSK5                            00000005
+ADOEN                             00000002
+ADON                              00000007
+ADOR                              00000002
+ADPCH                             0000009F
+ADPCH0                            00000000
+ADPCH1                            00000001
+ADPCH2                            00000002
+ADPCH3                            00000003
+ADPCH4                            00000004
+ADPCH5                            00000005
+ADPPOL                            00000007
+ADPRE                             0000010F
+ADPRE0                            00000000
+ADPRE1                            00000001
+ADPRE10                           00000002
+ADPRE11                           00000003
+ADPRE12                           00000004
+ADPRE2                            00000002
+ADPRE3                            00000003
+ADPRE4                            00000004
+ADPRE5                            00000005
+ADPRE6                            00000006
+ADPRE7                            00000007
+ADPRE8                            00000000
+ADPRE9                            00000001
+ADPREF0                           00000000
+ADPREF1                           00000001
+ADPREH                            00000110
+ADPREL                            0000010F
+ADPREV                            0000009B
+ADPREV0                           00000000
+ADPREV1                           00000001
+ADPREV10                          00000002
+ADPREV11                          00000003
+ADPREV12                          00000004
+ADPREV13                          00000005
+ADPREV14                          00000006
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADPREV15                          00000007
+ADPREV2                           00000002
+ADPREV3                           00000003
+ADPREV4                           00000004
+ADPREV5                           00000005
+ADPREV6                           00000006
+ADPREV7                           00000007
+ADPREV8                           00000000
+ADPREV9                           00000001
+ADPREVH                           0000009C
+ADPREVL                           0000009B
+ADPSIS                            00000007
+ADREF                             00000116
+ADRES                             0000009D
+ADRES0                            00000000
+ADRES1                            00000001
+ADRES10                           00000002
+ADRES11                           00000003
+ADRES12                           00000004
+ADRES13                           00000005
+ADRES14                           00000006
+ADRES15                           00000007
+ADRES2                            00000002
+ADRES3                            00000003
+ADRES4                            00000004
+ADRES5                            00000005
+ADRES6                            00000006
+ADRES7                            00000007
+ADRES8                            00000000
+ADRES9                            00000001
+ADRESH                            0000009E
+ADRESL                            0000009D
+ADRPT                             0000009A
+ADRPT0                            00000000
+ADRPT1                            00000001
+ADRPT2                            00000002
+ADRPT3                            00000003
+ADRPT4                            00000004
+ADRPT5                            00000005
+ADRPT6                            00000006
+ADRPT7                            00000007
+ADSOI                             00000003
+ADSTAT                            00000115
+ADSTAT0                           00000000
+ADSTAT1                           00000001
+ADSTAT2                           00000002
+ADSTPT                            00000092
+ADSTPT0                           00000000
+ADSTPT1                           00000001
+ADSTPT10                          00000002
+ADSTPT11                          00000003
+ADSTPT12                          00000004
+ADSTPT13                          00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADSTPT14                          00000006
+ADSTPT15                          00000007
+ADSTPT2                           00000002
+ADSTPT3                           00000003
+ADSTPT4                           00000004
+ADSTPT5                           00000005
+ADSTPT6                           00000006
+ADSTPT7                           00000007
+ADSTPT8                           00000000
+ADSTPT9                           00000001
+ADSTPTH                           00000093
+ADSTPTL                           00000092
+ADTIE                             00000001
+ADTIF                             00000001
+ADTMD0                            00000000
+ADTMD1                            00000001
+ADTMD2                            00000002
+ADUTH                             0000008E
+ADUTH0                            00000000
+ADUTH1                            00000001
+ADUTH10                           00000002
+ADUTH11                           00000003
+ADUTH12                           00000004
+ADUTH13                           00000005
+ADUTH14                           00000006
+ADUTH15                           00000007
+ADUTH2                            00000002
+ADUTH3                            00000003
+ADUTH4                            00000004
+ADUTH5                            00000005
+ADUTH6                            00000006
+ADUTH7                            00000007
+ADUTH8                            00000000
+ADUTH9                            00000001
+ADUTHH                            0000008F
+ADUTHL                            0000008E
+ADUTHR                            00000006
+AHEN                              00000001
+ALRMCON                           00000C0E
+ALRMDAY                           00000C19
+ALRMEN                            00000007
+ALRMHR                            00000C1A
+ALRMMIN                           00000C1B
+ALRMMTH                           00000C17
+ALRMRPT                           00000C0F
+ALRMSEC                           00000C1C
+ALRMWD                            00000C18
+AMASK0                            00000002
+AMASK1                            00000003
+AMASK2                            00000004
+AMASK3                            00000005
+ANSA0                             00000000
+ANSA1                             00000001
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 13
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ANSA2                             00000002
+ANSA3                             00000003
+ANSA4                             00000004
+ANSA6                             00000006
+ANSA7                             00000007
+ANSB0                             00000000
+ANSB1                             00000001
+ANSB2                             00000002
+ANSB3                             00000003
+ANSB4                             00000004
+ANSB5                             00000005
+ANSB6                             00000006
+ANSB7                             00000007
+ANSC0                             00000000
+ANSC1                             00000001
+ANSC2                             00000002
+ANSC3                             00000003
+ANSC4                             00000004
+ANSC6                             00000006
+ANSC7                             00000007
+ANSELA                            00001F38
+ANSELB                            00001F43
+ANSELC                            00001F4E
+ARPT0                             00000000
+ARPT1                             00000001
+ARPT2                             00000002
+ARPT3                             00000003
+ARPT4                             00000004
+ARPT5                             00000005
+ARPT6                             00000006
+ARPT7                             00000007
+AS                                00000000
+AS0E                              00000000
+AS1E                              00000001
+AS2E                              00000002
+AS3E                              00000003
+AS4E                              00000004
+AS5E                              00000005
+AS6E                              00000006
+BAUD1CON                          0000011F
+BAUD2CON                          00000A1F
+BAUDCON                           0000011F
+BAUDCON1                          0000011F
+BAUDCON2                          00000A1F
+BAUDCTL                           0000011F
+BAUDCTL1                          0000011F
+BAUDCTL2                          00000A1F
+BCL1IE                            00000001
+BCL1IF                            00000001
+BF                                00000000
+BIAS0                             00000000
+BIAS1                             00000001
+BIAS2                             00000002
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 14
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+BOEN                              00000004
+BORCON                            00000811
+BORRDY                            00000000
+BRG16                             00000003
+BRGH                              00000002
+BSR                               00000008
+BSR0                              00000000
+BSR1                              00000001
+BSR2                              00000002
+BSR3                              00000003
+BSR4                              00000004
+BSR5                              00000005
+BSR_SHAD                          00001FE6
+C                                 00000000
+C1HYS                             00000001
+C1IE                              00000000
+C1IF                              00000000
+C1INTN                            00000000
+C1INTP                            00000001
+C1NCH0                            00000000
+C1NCH1                            00000001
+C1NCH2                            00000002
+C1ON                              00000007
+C1OUT_CM1CON0                     00000006
+C1OUT_CMOUT                       00000000
+C1OUT_CMSTAT                      00000000
+C1PCH0                            00000000
+C1PCH1                            00000001
+C1PCH2                            00000002
+C1POL                             00000004
+C1SYNC                            00000000
+C1TSEL0                           00000000
+C1TSEL1                           00000001
+C2HYS                             00000001
+C2IE                              00000001
+C2IF                              00000001
+C2INTN                            00000000
+C2INTP                            00000001
+C2NCH0                            00000000
+C2NCH1                            00000001
+C2NCH2                            00000002
+C2ON                              00000007
+C2OUT_CM2CON0                     00000006
+C2OUT_CMOUT                       00000001
+C2OUT_CMSTAT                      00000001
+C2PCH0                            00000000
+C2PCH1                            00000001
+C2PCH2                            00000002
+C2POL                             00000004
+C2SYNC                            00000000
+C2TSEL0                           00000002
+C2TSEL1                           00000003
+C3TSEL0                           00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 15
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C3TSEL1                           00000005
+C4TSEL0                           00000006
+C4TSEL1                           00000007
+CAL0                              00000000
+CAL1                              00000001
+CAL2                              00000002
+CAL3                              00000003
+CAL4                              00000004
+CAL5                              00000005
+CAL6                              00000006
+CAL7                              00000007
+CALC0                             00000004
+CALC1                             00000005
+CALC2                             00000006
+CCP1CAP                           0000030F
+CCP1CON                           0000030E
+CCP1CTS0                          00000000
+CCP1CTS1                          00000001
+CCP1CTS2                          00000002
+CCP1EN                            00000007
+CCP1FMT                           00000004
+CCP1IE                            00000000
+CCP1IF                            00000000
+CCP1MD                            00000000
+CCP1MODE0                         00000000
+CCP1MODE1                         00000001
+CCP1MODE2                         00000002
+CCP1MODE3                         00000003
+CCP1OE                            00000006
+CCP1OUT                           00000005
+CCP1PPS                           00001EA1
+CCP1PPS0                          00000000
+CCP1PPS1                          00000001
+CCP1PPS2                          00000002
+CCP1PPS3                          00000003
+CCP1PPS4                          00000004
+CCP2CAP                           00000313
+CCP2CON                           00000312
+CCP2CTS0                          00000000
+CCP2CTS1                          00000001
+CCP2CTS2                          00000002
+CCP2EN                            00000007
+CCP2FMT                           00000004
+CCP2IE                            00000001
+CCP2IF                            00000001
+CCP2MD                            00000001
+CCP2MODE0                         00000000
+CCP2MODE1                         00000001
+CCP2MODE2                         00000002
+CCP2MODE3                         00000003
+CCP2OE                            00000006
+CCP2OUT                           00000005
+CCP2PPS                           00001EA2
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 16
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CCP2PPS0                          00000000
+CCP2PPS1                          00000001
+CCP2PPS2                          00000002
+CCP2PPS3                          00000003
+CCP2PPS4                          00000004
+CCP3MD                            00000002
+CCP4MD                            00000003
+CCPR1                             0000030C
+CCPR1H                            0000030D
+CCPR1L                            0000030C
+CCPR2                             00000310
+CCPR2H                            00000311
+CCPR2L                            00000310
+CCPTMRS0                          0000021E
+CDAFVR0                           00000002
+CDAFVR1                           00000003
+CDIV0                             00000000
+CDIV1                             00000001
+CDIV2                             00000002
+CDIV3                             00000003
+CHIME                             00000006
+CKE                               00000006
+CKP                               00000004
+CKPOL                             00000006
+CKPS0                             00000004
+CKPS1                             00000005
+CKPS2                             00000006
+CKSYNC                            00000005
+CLC1CON                           00001E10
+CLC1GLS0                          00001E16
+CLC1GLS1                          00001E17
+CLC1GLS2                          00001E18
+CLC1GLS3                          00001E19
+CLC1IE                            00000004
+CLC1IF                            00000004
+CLC1MD                            00000001
+CLC1POL                           00001E11
+CLC1SEL0                          00001E12
+CLC1SEL1                          00001E13
+CLC1SEL2                          00001E14
+CLC1SEL3                          00001E15
+CLC2CON                           00001E1A
+CLC2GLS0                          00001E20
+CLC2GLS1                          00001E21
+CLC2GLS2                          00001E22
+CLC2GLS3                          00001E23
+CLC2IE                            00000005
+CLC2IF                            00000005
+CLC2MD                            00000002
+CLC2POL                           00001E1B
+CLC2SEL0                          00001E1C
+CLC2SEL1                          00001E1D
+CLC2SEL2                          00001E1E
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 17
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CLC2SEL3                          00001E1F
+CLC3CON                           00001E24
+CLC3GLS0                          00001E2A
+CLC3GLS1                          00001E2B
+CLC3GLS2                          00001E2C
+CLC3GLS3                          00001E2D
+CLC3IE                            00000006
+CLC3IF                            00000006
+CLC3MD                            00000003
+CLC3POL                           00001E25
+CLC3SEL0                          00001E26
+CLC3SEL1                          00001E27
+CLC3SEL2                          00001E28
+CLC3SEL3                          00001E29
+CLC4CON                           00001E2E
+CLC4GLS0                          00001E34
+CLC4GLS1                          00001E35
+CLC4GLS2                          00001E36
+CLC4GLS3                          00001E37
+CLC4IE                            00000007
+CLC4IF                            00000007
+CLC4MD                            00000004
+CLC4POL                           00001E2F
+CLC4SEL0                          00001E30
+CLC4SEL1                          00001E31
+CLC4SEL2                          00001E32
+CLC4SEL3                          00001E33
+CLCDATA                           00001E0F
+CLCIN0PPS                         00001EBB
+CLCIN0PPS0                        00000000
+CLCIN0PPS1                        00000001
+CLCIN0PPS2                        00000002
+CLCIN0PPS3                        00000003
+CLCIN0PPS4                        00000004
+CLCIN1PPS                         00001EBC
+CLCIN1PPS0                        00000000
+CLCIN1PPS1                        00000001
+CLCIN1PPS2                        00000002
+CLCIN1PPS3                        00000003
+CLCIN1PPS4                        00000004
+CLCIN2PPS                         00001EBD
+CLCIN2PPS0                        00000000
+CLCIN2PPS1                        00000001
+CLCIN2PPS2                        00000002
+CLCIN2PPS3                        00000003
+CLCIN2PPS4                        00000004
+CLCIN3PPS                         00001EBE
+CLCIN3PPS0                        00000000
+CLCIN3PPS1                        00000001
+CLCIN3PPS2                        00000002
+CLCIN3PPS3                        00000003
+CLCIN3PPS4                        00000004
+CM1CON0                           00000990
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 18
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CM1CON1                           00000991
+CM1NSEL                           00000992
+CM1PSEL                           00000993
+CM2CON0                           00000994
+CM2CON1                           00000995
+CM2NSEL                           00000996
+CM2PSEL                           00000997
+CMOUT                             0000098F
+CMP1MD                            00000001
+CMP2MD                            00000002
+CMSTAT                            0000098F
+CNT0                              00000000
+CNT1                              00000001
+CNT2                              00000002
+CNT3                              00000003
+CNT4                              00000004
+CNT5                              00000005
+CNT6                              00000006
+CNT7                              00000007
+CONT                              00000006
+COSC0                             00000004
+COSC1                             00000005
+COSC2                             00000006
+CPOL                              00000002
+CPR0                              00000000
+CPR1                              00000001
+CPR10                             00000002
+CPR11                             00000003
+CPR12                             00000004
+CPR13                             00000005
+CPR14                             00000006
+CPR15                             00000007
+CPR16                             00000000
+CPR17                             00000001
+CPR18                             00000002
+CPR19                             00000003
+CPR2                              00000002
+CPR20                             00000004
+CPR21                             00000005
+CPR22                             00000006
+CPR23                             00000007
+CPR3                              00000003
+CPR4                              00000004
+CPR5                              00000005
+CPR6                              00000006
+CPR7                              00000007
+CPR8                              00000000
+CPR9                              00000001
+CPRUP                             00000007
+CPUDOZE                           0000088C
+CPW0                              00000000
+CPW1                              00000001
+CPW10                             00000002
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 19
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CPW11                             00000003
+CPW12                             00000004
+CPW13                             00000005
+CPW14                             00000006
+CPW15                             00000007
+CPW16                             00000000
+CPW17                             00000001
+CPW18                             00000002
+CPW19                             00000003
+CPW2                              00000002
+CPW20                             00000004
+CPW21                             00000005
+CPW22                             00000006
+CPW23                             00000007
+CPW3                              00000003
+CPW4                              00000004
+CPW5                              00000005
+CPW6                              00000006
+CPW7                              00000007
+CPW8                              00000000
+CPW9                              00000001
+CPWDT                             00000007
+CPWUP                             00000006
+CREN                              00000004
+CRIE                              00000007
+CRIF                              00000007
+CRS0                              00000004
+CRS1                              00000005
+CRS2                              00000006
+CS0                               00000000
+CS1                               00000001
+CS2                               00000002
+CS3                               00000003
+CS4                               00000004
+CS5                               00000005
+CSEL0                             00000000
+CSEL1                             00000001
+CSEL2                             00000002
+CSRC                              00000007
+CSWHOLD                           00000007
+CSWIE                             00000006
+CSWIF                             00000006
+CS_ADCON0                         00000004
+CS_CWG1CLKCON                     00000000
+CS_LCDCON                         00000004
+CTS0                              00000000
+CTS1                              00000001
+CTS2                              00000002
+CWG1AS0                           00000612
+CWG1AS1                           00000613
+CWG1CLKCON                        0000060C
+CWG1CON0                          00000610
+CWG1CON1                          00000611
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 20
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CWG1CS                            00000000
+CWG1DBF                           0000060F
+CWG1DBF0                          00000000
+CWG1DBF1                          00000001
+CWG1DBF2                          00000002
+CWG1DBF3                          00000003
+CWG1DBF4                          00000004
+CWG1DBF5                          00000005
+CWG1DBR                           0000060E
+CWG1DBR0                          00000000
+CWG1DBR1                          00000001
+CWG1DBR2                          00000002
+CWG1DBR3                          00000003
+CWG1DBR4                          00000004
+CWG1DBR5                          00000005
+CWG1EN                            00000007
+CWG1IE                            00000000
+CWG1IF                            00000000
+CWG1IN                            00000005
+CWG1ISM                           0000060D
+CWG1ISM0                          00000000
+CWG1ISM1                          00000001
+CWG1ISM2                          00000002
+CWG1ISM3                          00000003
+CWG1LD                            00000006
+CWG1LSAC0                         00000002
+CWG1LSAC1                         00000003
+CWG1LSBD0                         00000004
+CWG1LSBD1                         00000005
+CWG1MD                            00000000
+CWG1MODE0                         00000000
+CWG1MODE1                         00000001
+CWG1MODE2                         00000002
+CWG1OVRA                          00000004
+CWG1OVRB                          00000005
+CWG1OVRC                          00000006
+CWG1OVRD                          00000007
+CWG1POLA                          00000000
+CWG1POLB                          00000001
+CWG1POLC                          00000002
+CWG1POLD                          00000003
+CWG1PPS                           00001EB1
+CWG1PPS0                          00000000
+CWG1PPS1                          00000001
+CWG1PPS2                          00000002
+CWG1PPS3                          00000003
+CWG1PPS4                          00000004
+CWG1REN                           00000006
+CWG1SHUTDOWN                      00000007
+CWG1STR                           00000614
+CWG1STRA                          00000000
+CWG1STRB                          00000001
+CWG1STRC                          00000002
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 21
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CWG1STRD                          00000003
+C_SHAD                            00000000
+D1N                               00000000
+D1S0                              00000000
+D1S1                              00000001
+D1S2                              00000002
+D1S3                              00000003
+D1S4                              00000004
+D1S5                              00000005
+D1S6                              00000006
+D1S7                              00000007
+D1T                               00000001
+D2N                               00000002
+D2S0                              00000000
+D2S1                              00000001
+D2S2                              00000002
+D2S3                              00000003
+D2S4                              00000004
+D2S5                              00000005
+D2S6                              00000006
+D2S7                              00000007
+D2T                               00000003
+D3N                               00000004
+D3S0                              00000000
+D3S1                              00000001
+D3S2                              00000002
+D3S3                              00000003
+D3S4                              00000004
+D3S5                              00000005
+D3S6                              00000006
+D3S7                              00000007
+D3T                               00000005
+D4N                               00000006
+D4S0                              00000000
+D4S1                              00000001
+D4S2                              00000002
+D4S3                              00000003
+D4S4                              00000004
+D4S5                              00000005
+D4S6                              00000006
+D4S7                              00000007
+D4T                               00000007
+DAC1CON0                          0000090E
+DAC1CON1                          0000090F
+DAC1EN                            00000007
+DAC1NSS                           00000000
+DAC1OE1                           00000005
+DAC1OE2                           00000004
+DAC1PSS0                          00000002
+DAC1PSS1                          00000003
+DAC1R0                            00000000
+DAC1R1                            00000001
+DAC1R2                            00000002
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 22
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+DAC1R3                            00000003
+DAC1R4                            00000004
+DACMD                             00000006
+DATA_ADDRESS                      00000005
+DAY                               00000C13
+DAYALRMH0                         00000004
+DAYALRMH1                         00000005
+DAYALRML0                         00000000
+DAYALRML1                         00000001
+DAYALRML2                         00000002
+DAYALRML3                         00000003
+DAYH0                             00000004
+DAYH1                             00000005
+DAYL0                             00000000
+DAYL1                             00000001
+DAYL2                             00000002
+DAYL3                             00000003
+DBF0                              00000000
+DBF1                              00000001
+DBF2                              00000002
+DBF3                              00000003
+DBF4                              00000004
+DBF5                              00000005
+DBR0                              00000000
+DBR1                              00000001
+DBR2                              00000002
+DBR3                              00000003
+DBR4                              00000004
+DBR5                              00000005
+DC                                00000001
+DC0                               00000006
+DC1                               00000007
+DC2                               00000000
+DC3                               00000001
+DC4                               00000002
+DC5                               00000003
+DC6                               00000004
+DC7                               00000005
+DC8                               00000006
+DC9                               00000007
+DC_SHAD                           00000001
+DHEN                              00000000
+DOE                               00000004
+DONE                              00000000
+DOZE0                             00000000
+DOZE1                             00000001
+DOZE2                             00000002
+DOZEN                             00000006
+DSEN                              00000000
+D_A                               00000005
+D_NOT_A                           00000005
+Delay                             00000000
+Delaycounter                      0000000B
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 23
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+EN                                00000007
+EN5V                              00000006
+ERR0                              00000000
+ERR1                              00000001
+ERR10                             00000002
+ERR11                             00000003
+ERR12                             00000004
+ERR13                             00000005
+ERR14                             00000006
+ERR15                             00000007
+ERR2                              00000002
+ERR3                              00000003
+ERR4                              00000004
+ERR5                              00000005
+ERR6                              00000006
+ERR7                              00000007
+ERR8                              00000000
+ERR9                              00000001
+EXTOEN                            00000007
+EXTOR                             00000007
+F                                 00000001
+FERR                              00000002
+FLTR0                             00000000
+FLTR1                             00000001
+FLTR10                            00000002
+FLTR11                            00000003
+FLTR12                            00000004
+FLTR13                            00000005
+FLTR14                            00000006
+FLTR15                            00000007
+FLTR2                             00000002
+FLTR3                             00000003
+FLTR4                             00000004
+FLTR5                             00000005
+FLTR6                             00000006
+FLTR7                             00000007
+FLTR8                             00000000
+FLTR9                             00000001
+FM                                00000002
+FMT                               00000004
+FREE                              00000004
+FSR0                              00000004
+FSR0H                             00000005
+FSR0H_SHAD                        00001FE9
+FSR0L                             00000004
+FSR0L_SHAD                        00001FE8
+FSR1                              00000006
+FSR1H                             00000007
+FSR1H_SHAD                        00001FEB
+FSR1L                             00000006
+FSR1L_SHAD                        00001FEA
+FVRCON                            0000090C
+FVREN                             00000007
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 24
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+FVRMD                             00000006
+FVRRDY                            00000006
+G1EN                              00000007
+G1POL                             00000000
+G2POL                             00000001
+G3POL                             00000002
+G4D1N                             00000000
+G4D1T                             00000001
+G4D2N                             00000002
+G4D2T                             00000003
+G4D3N                             00000004
+G4D3T                             00000005
+G4D4N                             00000006
+G4D4T                             00000007
+G4POL                             00000003
+GCEN                              00000007
+GE                                00000007
+GGO_NOT_DONE                      00000003
+GIE                               00000007
+GO                                00000000
+GO_NOT_DONE                       00000000
+GPOL_ADCON1                       00000005
+GPOL_PR1                          00000006
+GPOL_T1GCON                       00000006
+GSPM                              00000004
+GSS0                              00000000
+GSS1                              00000001
+GSS2                              00000002
+GSS3                              00000003
+GSS4                              00000004
+GTM                               00000005
+GVAL                              00000002
+HALFSEC                           00000003
+HFFRQ0                            00000000
+HFFRQ1                            00000001
+HFFRQ2                            00000002
+HFOEN                             00000006
+HFOR                              00000006
+HIDB1                             00000001
+HIDRVB                            0000040D
+HOURS                             00000C14
+HRALRMH0                          00000004
+HRALRMH1                          00000005
+HRALRML0                          00000000
+HRALRML1                          00000001
+HRALRML2                          00000002
+HRALRML3                          00000003
+HRH0                              00000004
+HRH1                              00000005
+HRL0                              00000000
+HRL1                              00000001
+HRL2                              00000002
+HRL3                              00000003
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 25
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+HYS                               00000001
+I2C_DAT                           00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+IDLEN                             00000007
+IN                                00000005
+INDF0                             00000000
+INDF1                             00000001
+INLVLA                            00001F3C
+INLVLA0                           00000000
+INLVLA1                           00000001
+INLVLA2                           00000002
+INLVLA3                           00000003
+INLVLA4                           00000004
+INLVLA5                           00000005
+INLVLA6                           00000006
+INLVLA7                           00000007
+INLVLB                            00001F47
+INLVLB0                           00000000
+INLVLB1                           00000001
+INLVLB2                           00000002
+INLVLB3                           00000003
+INLVLB4                           00000004
+INLVLB5                           00000005
+INLVLB6                           00000006
+INLVLB7                           00000007
+INLVLC                            00001F52
+INLVLC0                           00000000
+INLVLC1                           00000001
+INLVLC2                           00000002
+INLVLC3                           00000003
+INLVLC4                           00000004
+INLVLC6                           00000006
+INLVLC7                           00000007
+INLVLE                            00001F68
+INLVLE3                           00000003
+INTCON                            0000000B
+INTE                              00000000
+INTEDG                            00000000
+INTF                              00000000
+INTN_CLC1CON                      00000003
+INTN_CLC2CON                      00000003
+INTN_CLC3CON                      00000003
+INTN_CLC4CON                      00000003
+INTN_CM1CON1                      00000000
+INTN_CM2CON1                      00000000
+INTPPS                            00001E90
+INTPPS0                           00000000
+INTPPS1                           00000001
+INTPPS2                           00000002
+INTPPS3                           00000003
+INTP_CLC1CON                      00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 26
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+INTP_CLC2CON                      00000004
+INTP_CLC3CON                      00000004
+INTP_CLC4CON                      00000004
+INTP_CM1CON1                      00000001
+INTP_CM2CON1                      00000001
+IOCAF                             00001F3F
+IOCAF0                            00000000
+IOCAF1                            00000001
+IOCAF2                            00000002
+IOCAF3                            00000003
+IOCAF4                            00000004
+IOCAF5                            00000005
+IOCAF6                            00000006
+IOCAF7                            00000007
+IOCAN                             00001F3E
+IOCAN0                            00000000
+IOCAN1                            00000001
+IOCAN2                            00000002
+IOCAN3                            00000003
+IOCAN4                            00000004
+IOCAN5                            00000005
+IOCAN6                            00000006
+IOCAN7                            00000007
+IOCAP                             00001F3D
+IOCAP0                            00000000
+IOCAP1                            00000001
+IOCAP2                            00000002
+IOCAP3                            00000003
+IOCAP4                            00000004
+IOCAP5                            00000005
+IOCAP6                            00000006
+IOCAP7                            00000007
+IOCBF                             00001F4A
+IOCBF0                            00000000
+IOCBF1                            00000001
+IOCBF2                            00000002
+IOCBF3                            00000003
+IOCBF4                            00000004
+IOCBF5                            00000005
+IOCBF6                            00000006
+IOCBF7                            00000007
+IOCBN                             00001F49
+IOCBN0                            00000000
+IOCBN1                            00000001
+IOCBN2                            00000002
+IOCBN3                            00000003
+IOCBN4                            00000004
+IOCBN5                            00000005
+IOCBN6                            00000006
+IOCBN7                            00000007
+IOCBP                             00001F48
+IOCBP0                            00000000
+IOCBP1                            00000001
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 27
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+IOCBP2                            00000002
+IOCBP3                            00000003
+IOCBP4                            00000004
+IOCBP5                            00000005
+IOCBP6                            00000006
+IOCBP7                            00000007
+IOCCF                             00001F55
+IOCCF0                            00000000
+IOCCF1                            00000001
+IOCCF2                            00000002
+IOCCF3                            00000003
+IOCCF4                            00000004
+IOCCF6                            00000006
+IOCCF7                            00000007
+IOCCN                             00001F54
+IOCCN0                            00000000
+IOCCN1                            00000001
+IOCCN2                            00000002
+IOCCN3                            00000003
+IOCCN4                            00000004
+IOCCN6                            00000006
+IOCCN7                            00000007
+IOCCP                             00001F53
+IOCCP0                            00000000
+IOCCP1                            00000001
+IOCCP2                            00000002
+IOCCP3                            00000003
+IOCCP4                            00000004
+IOCCP6                            00000006
+IOCCP7                            00000007
+IOCEF                             00001F6B
+IOCEF3                            00000003
+IOCEN                             00001F6A
+IOCEN3                            00000003
+IOCEP                             00001F69
+IOCEP3                            00000003
+IOCIE                             00000004
+IOCIF                             00000004
+IOCMD                             00000000
+IPEN                              00000006
+LATA                              00000018
+LATA0                             00000000
+LATA1                             00000001
+LATA2                             00000002
+LATA3                             00000003
+LATA4                             00000004
+LATA6                             00000006
+LATA7                             00000007
+LATB                              00000019
+LATB0                             00000000
+LATB1                             00000001
+LATB2                             00000002
+LATB3                             00000003
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 28
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LATB4                             00000004
+LATB5                             00000005
+LATB6                             00000006
+LATB7                             00000007
+LATC                              0000001A
+LATC0                             00000000
+LATC1                             00000001
+LATC2                             00000002
+LATC3                             00000003
+LATC4                             00000004
+LATC6                             00000006
+LATC7                             00000007
+LC1D1S0                           00000000
+LC1D1S1                           00000001
+LC1D1S2                           00000002
+LC1D1S3                           00000003
+LC1D1S4                           00000004
+LC1D1S5                           00000005
+LC1D1S6                           00000006
+LC1D1S7                           00000007
+LC1D2S0                           00000000
+LC1D2S1                           00000001
+LC1D2S2                           00000002
+LC1D2S3                           00000003
+LC1D2S4                           00000004
+LC1D2S5                           00000005
+LC1D2S6                           00000006
+LC1D2S7                           00000007
+LC1D3S0                           00000000
+LC1D3S1                           00000001
+LC1D3S2                           00000002
+LC1D3S3                           00000003
+LC1D3S4                           00000004
+LC1D3S5                           00000005
+LC1D3S6                           00000006
+LC1D3S7                           00000007
+LC1D4S0                           00000000
+LC1D4S1                           00000001
+LC1D4S2                           00000002
+LC1D4S3                           00000003
+LC1D4S4                           00000004
+LC1D4S5                           00000005
+LC1D4S6                           00000006
+LC1D4S7                           00000007
+LC1EN                             00000007
+LC1G1D1N                          00000000
+LC1G1D1T                          00000001
+LC1G1D2N                          00000002
+LC1G1D2T                          00000003
+LC1G1D3N                          00000004
+LC1G1D3T                          00000005
+LC1G1D4N                          00000006
+LC1G1D4T                          00000007
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 29
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC1G1POL                          00000000
+LC1G2D1N                          00000000
+LC1G2D1T                          00000001
+LC1G2D2N                          00000002
+LC1G2D2T                          00000003
+LC1G2D3N                          00000004
+LC1G2D3T                          00000005
+LC1G2D4N                          00000006
+LC1G2D4T                          00000007
+LC1G2POL                          00000001
+LC1G3D1N                          00000000
+LC1G3D1T                          00000001
+LC1G3D2N                          00000002
+LC1G3D2T                          00000003
+LC1G3D3N                          00000004
+LC1G3D3T                          00000005
+LC1G3D4N                          00000006
+LC1G3D4T                          00000007
+LC1G3POL                          00000002
+LC1G4D1N                          00000000
+LC1G4D1T                          00000001
+LC1G4D2N                          00000002
+LC1G4D2T                          00000003
+LC1G4D3N                          00000004
+LC1G4D3T                          00000005
+LC1G4D4N                          00000006
+LC1G4D4T                          00000007
+LC1G4POL                          00000003
+LC1INTN                           00000003
+LC1INTP                           00000004
+LC1MODE0                          00000000
+LC1MODE1                          00000001
+LC1MODE2                          00000002
+LC1OUT                            00000005
+LC1POL                            00000007
+LC2D1S0                           00000000
+LC2D1S1                           00000001
+LC2D1S2                           00000002
+LC2D1S3                           00000003
+LC2D1S4                           00000004
+LC2D1S5                           00000005
+LC2D1S6                           00000006
+LC2D1S7                           00000007
+LC2D2S0                           00000000
+LC2D2S1                           00000001
+LC2D2S2                           00000002
+LC2D2S3                           00000003
+LC2D2S4                           00000004
+LC2D2S5                           00000005
+LC2D2S6                           00000006
+LC2D2S7                           00000007
+LC2D3S0                           00000000
+LC2D3S1                           00000001
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 30
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC2D3S2                           00000002
+LC2D3S3                           00000003
+LC2D3S4                           00000004
+LC2D3S5                           00000005
+LC2D3S6                           00000006
+LC2D3S7                           00000007
+LC2D4S0                           00000000
+LC2D4S1                           00000001
+LC2D4S2                           00000002
+LC2D4S3                           00000003
+LC2D4S4                           00000004
+LC2D4S5                           00000005
+LC2D4S6                           00000006
+LC2D4S7                           00000007
+LC2EN                             00000007
+LC2G1D1N                          00000000
+LC2G1D1T                          00000001
+LC2G1D2N                          00000002
+LC2G1D2T                          00000003
+LC2G1D3N                          00000004
+LC2G1D3T                          00000005
+LC2G1D4N                          00000006
+LC2G1D4T                          00000007
+LC2G1POL                          00000000
+LC2G2D1N                          00000000
+LC2G2D1T                          00000001
+LC2G2D2N                          00000002
+LC2G2D2T                          00000003
+LC2G2D3N                          00000004
+LC2G2D3T                          00000005
+LC2G2D4N                          00000006
+LC2G2D4T                          00000007
+LC2G2POL                          00000001
+LC2G3D1N                          00000000
+LC2G3D1T                          00000001
+LC2G3D2N                          00000002
+LC2G3D2T                          00000003
+LC2G3D3N                          00000004
+LC2G3D3T                          00000005
+LC2G3D4N                          00000006
+LC2G3D4T                          00000007
+LC2G3POL                          00000002
+LC2G4D1N                          00000000
+LC2G4D1T                          00000001
+LC2G4D2N                          00000002
+LC2G4D2T                          00000003
+LC2G4D3N                          00000004
+LC2G4D3T                          00000005
+LC2G4D4N                          00000006
+LC2G4D4T                          00000007
+LC2G4POL                          00000003
+LC2INTN                           00000003
+LC2INTP                           00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 31
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC2MODE0                          00000000
+LC2MODE1                          00000001
+LC2MODE2                          00000002
+LC2OUT                            00000005
+LC2POL                            00000007
+LC3D1S0                           00000000
+LC3D1S1                           00000001
+LC3D1S2                           00000002
+LC3D1S3                           00000003
+LC3D1S4                           00000004
+LC3D1S5                           00000005
+LC3D1S6                           00000006
+LC3D1S7                           00000007
+LC3D2S0                           00000000
+LC3D2S1                           00000001
+LC3D2S2                           00000002
+LC3D2S3                           00000003
+LC3D2S4                           00000004
+LC3D2S5                           00000005
+LC3D2S6                           00000006
+LC3D2S7                           00000007
+LC3D3S0                           00000000
+LC3D3S1                           00000001
+LC3D3S2                           00000002
+LC3D3S3                           00000003
+LC3D3S4                           00000004
+LC3D3S5                           00000005
+LC3D3S6                           00000006
+LC3D3S7                           00000007
+LC3D4S0                           00000000
+LC3D4S1                           00000001
+LC3D4S2                           00000002
+LC3D4S3                           00000003
+LC3D4S4                           00000004
+LC3D4S5                           00000005
+LC3D4S6                           00000006
+LC3D4S7                           00000007
+LC3EN                             00000007
+LC3G1D1N                          00000000
+LC3G1D1T                          00000001
+LC3G1D2N                          00000002
+LC3G1D2T                          00000003
+LC3G1D3N                          00000004
+LC3G1D3T                          00000005
+LC3G1D4N                          00000006
+LC3G1D4T                          00000007
+LC3G1POL                          00000000
+LC3G2D1N                          00000000
+LC3G2D1T                          00000001
+LC3G2D2N                          00000002
+LC3G2D2T                          00000003
+LC3G2D3N                          00000004
+LC3G2D3T                          00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 32
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC3G2D4N                          00000006
+LC3G2D4T                          00000007
+LC3G2POL                          00000001
+LC3G3D1N                          00000000
+LC3G3D1T                          00000001
+LC3G3D2N                          00000002
+LC3G3D2T                          00000003
+LC3G3D3N                          00000004
+LC3G3D3T                          00000005
+LC3G3D4N                          00000006
+LC3G3D4T                          00000007
+LC3G3POL                          00000002
+LC3G4D1N                          00000000
+LC3G4D1T                          00000001
+LC3G4D2N                          00000002
+LC3G4D2T                          00000003
+LC3G4D3N                          00000004
+LC3G4D3T                          00000005
+LC3G4D4N                          00000006
+LC3G4D4T                          00000007
+LC3G4POL                          00000003
+LC3INTN                           00000003
+LC3INTP                           00000004
+LC3MODE0                          00000000
+LC3MODE1                          00000001
+LC3MODE2                          00000002
+LC3OUT                            00000005
+LC3POL                            00000007
+LC4D1S0                           00000000
+LC4D1S1                           00000001
+LC4D1S2                           00000002
+LC4D1S3                           00000003
+LC4D1S4                           00000004
+LC4D1S5                           00000005
+LC4D1S6                           00000006
+LC4D1S7                           00000007
+LC4D2S0                           00000000
+LC4D2S1                           00000001
+LC4D2S2                           00000002
+LC4D2S3                           00000003
+LC4D2S4                           00000004
+LC4D2S5                           00000005
+LC4D2S6                           00000006
+LC4D2S7                           00000007
+LC4D3S0                           00000000
+LC4D3S1                           00000001
+LC4D3S2                           00000002
+LC4D3S3                           00000003
+LC4D3S4                           00000004
+LC4D3S5                           00000005
+LC4D3S6                           00000006
+LC4D3S7                           00000007
+LC4D4S0                           00000000
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 33
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LC4D4S1                           00000001
+LC4D4S2                           00000002
+LC4D4S3                           00000003
+LC4D4S4                           00000004
+LC4D4S5                           00000005
+LC4D4S6                           00000006
+LC4D4S7                           00000007
+LC4EN                             00000007
+LC4G1D1N                          00000000
+LC4G1D1T                          00000001
+LC4G1D2N                          00000002
+LC4G1D2T                          00000003
+LC4G1D3N                          00000004
+LC4G1D3T                          00000005
+LC4G1D4N                          00000006
+LC4G1D4T                          00000007
+LC4G1POL                          00000000
+LC4G2D1N                          00000000
+LC4G2D1T                          00000001
+LC4G2D2N                          00000002
+LC4G2D2T                          00000003
+LC4G2D3N                          00000004
+LC4G2D3T                          00000005
+LC4G2D4N                          00000006
+LC4G2D4T                          00000007
+LC4G2POL                          00000001
+LC4G3D1N                          00000000
+LC4G3D1T                          00000001
+LC4G3D2N                          00000002
+LC4G3D2T                          00000003
+LC4G3D3N                          00000004
+LC4G3D3T                          00000005
+LC4G3D4N                          00000006
+LC4G3D4T                          00000007
+LC4G3POL                          00000002
+LC4G4D1N                          00000000
+LC4G4D1T                          00000001
+LC4G4D2N                          00000002
+LC4G4D2T                          00000003
+LC4G4D3N                          00000004
+LC4G4D3T                          00000005
+LC4G4D4N                          00000006
+LC4G4D4T                          00000007
+LC4G4POL                          00000003
+LC4INTN                           00000003
+LC4INTP                           00000004
+LC4MODE0                          00000000
+LC4MODE1                          00000001
+LC4MODE2                          00000002
+LC4OUT                            00000005
+LC4POL                            00000007
+LCDA                              00000005
+LCDCON                            00001D0C
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 34
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LCDCST0                           00000000
+LCDCST1                           00000001
+LCDCST2                           00000002
+LCDDATA0                          00001D18
+LCDDATA1                          00001D19
+LCDDATA12                         00001D24
+LCDDATA13                         00001D25
+LCDDATA14                         00001D26
+LCDDATA18                         00001D2A
+LCDDATA19                         00001D2B
+LCDDATA2                          00001D1A
+LCDDATA20                         00001D2C
+LCDDATA24                         00001D30
+LCDDATA25                         00001D31
+LCDDATA26                         00001D32
+LCDDATA30                         00001D36
+LCDDATA31                         00001D37
+LCDDATA32                         00001D38
+LCDDATA36                         00001D3C
+LCDDATA37                         00001D3D
+LCDDATA38                         00001D3E
+LCDDATA42                         00001D42
+LCDDATA43                         00001D43
+LCDDATA44                         00001D44
+LCDDATA6                          00001D1E
+LCDDATA7                          00001D1F
+LCDDATA8                          00001D20
+LCDEN                             00000007
+LCDIE                             00000007
+LCDIF                             00000007
+LCDIRI                            00000003
+LCDMD                             00000005
+LCDPS                             00001D0D
+LCDREF                            00001D16
+LCDRL                             00001D17
+LCDSE0                            00001D0E
+LCDSE1                            00001D0F
+LCDSE2                            00001D10
+LCDSE3                            00001D11
+LCDSE4                            00001D12
+LCDSE5                            00001D13
+LCDVCON1                          00001D14
+LCDVCON2                          00001D15
+LCDVSRC0                          00000000
+LCDVSRC1                          00000001
+LCDVSRC2                          00000002
+LCDVSRC3                          00000003
+LD                                00000006
+LFOEN                             00000004
+LFOR                              00000004
+LMUX0                             00000000
+LMUX1                             00000001
+LMUX2                             00000002
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 35
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LMUX3                             00000003
+LP0                               00000000
+LP1                               00000001
+LP2                               00000002
+LP3                               00000003
+LPEN                              00000007
+LRLAP0                            00000006
+LRLAP1                            00000007
+LRLAT0                            00000000
+LRLAT1                            00000001
+LRLAT2                            00000002
+LRLBP0                            00000004
+LRLBP1                            00000005
+LSAC0                             00000002
+LSAC1                             00000003
+LSBD0                             00000004
+LSBD1                             00000005
+LTH0                              00000000
+LTH1                              00000001
+LTH10                             00000002
+LTH11                             00000003
+LTH12                             00000004
+LTH13                             00000005
+LTH14                             00000006
+LTH15                             00000007
+LTH2                              00000002
+LTH3                              00000003
+LTH4                              00000004
+LTH5                              00000005
+LTH6                              00000006
+LTH7                              00000007
+LTH8                              00000000
+LTH9                              00000001
+LTHR                              00000005
+LWLO                              00000005
+MATH                              00000004
+MC1OUT                            00000000
+MC2OUT                            00000001
+MD0                               00000000
+MD1                               00000001
+MD2                               00000002
+MEMV                              00000001
+MFOEN                             00000005
+MFOR                              00000005
+MINALRMH0                         00000004
+MINALRMH1                         00000005
+MINALRMH2                         00000006
+MINALRML0                         00000000
+MINALRML1                         00000001
+MINALRML2                         00000002
+MINALRML3                         00000003
+MINH0                             00000004
+MINH1                             00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 36
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+MINH2                             00000006
+MINL0                             00000000
+MINL1                             00000001
+MINL2                             00000002
+MINL3                             00000003
+MINUTES                           00000C15
+MLC1OUT                           00000000
+MLC2OUT                           00000001
+MLC3OUT                           00000002
+MLC4OUT                           00000003
+MODE0                             00000000
+MODE1                             00000001
+MODE2                             00000002
+MODE3                             00000003
+MODE4                             00000004
+MONTH                             00000C11
+MONTHH                            00000004
+MONTHL0                           00000000
+MONTHL1                           00000001
+MONTHL2                           00000002
+MONTHL3                           00000003
+MSK0                              00000000
+MSK1                              00000001
+MSK2                              00000002
+MSK3                              00000003
+MSK4                              00000004
+MSK5                              00000005
+MSK6                              00000006
+MSK7                              00000007
+MSSP1MD                           00000004
+MTHALRMH0                         00000004
+MTHALRML0                         00000000
+MTHALRML1                         00000001
+MTHALRML2                         00000002
+MTHALRML3                         00000003
+NCH0                              00000000
+NCH1                              00000001
+NCH2                              00000002
+NDIV0                             00000000
+NDIV1                             00000001
+NDIV2                             00000002
+NDIV3                             00000003
+NOSC0                             00000004
+NOSC1                             00000005
+NOSC2                             00000006
+NOSCR                             00000003
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BOR                           00000000
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RI                            00000002
+NOT_RMCLR                         00000003
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 37
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NOT_RWDT                          00000004
+NOT_SYNC                          00000002
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_W                             00000002
+NOT_WDTWV                         00000005
+NOT_WRITE                         00000002
+NSS                               00000000
+NVMADR0                           00000000
+NVMADR1                           00000001
+NVMADR10                          00000002
+NVMADR11                          00000003
+NVMADR12                          00000004
+NVMADR13                          00000005
+NVMADR14                          00000006
+NVMADR2                           00000002
+NVMADR3                           00000003
+NVMADR4                           00000004
+NVMADR5                           00000005
+NVMADR6                           00000006
+NVMADR7                           00000007
+NVMADR8                           00000000
+NVMADR9                           00000001
+NVMADRH                           0000081B
+NVMADRL                           0000081A
+NVMCON1                           0000081E
+NVMCON2                           0000081F
+NVMDAT0                           00000000
+NVMDAT1                           00000001
+NVMDAT10                          00000002
+NVMDAT11                          00000003
+NVMDAT12                          00000004
+NVMDAT13                          00000005
+NVMDAT2                           00000002
+NVMDAT3                           00000003
+NVMDAT4                           00000004
+NVMDAT5                           00000005
+NVMDAT6                           00000006
+NVMDAT7                           00000007
+NVMDAT8                           00000000
+NVMDAT9                           00000001
+NVMDATH                           0000081D
+NVMDATL                           0000081C
+NVMIE                             00000005
+NVMIF                             00000005
+NVMMD                             00000002
+NVMREGS                           00000006
+ODCA0                             00000000
+ODCA1                             00000001
+ODCA2                             00000002
+ODCA3                             00000003
+ODCA4                             00000004
+ODCA6                             00000006
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 38
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ODCA7                             00000007
+ODCB0                             00000000
+ODCB1                             00000001
+ODCB2                             00000002
+ODCB3                             00000003
+ODCB4                             00000004
+ODCB5                             00000005
+ODCB6                             00000006
+ODCB7                             00000007
+ODCC0                             00000000
+ODCC1                             00000001
+ODCC2                             00000002
+ODCC3                             00000003
+ODCC4                             00000004
+ODCC6                             00000006
+ODCC7                             00000007
+ODCONA                            00001F3A
+ODCONB                            00001F45
+ODCONC                            00001F50
+OE                                00000006
+OE1                               00000005
+OE2                               00000004
+OERR                              00000001
+ON_ADCON0                         00000007
+ON_CM1CON0                        00000007
+ON_CM2CON0                        00000007
+ON_T1CON                          00000000
+ON_T2CON                          00000007
+ON_T4CON                          00000007
+ORDY                              00000004
+OSCCON1                           0000088D
+OSCCON2                           0000088E
+OSCCON3                           0000088F
+OSCEN                             00000891
+OSCFRQ                            00000893
+OSCSTAT                           00000890
+OSCTUNE                           00000892
+OSFIE                             00000007
+OSFIF                             00000007
+OUTPS0                            00000000
+OUTPS1                            00000001
+OUTPS2                            00000002
+OUTPS3                            00000003
+OUT_CCP1CON                       00000005
+OUT_CCP2CON                       00000005
+OUT_CLC1CON                       00000005
+OUT_CLC2CON                       00000005
+OUT_CLC3CON                       00000005
+OUT_CLC4CON                       00000005
+OUT_CM1CON0                       00000006
+OUT_CM2CON0                       00000006
+OUT_PWM3CON                       00000005
+OUT_PWM4CON                       00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 39
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+OV                                00000007
+OVRA                              00000004
+OVRB                              00000005
+OVRC                              00000006
+OVRD                              00000007
+P                                 00000004
+PCH0                              00000000
+PCH1                              00000001
+PCH2                              00000002
+PCIE                              00000006
+PCL                               00000002
+PCLATH                            0000000A
+PCLATH_SHAD                       00001FE7
+PCON0                             00000813
+PCON1                             00000814
+PEIE                              00000006
+PEN                               00000002
+PIE0                              00000716
+PIE1                              00000717
+PIE2                              00000718
+PIE3                              00000719
+PIE4                              0000071A
+PIE5                              0000071B
+PIE6                              0000071C
+PIE7                              0000071D
+PIE8                              0000071E
+PIR0                              0000070C
+PIR1                              0000070D
+PIR2                              0000070E
+PIR3                              0000070F
+PIR4                              00000710
+PIR5                              00000711
+PIR6                              00000712
+PIR7                              00000713
+PIR8                              00000714
+PLLR                              00000000
+PMD0                              00000796
+PMD1                              00000797
+PMD2                              00000798
+PMD3                              00000799
+PMD4                              0000079A
+PMD5                              0000079B
+POLA                              00000000
+POLB                              00000001
+POLC                              00000002
+POLD                              00000003
+POL_CLC1POL                       00000007
+POL_CLC2POL                       00000007
+POL_CLC3POL                       00000007
+POL_CLC4POL                       00000007
+POL_CM1CON0                       00000004
+POL_CM2CON0                       00000004
+POL_PWM3CON                       00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 40
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+POL_PWM4CON                       00000004
+PORTA                             0000000C
+PORTB                             0000000D
+PORTC                             0000000E
+PORTE                             00000010
+PPOL                              00000007
+PPSLOCK                           00001E8F
+PPSLOCKED                         00000000
+PR0                               0000059D
+PR1                               0000020F
+PR2                               0000028D
+PR4                               00000293
+PRE0                              00000000
+PRE1                              00000001
+PRE10                             00000002
+PRE11                             00000003
+PRE12                             00000004
+PRE2                              00000002
+PRE3                              00000003
+PRE4                              00000004
+PRE5                              00000005
+PRE6                              00000006
+PRE7                              00000007
+PRE8                              00000000
+PRE9                              00000001
+PREF0                             00000000
+PREF1                             00000001
+PREV0                             00000000
+PREV1                             00000001
+PREV10                            00000002
+PREV11                            00000003
+PREV12                            00000004
+PREV13                            00000005
+PREV14                            00000006
+PREV15                            00000007
+PREV2                             00000002
+PREV3                             00000003
+PREV4                             00000004
+PREV5                             00000005
+PREV6                             00000006
+PREV7                             00000007
+PREV8                             00000000
+PREV9                             00000001
+PSCNT0                            00000000
+PSCNT1                            00000001
+PSCNT10                           00000002
+PSCNT11                           00000003
+PSCNT12                           00000004
+PSCNT13                           00000005
+PSCNT14                           00000006
+PSCNT15                           00000007
+PSCNT16                           00000000
+PSCNT17                           00000001
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 41
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PSCNT2                            00000002
+PSCNT3                            00000003
+PSCNT4                            00000004
+PSCNT5                            00000005
+PSCNT6                            00000006
+PSCNT7                            00000007
+PSCNT8                            00000000
+PSCNT9                            00000001
+PSIS                              00000007
+PSS0                              00000002
+PSS1                              00000003
+PSYNC                             00000007
+PWM3CON                           00000316
+PWM3DC                            00000314
+PWM3DC0                           00000006
+PWM3DC1                           00000007
+PWM3DC2                           00000000
+PWM3DC3                           00000001
+PWM3DC4                           00000002
+PWM3DC5                           00000003
+PWM3DC6                           00000004
+PWM3DC7                           00000005
+PWM3DC8                           00000006
+PWM3DC9                           00000007
+PWM3DCH                           00000315
+PWM3DCL                           00000314
+PWM3EN                            00000007
+PWM3OUT                           00000005
+PWM3POL                           00000004
+PWM4CON                           0000031A
+PWM4DC                            00000318
+PWM4DC0                           00000006
+PWM4DC1                           00000007
+PWM4DC2                           00000000
+PWM4DC3                           00000001
+PWM4DC4                           00000002
+PWM4DC5                           00000003
+PWM4DC6                           00000004
+PWM4DC7                           00000005
+PWM4DC8                           00000006
+PWM4DC9                           00000007
+PWM4DCH                           00000319
+PWM4DCL                           00000318
+PWM4EN                            00000007
+PWM4OUT                           00000005
+PWM4POL                           00000004
+PWMPW0                            00000006
+PWMPW1                            00000007
+PWMPW2                            00000000
+PWMPW3                            00000001
+PWMPW4                            00000002
+PWMPW5                            00000003
+PWMPW6                            00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 42
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PWMPW7                            00000005
+PWMPW8                            00000006
+PWMPW9                            00000007
+RA0                               00000000
+RA0PPS                            00001F10
+RA0PPS0                           00000000
+RA0PPS1                           00000001
+RA0PPS2                           00000002
+RA0PPS3                           00000003
+RA0PPS4                           00000004
+RA0PPS5                           00000005
+RA1                               00000001
+RA1PPS                            00001F11
+RA1PPS0                           00000000
+RA1PPS1                           00000001
+RA1PPS2                           00000002
+RA1PPS3                           00000003
+RA1PPS4                           00000004
+RA1PPS5                           00000005
+RA2                               00000002
+RA2PPS                            00001F12
+RA2PPS0                           00000000
+RA2PPS1                           00000001
+RA2PPS2                           00000002
+RA2PPS3                           00000003
+RA2PPS4                           00000004
+RA2PPS5                           00000005
+RA3                               00000003
+RA3PPS                            00001F13
+RA3PPS0                           00000000
+RA3PPS1                           00000001
+RA3PPS2                           00000002
+RA3PPS3                           00000003
+RA3PPS4                           00000004
+RA3PPS5                           00000005
+RA4                               00000004
+RA4PPS                            00001F14
+RA4PPS0                           00000000
+RA4PPS1                           00000001
+RA4PPS2                           00000002
+RA4PPS3                           00000003
+RA4PPS4                           00000004
+RA4PPS5                           00000005
+RA5                               00000005
+RA5PPS                            00001F15
+RA5PPS0                           00000000
+RA5PPS1                           00000001
+RA5PPS2                           00000002
+RA5PPS3                           00000003
+RA5PPS4                           00000004
+RA5PPS5                           00000005
+RA6                               00000006
+RA6PPS                            00001F16
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 43
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RA6PPS0                           00000000
+RA6PPS1                           00000001
+RA6PPS2                           00000002
+RA6PPS3                           00000003
+RA6PPS4                           00000004
+RA6PPS5                           00000005
+RA7                               00000007
+RA7PPS                            00001F17
+RA7PPS0                           00000000
+RA7PPS1                           00000001
+RA7PPS2                           00000002
+RA7PPS3                           00000003
+RA7PPS4                           00000004
+RA7PPS5                           00000005
+RB0                               00000000
+RB0PPS                            00001F18
+RB0PPS0                           00000000
+RB0PPS1                           00000001
+RB0PPS2                           00000002
+RB0PPS3                           00000003
+RB0PPS4                           00000004
+RB0PPS5                           00000005
+RB1                               00000001
+RB1PPS                            00001F19
+RB1PPS0                           00000000
+RB1PPS1                           00000001
+RB1PPS2                           00000002
+RB1PPS3                           00000003
+RB1PPS4                           00000004
+RB1PPS5                           00000005
+RB2                               00000002
+RB2PPS                            00001F1A
+RB2PPS0                           00000000
+RB2PPS1                           00000001
+RB2PPS2                           00000002
+RB2PPS3                           00000003
+RB2PPS4                           00000004
+RB2PPS5                           00000005
+RB3                               00000003
+RB3PPS                            00001F1B
+RB3PPS0                           00000000
+RB3PPS1                           00000001
+RB3PPS2                           00000002
+RB3PPS3                           00000003
+RB3PPS4                           00000004
+RB3PPS5                           00000005
+RB4                               00000004
+RB4PPS                            00001F1C
+RB4PPS0                           00000000
+RB4PPS1                           00000001
+RB4PPS2                           00000002
+RB4PPS3                           00000003
+RB4PPS4                           00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 44
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RB4PPS5                           00000005
+RB5                               00000005
+RB5PPS                            00001F1D
+RB5PPS0                           00000000
+RB5PPS1                           00000001
+RB5PPS2                           00000002
+RB5PPS3                           00000003
+RB5PPS4                           00000004
+RB5PPS5                           00000005
+RB6                               00000006
+RB6PPS                            00001F1E
+RB6PPS0                           00000000
+RB6PPS1                           00000001
+RB6PPS2                           00000002
+RB6PPS3                           00000003
+RB6PPS4                           00000004
+RB6PPS5                           00000005
+RB7                               00000007
+RB7PPS                            00001F1F
+RB7PPS0                           00000000
+RB7PPS1                           00000001
+RB7PPS2                           00000002
+RB7PPS3                           00000003
+RB7PPS4                           00000004
+RB7PPS5                           00000005
+RC0                               00000000
+RC0PPS                            00001F20
+RC0PPS0                           00000000
+RC0PPS1                           00000001
+RC0PPS2                           00000002
+RC0PPS3                           00000003
+RC0PPS4                           00000004
+RC0PPS5                           00000005
+RC1                               00000001
+RC1IE                             00000005
+RC1IF                             00000005
+RC1PPS                            00001F21
+RC1PPS0                           00000000
+RC1PPS1                           00000001
+RC1PPS2                           00000002
+RC1PPS3                           00000003
+RC1PPS4                           00000004
+RC1PPS5                           00000005
+RC1REG                            00000119
+RC1STA                            0000011D
+RC2                               00000002
+RC2IE                             00000007
+RC2IF                             00000007
+RC2PPS                            00001F22
+RC2PPS0                           00000000
+RC2PPS1                           00000001
+RC2PPS2                           00000002
+RC2PPS3                           00000003
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 45
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RC2PPS4                           00000004
+RC2PPS5                           00000005
+RC2REG                            00000A19
+RC2STA                            00000A1D
+RC3                               00000003
+RC3PPS                            00001F23
+RC3PPS0                           00000000
+RC3PPS1                           00000001
+RC3PPS2                           00000002
+RC3PPS3                           00000003
+RC3PPS4                           00000004
+RC3PPS5                           00000005
+RC4                               00000004
+RC4PPS                            00001F24
+RC4PPS0                           00000000
+RC4PPS1                           00000001
+RC4PPS2                           00000002
+RC4PPS3                           00000003
+RC4PPS4                           00000004
+RC4PPS5                           00000005
+RC6                               00000006
+RC6PPS                            00001F26
+RC6PPS0                           00000000
+RC6PPS1                           00000001
+RC6PPS2                           00000002
+RC6PPS3                           00000003
+RC6PPS4                           00000004
+RC6PPS5                           00000005
+RC7                               00000007
+RC7PPS                            00001F27
+RC7PPS0                           00000000
+RC7PPS1                           00000001
+RC7PPS2                           00000002
+RC7PPS3                           00000003
+RC7PPS4                           00000004
+RC7PPS5                           00000005
+RCEN                              00000003
+RCIDL                             00000006
+RCREG                             00000119
+RCREG1                            00000119
+RCREG2                            00000A19
+RCSTA                             0000011D
+RCSTA1                            0000011D
+RCSTA2                            00000A1D
+RD                                00000000
+RD16                              00000001
+RE3                               00000003
+READ_WRITE                        00000002
+REGA                              00000000
+REGB                              00000001
+REGC                              00000002
+REN                               00000006
+REPEAT                            00000006
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 46
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RES0                              00000000
+RES1                              00000001
+RES10                             00000002
+RES11                             00000003
+RES12                             00000004
+RES13                             00000005
+RES14                             00000006
+RES15                             00000007
+RES2                              00000002
+RES3                              00000003
+RES4                              00000004
+RES5                              00000005
+RES6                              00000006
+RES7                              00000007
+RES8                              00000000
+RES9                              00000001
+ROI                               00000005
+RPT0                              00000000
+RPT1                              00000001
+RPT2                              00000002
+RPT3                              00000003
+RPT4                              00000004
+RPT5                              00000005
+RPT6                              00000006
+RPT7                              00000007
+RSEL0                             00000000
+RSEL1                             00000001
+RSEL2                             00000002
+RSEL3                             00000003
+RSEL4                             00000004
+RSEN                              00000001
+RST                               00000005
+RTCCAL                            00000C0D
+RTCCIE                            00000006
+RTCCIF                            00000006
+RTCCLKSEL0                        00000000
+RTCCLKSEL1                        00000001
+RTCCMD                            00000007
+RTCCON                            00000C0C
+RTCEN                             00000007
+RTCSYNC                           00000004
+RTCWREN                           00000005
+RX1PPS                            00001ECB
+RX1PPS0                           00000000
+RX1PPS1                           00000001
+RX1PPS2                           00000002
+RX1PPS3                           00000003
+RX1PPS4                           00000004
+RX2PPS                            00001ECD
+RX2PPS0                           00000000
+RX2PPS1                           00000001
+RX3PPS2                           00000002
+RX4PPS3                           00000003
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 47
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RX5PPS4                           00000004
+RX9                               00000006
+RX9D                              00000000
+R_NOT_W                           00000002
+R_W                               00000002
+S                                 00000003
+S00C0                             00000000
+S00C1                             00000000
+S00C2                             00000000
+S00C3                             00000000
+S00C4                             00000000
+S00C5                             00000000
+S00C6                             00000000
+S00C7                             00000000
+S01C0                             00000001
+S01C1                             00000001
+S01C2                             00000001
+S01C3                             00000001
+S01C4                             00000001
+S01C5                             00000001
+S01C6                             00000001
+S01C7                             00000001
+S02C0                             00000002
+S02C1                             00000002
+S02C2                             00000002
+S02C3                             00000002
+S02C4                             00000002
+S02C5                             00000002
+S02C6                             00000002
+S02C7                             00000002
+S03C0                             00000003
+S03C1                             00000003
+S03C2                             00000003
+S03C3                             00000003
+S03C4                             00000003
+S03C5                             00000003
+S03C6                             00000003
+S03C7                             00000003
+S04C0                             00000004
+S04C1                             00000004
+S04C2                             00000004
+S04C3                             00000004
+S04C4                             00000004
+S04C5                             00000004
+S04C6                             00000004
+S04C7                             00000004
+S06C0                             00000006
+S06C1                             00000006
+S06C2                             00000006
+S06C3                             00000006
+S06C4                             00000006
+S06C5                             00000006
+S06C6                             00000006
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 48
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+S06C7                             00000006
+S07C0                             00000007
+S07C1                             00000007
+S07C2                             00000007
+S07C3                             00000007
+S07C4                             00000007
+S07C5                             00000007
+S07C6                             00000007
+S07C7                             00000007
+S08C0                             00000000
+S08C1                             00000000
+S08C2                             00000000
+S08C3                             00000000
+S08C4                             00000000
+S08C5                             00000000
+S08C6                             00000000
+S08C7                             00000000
+S09C0                             00000001
+S09C1                             00000001
+S09C2                             00000001
+S09C3                             00000001
+S09C4                             00000001
+S09C5                             00000001
+S09C6                             00000001
+S09C7                             00000001
+S10C0                             00000002
+S10C1                             00000002
+S10C2                             00000002
+S10C3                             00000002
+S10C4                             00000002
+S10C5                             00000002
+S10C6                             00000002
+S10C7                             00000002
+S11C0                             00000003
+S11C1                             00000003
+S11C2                             00000003
+S11C3                             00000003
+S11C4                             00000003
+S11C5                             00000003
+S11C6                             00000003
+S11C7                             00000003
+S13C0                             00000005
+S13C1                             00000005
+S13C2                             00000005
+S13C3                             00000005
+S13C4                             00000005
+S13C5                             00000005
+S13C6                             00000005
+S13C7                             00000005
+S14C0                             00000006
+S14C1                             00000006
+S14C2                             00000006
+S14C3                             00000006
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 49
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+S14C4                             00000006
+S14C5                             00000006
+S14C6                             00000006
+S14C7                             00000006
+S15C0                             00000007
+S15C1                             00000007
+S15C2                             00000007
+S15C3                             00000007
+S15C4                             00000007
+S15C5                             00000007
+S15C6                             00000007
+S15C7                             00000007
+S18C0                             00000002
+S18C1                             00000002
+S18C2                             00000002
+S18C3                             00000002
+S18C4                             00000002
+S18C5                             00000002
+S18C6                             00000002
+S18C7                             00000002
+S19C0                             00000003
+S19C1                             00000003
+S19C2                             00000003
+S19C3                             00000003
+S19C4                             00000003
+S19C5                             00000003
+S19C6                             00000003
+S19C7                             00000003
+S20C0                             00000004
+S20C1                             00000004
+S20C2                             00000004
+S20C3                             00000004
+S20C4                             00000004
+S20C5                             00000004
+S20C6                             00000004
+S20C7                             00000004
+S22C0                             00000006
+S22C1                             00000006
+S22C2                             00000006
+S22C3                             00000006
+S22C4                             00000006
+S22C5                             00000006
+S22C6                             00000006
+S22C7                             00000006
+S23C0                             00000007
+S23C1                             00000007
+S23C2                             00000007
+S23C3                             00000007
+S23C4                             00000007
+S23C5                             00000007
+S23C6                             00000007
+S23C7                             00000007
+SBCDE                             00000002
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 50
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SBOREN                            00000007
+SCIE                              00000005
+SCKP                              00000004
+SDAHT                             00000003
+SE00                              00000000
+SE01                              00000001
+SE02                              00000002
+SE03                              00000003
+SE04                              00000004
+SE05                              00000005
+SE06                              00000006
+SE07                              00000007
+SE08                              00000000
+SE09                              00000001
+SE10                              00000002
+SE11                              00000003
+SE12                              00000004
+SE13                              00000005
+SE14                              00000006
+SE15                              00000007
+SE16                              00000000
+SE17                              00000001
+SE18                              00000002
+SE19                              00000003
+SE20                              00000004
+SE21                              00000005
+SE22                              00000006
+SE23                              00000007
+SE24                              00000000
+SE25                              00000001
+SE26                              00000002
+SE27                              00000003
+SE28                              00000004
+SE29                              00000005
+SE30                              00000006
+SE31                              00000007
+SE32                              00000000
+SE33                              00000001
+SE34                              00000002
+SE35                              00000003
+SE36                              00000004
+SE37                              00000005
+SE38                              00000006
+SE39                              00000007
+SE40                              00000000
+SE41                              00000001
+SE42                              00000002
+SE43                              00000003
+SE44                              00000004
+SE45                              00000005
+SE46                              00000006
+SE47                              00000007
+SECALRMH0                         00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 51
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SECALRMH1                         00000005
+SECALRMH2                         00000006
+SECALRML0                         00000000
+SECALRML1                         00000001
+SECALRML2                         00000002
+SECALRML3                         00000003
+SECH0                             00000004
+SECH1                             00000005
+SECH2                             00000006
+SECL0                             00000000
+SECL1                             00000001
+SECL2                             00000002
+SECL3                             00000003
+SECONDS                           00000C16
+SEN                               00000000
+SENDB                             00000003
+SHUTDOWN                          00000007
+SLPEN                             00000006
+SLRA0                             00000000
+SLRA1                             00000001
+SLRA2                             00000002
+SLRA3                             00000003
+SLRA4                             00000004
+SLRA6                             00000006
+SLRA7                             00000007
+SLRB0                             00000000
+SLRB1                             00000001
+SLRB2                             00000002
+SLRB3                             00000003
+SLRB4                             00000004
+SLRB5                             00000005
+SLRB6                             00000006
+SLRB7                             00000007
+SLRC0                             00000000
+SLRC1                             00000001
+SLRC2                             00000002
+SLRC3                             00000003
+SLRC4                             00000004
+SLRC6                             00000006
+SLRC7                             00000007
+SLRCONA                           00001F3B
+SLRCONB                           00001F46
+SLRCONC                           00001F51
+SMP                               00000007
+SMT1AS                            00000000
+SMT1CLK                           0000049B
+SMT1CON0                          00000498
+SMT1CON1                          00000499
+SMT1CPR                           0000048F
+SMT1CPR10                         00000002
+SMT1CPR11                         00000003
+SMT1CPR12                         00000004
+SMT1CPR13                         00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 52
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SMT1CPR14                         00000006
+SMT1CPR15                         00000007
+SMT1CPR16                         00000000
+SMT1CPR17                         00000001
+SMT1CPR18                         00000002
+SMT1CPR19                         00000003
+SMT1CPR20                         00000004
+SMT1CPR21                         00000005
+SMT1CPR22                         00000006
+SMT1CPR23                         00000007
+SMT1CPR8                          00000000
+SMT1CPR9                          00000001
+SMT1CPRH                          00000490
+SMT1CPRL                          0000048F
+SMT1CPRU                          00000491
+SMT1CPRUP                         00000007
+SMT1CPW                           00000492
+SMT1CPW0                          00000000
+SMT1CPW1                          00000001
+SMT1CPW10                         00000002
+SMT1CPW11                         00000003
+SMT1CPW12                         00000004
+SMT1CPW13                         00000005
+SMT1CPW14                         00000006
+SMT1CPW15                         00000007
+SMT1CPW16                         00000000
+SMT1CPW17                         00000001
+SMT1CPW18                         00000002
+SMT1CPW19                         00000003
+SMT1CPW2                          00000002
+SMT1CPW20                         00000004
+SMT1CPW21                         00000005
+SMT1CPW22                         00000006
+SMT1CPW23                         00000007
+SMT1CPW3                          00000003
+SMT1CPW4                          00000004
+SMT1CPW5                          00000005
+SMT1CPW6                          00000006
+SMT1CPW7                          00000007
+SMT1CPW8                          00000000
+SMT1CPW9                          00000001
+SMT1CPWH                          00000493
+SMT1CPWL                          00000492
+SMT1CPWU                          00000494
+SMT1CPWUP                         00000006
+SMT1CSEL0                         00000000
+SMT1CSEL1                         00000001
+SMT1CSEL2                         00000002
+SMT1EN                            00000007
+SMT1GO                            00000007
+SMT1IE                            00000000
+SMT1IF                            00000000
+SMT1MD                            00000006
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 53
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SMT1PR                            00000495
+SMT1PR0                           00000000
+SMT1PR1                           00000001
+SMT1PR10                          00000002
+SMT1PR11                          00000003
+SMT1PR12                          00000004
+SMT1PR13                          00000005
+SMT1PR14                          00000006
+SMT1PR15                          00000007
+SMT1PR16                          00000000
+SMT1PR17                          00000001
+SMT1PR18                          00000002
+SMT1PR19                          00000003
+SMT1PR2                           00000002
+SMT1PR20                          00000004
+SMT1PR21                          00000005
+SMT1PR22                          00000006
+SMT1PR23                          00000007
+SMT1PR3                           00000003
+SMT1PR4                           00000004
+SMT1PR5                           00000005
+SMT1PR6                           00000006
+SMT1PR7                           00000007
+SMT1PR8                           00000000
+SMT1PR9                           00000001
+SMT1PRAIE                         00000001
+SMT1PRAIF                         00000001
+SMT1PRH                           00000496
+SMT1PRL                           00000495
+SMT1PRU                           00000497
+SMT1PS0                           00000000
+SMT1PS1                           00000001
+SMT1PWAIE                         00000002
+SMT1PWAIF                         00000002
+SMT1RESET                         00000005
+SMT1SIG                           0000049C
+SMT1SIGPPS                        00001EAA
+SMT1SSEL0                         00000000
+SMT1SSEL1                         00000001
+SMT1SSEL2                         00000002
+SMT1SSEL3                         00000003
+SMT1SSEL4                         00000004
+SMT1STAT                          0000049A
+SMT1TMR                           0000048C
+SMT1TMR0                          00000000
+SMT1TMR1                          00000001
+SMT1TMR10                         00000002
+SMT1TMR11                         00000003
+SMT1TMR12                         00000004
+SMT1TMR13                         00000005
+SMT1TMR14                         00000006
+SMT1TMR15                         00000007
+SMT1TMR16                         00000000
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 54
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SMT1TMR17                         00000001
+SMT1TMR18                         00000002
+SMT1TMR19                         00000003
+SMT1TMR2                          00000002
+SMT1TMR20                         00000004
+SMT1TMR21                         00000005
+SMT1TMR22                         00000006
+SMT1TMR23                         00000007
+SMT1TMR3                          00000003
+SMT1TMR4                          00000004
+SMT1TMR5                          00000005
+SMT1TMR6                          00000006
+SMT1TMR7                          00000007
+SMT1TMR8                          00000000
+SMT1TMR9                          00000001
+SMT1TMRH                          0000048D
+SMT1TMRL                          0000048C
+SMT1TMRU                          0000048E
+SMT1TS                            00000002
+SMT1WIN                           0000049D
+SMT1WINPPS                        00001EA9
+SMT1WS                            00000001
+SMT1WSEL0                         00000000
+SMT1WSEL1                         00000001
+SMT1WSEL2                         00000002
+SMT1WSEL3                         00000003
+SMT1WSEL4                         00000004
+SMU1SIGPPS0                       00000000
+SMU1SIGPPS1                       00000001
+SMU1SIGPPS2                       00000002
+SMU1SIGPPS3                       00000003
+SMU1SIGPPS4                       00000004
+SMU1WINPPS0                       00000000
+SMU1WINPPS1                       00000001
+SMU1WINPPS2                       00000002
+SMU1WINPPS3                       00000003
+SMU1WINPPS4                       00000004
+SOI                               00000003
+SOR                               00000003
+SOSCEN                            00000003
+SOSCPWR                           00000006
+SP1BRG                            0000011B
+SP1BRGH                           0000011C
+SP1BRGL                           0000011B
+SP2BRG                            00000A1B
+SP2BRGH                           00000A1C
+SP2BRGL                           00000A1B
+SPBRG                             0000011B
+SPBRG1                            0000011B
+SPBRG2                            00000A1B
+SPBRGH                            0000011C
+SPBRGH1                           0000011C
+SPBRGH2                           00000A1C
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 55
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SPBRGL                            0000011B
+SPEN                              00000007
+SPOL                              00000003
+SREN                              00000005
+SSEL0                             00000000
+SSEL1                             00000001
+SSEL2                             00000002
+SSEL3                             00000003
+SSEL4                             00000004
+SSP1ADD                           0000018D
+SSP1BUF                           0000018C
+SSP1CLKPPS                        00001EC5
+SSP1CLKPPS0                       00000000
+SSP1CLKPPS1                       00000001
+SSP1CLKPPS2                       00000002
+SSP1CLKPPS3                       00000003
+SSP1CLKPPS4                       00000004
+SSP1CON1                          00000190
+SSP1CON2                          00000191
+SSP1CON3                          00000192
+SSP1DATPPS                        00001EC6
+SSP1DATPPS0                       00000000
+SSP1DATPPS1                       00000001
+SSP1DATPPS2                       00000002
+SSP1DATPPS3                       00000003
+SSP1DATPPS4                       00000004
+SSP1IE                            00000000
+SSP1IF                            00000000
+SSP1MSK                           0000018E
+SSP1SSPPS                         00001EC7
+SSP1SSPPS0                        00000000
+SSP1SSPPS1                        00000001
+SSP1SSPPS2                        00000002
+SSP1SSPPS3                        00000003
+SSP1SSPPS4                        00000004
+SSP1STAT                          0000018F
+SSPEN                             00000005
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+START                             0000000F
+STAT0                             00000000
+STAT1                             00000001
+STAT2                             00000002
+STATE                             00000002
+STATUS                            00000003
+STATUS_SHAD                       00001FE4
+STKOVF                            00000007
+STKPTR                            00001FED
+STKUNF                            00000006
+STP                               00000005
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 56
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+STPT0                             00000000
+STPT1                             00000001
+STPT10                            00000002
+STPT11                            00000003
+STPT12                            00000004
+STPT13                            00000005
+STPT15                            00000006
+STPT16                            00000007
+STPT2                             00000002
+STPT3                             00000003
+STPT4                             00000004
+STPT5                             00000005
+STPT6                             00000006
+STPT7                             00000007
+STPT8                             00000000
+STPT9                             00000001
+STRA                              00000000
+STRB                              00000001
+STRC                              00000002
+STRD                              00000003
+SWDTEN                            00000000
+SYNC_CM1CON0                      00000000
+SYNC_CM2CON0                      00000000
+SYNC_TX1STA                       00000004
+SYNC_TX2STA                       00000004
+SYNC_TXSTA                        00000004
+SYNC_TXSTA1                       00000004
+SYNC_TXSTA2                       00000004
+SYSCMD                            00000007
+T016BIT                           00000004
+T0ASYNC                           00000004
+T0CKIPPS                          00001E91
+T0CKIPPS0                         00000000
+T0CKIPPS1                         00000001
+T0CKIPPS2                         00000002
+T0CKIPPS3                         00000003
+T0CKPS0                           00000000
+T0CKPS1                           00000001
+T0CKPS2                           00000002
+T0CKPS3                           00000003
+T0CON0                            0000059E
+T0CON1                            0000059F
+T0CS0                             00000005
+T0CS1                             00000006
+T0CS2                             00000007
+T0EN                              00000007
+T0OE                              00000006
+T0OUT                             00000005
+T0OUTPS0                          00000000
+T0OUTPS1                          00000001
+T0OUTPS2                          00000002
+T0OUTPS3                          00000003
+T0PR0                             00000000
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 57
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T0PR1                             00000001
+T0PR2                             00000002
+T0PR3                             00000003
+T0PR4                             00000004
+T0PR5                             00000005
+T0PR6                             00000006
+T0PR7                             00000007
+T0PS0                             00000000
+T0PS1                             00000001
+T0PS2                             00000002
+T0PS3                             00000003
+T1CKIPPS                          00001E92
+T1CKIPPS0                         00000000
+T1CKIPPS1                         00000001
+T1CKIPPS2                         00000002
+T1CKIPPS3                         00000003
+T1CKIPPS4                         00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CLK                             00000211
+T1CON                             0000020E
+T1CS0                             00000000
+T1CS1                             00000001
+T1CS2                             00000002
+T1CS3                             00000003
+T1GATE                            00000210
+T1GCON                            0000020F
+T1GE                              00000007
+T1GGO                             00000003
+T1GGO_NOT_DONE                    00000003
+T1GPOL                            00000006
+T1GPPS                            00001E93
+T1GPPS0                           00000000
+T1GPPS1                           00000001
+T1GPPS2                           00000002
+T1GPPS3                           00000003
+T1GPPS4                           00000004
+T1GSPM                            00000004
+T1GSS0                            00000000
+T1GSS1                            00000001
+T1GSS2                            00000002
+T1GSS3                            00000003
+T1GSS4                            00000004
+T1GTM                             00000005
+T1GVAL                            00000002
+T1RD16                            00000001
+T2CKPOL                           00000006
+T2CKPS0                           00000004
+T2CKPS1                           00000005
+T2CKPS2                           00000006
+T2CKSYNC                          00000005
+T2CLK                             00000290
+T2CLKCON                          00000290
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 58
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T2CON                             0000028E
+T2CS0                             00000000
+T2CS1                             00000001
+T2CS2                             00000002
+T2CS3                             00000003
+T2HLT                             0000028F
+T2INPPS                           00001E9C
+T2INPPS0                          00000000
+T2INPPS1                          00000001
+T2INPPS2                          00000002
+T2INPPS3                          00000003
+T2INPPS4                          00000004
+T2MODE0                           00000000
+T2MODE1                           00000001
+T2MODE2                           00000002
+T2MODE3                           00000003
+T2MODE4                           00000004
+T2ON                              00000007
+T2OUTPS0                          00000000
+T2OUTPS1                          00000001
+T2OUTPS2                          00000002
+T2OUTPS3                          00000003
+T2PR                              0000028D
+T2PSYNC                           00000007
+T2RSEL0                           00000000
+T2RSEL1                           00000001
+T2RSEL2                           00000002
+T2RSEL3                           00000003
+T2RSEL4                           00000004
+T2RST                             00000291
+T2TMR                             0000028C
+T4CKPOL                           00000006
+T4CKPS0                           00000004
+T4CKPS1                           00000005
+T4CKPS2                           00000006
+T4CKSYNC                          00000005
+T4CLK                             00000296
+T4CLKCON                          00000296
+T4CON                             00000294
+T4CS0                             00000000
+T4CS1                             00000001
+T4CS2                             00000002
+T4CS3                             00000003
+T4HLT                             00000295
+T4INPPS                           00001E9D
+T4INPPS0                          00000000
+T4INPPS1                          00000001
+T4INPPS2                          00000002
+T4INPPS3                          00000003
+T4INPPS4                          00000004
+T4MODE0                           00000000
+T4MODE1                           00000001
+T4MODE2                           00000002
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 59
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+T4MODE3                           00000003
+T4MODE4                           00000004
+T4ON                              00000007
+T4OUTPS0                          00000000
+T4OUTPS1                          00000001
+T4OUTPS2                          00000002
+T4OUTPS3                          00000003
+T4PR                              00000293
+T4PSYNC                           00000007
+T4RSEL0                           00000000
+T4RSEL1                           00000001
+T4RSEL2                           00000002
+T4RSEL3                           00000003
+T4RSEL4                           00000004
+T4RST                             00000297
+T4TMR                             00000292
+TMD0                              00000000
+TMD1                              00000001
+TMD2                              00000002
+TMR0                              0000059C
+TMR0H                             0000059D
+TMR0H0                            00000000
+TMR0H1                            00000001
+TMR0H2                            00000002
+TMR0H3                            00000003
+TMR0H4                            00000004
+TMR0H5                            00000005
+TMR0H6                            00000006
+TMR0H7                            00000007
+TMR0IE                            00000005
+TMR0IF                            00000005
+TMR0L                             0000059C
+TMR0L0                            00000000
+TMR0L1                            00000001
+TMR0L2                            00000002
+TMR0L3                            00000003
+TMR0L4                            00000004
+TMR0L5                            00000005
+TMR0L6                            00000006
+TMR0L7                            00000007
+TMR0MD                            00000000
+TMR1                              0000020C
+TMR10                             00000000
+TMR11                             00000001
+TMR110                            00000002
+TMR111                            00000003
+TMR112                            00000004
+TMR113                            00000005
+TMR114                            00000006
+TMR115                            00000007
+TMR12                             00000002
+TMR13                             00000003
+TMR14                             00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 60
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR15                             00000005
+TMR16                             00000006
+TMR17                             00000007
+TMR18                             00000000
+TMR19                             00000001
+TMR1CLK                           00000211
+TMR1GATE                          00000210
+TMR1GIE                           00000000
+TMR1GIF                           00000000
+TMR1H                             0000020D
+TMR1H0                            00000000
+TMR1H1                            00000001
+TMR1H2                            00000002
+TMR1H3                            00000003
+TMR1H4                            00000004
+TMR1H5                            00000005
+TMR1H6                            00000006
+TMR1H7                            00000007
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000020C
+TMR1L0                            00000000
+TMR1L1                            00000001
+TMR1L2                            00000002
+TMR1L3                            00000003
+TMR1L4                            00000004
+TMR1L5                            00000005
+TMR1L6                            00000006
+TMR1L7                            00000007
+TMR1MD                            00000001
+TMR1ON                            00000000
+TMR2                              0000028C
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2MD                            00000002
+TMR2ON                            00000007
+TMR4                              00000292
+TMR4IE                            00000003
+TMR4IF                            00000003
+TMR4MD                            00000004
+TMR4ON                            00000007
+TOSH                              00001FEF
+TOSL                              00001FEE
+TRISA                             00000012
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISA6                            00000006
+TRISA7                            00000007
+TRISB                             00000013
+TRISB0                            00000000
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 61
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+TRISC                             00000014
+TRISC0                            00000000
+TRISC1                            00000001
+TRISC2                            00000002
+TRISC3                            00000003
+TRISC4                            00000004
+TRISC6                            00000006
+TRISC7                            00000007
+TRMT                              00000001
+TS                                00000002
+TSEN                              00000005
+TSRNG                             00000004
+TUN0                              00000000
+TUN1                              00000001
+TUN2                              00000002
+TUN3                              00000003
+TUN4                              00000004
+TUN5                              00000005
+TX1IE                             00000004
+TX1IF                             00000004
+TX1PPS                            00001ECC
+TX1PPS0                           00000000
+TX1PPS1                           00000001
+TX1PPS2                           00000002
+TX1PPS3                           00000003
+TX1PPS4                           00000004
+TX1REG                            0000011A
+TX1STA                            0000011E
+TX2IE                             00000006
+TX2IF                             00000006
+TX2PPS                            00001ECE
+TX2PPS0                           00000000
+TX2PPS1                           00000001
+TX2PPS2                           00000002
+TX2PPS3                           00000003
+TX2PPS4                           00000004
+TX2REG                            00000A1A
+TX2STA                            00000A1E
+TX9                               00000006
+TX9D                              00000000
+TXEN                              00000005
+TXREG                             0000011A
+TXREG1                            0000011A
+TXREG2                            00000A1A
+TXSTA                             0000011E
+TXSTA1                            0000011E
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 62
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TXSTA2                            00000A1E
+UA                                00000001
+UART1MD                           00000006
+UART2MD                           00000007
+UTH0                              00000000
+UTH1                              00000001
+UTH10                             00000002
+UTH11                             00000003
+UTH12                             00000004
+UTH13                             00000005
+UTH14                             00000006
+UTH15                             00000007
+UTH2                              00000002
+UTH3                              00000003
+UTH4                              00000004
+UTH5                              00000005
+UTH6                              00000006
+UTH7                              00000007
+UTH8                              00000000
+UTH9                              00000001
+UTHR                              00000006
+VB0GPR                            00000E8C
+VB0GPR0                           00000000
+VB0GPR1                           00000001
+VB0GPR2                           00000002
+VB0GPR3                           00000003
+VB0GPR4                           00000004
+VB0GPR5                           00000005
+VB0GPR6                           00000006
+VB0GPR7                           00000007
+VB1GPR                            00000E8D
+VB1GPR0                           00000000
+VB1GPR1                           00000001
+VB1GPR2                           00000002
+VB1GPR3                           00000003
+VB1GPR4                           00000004
+VB1GPR5                           00000005
+VB1GPR6                           00000006
+VB1GPR7                           00000007
+VB2GPR                            00000E8E
+VB2GPR0                           00000000
+VB2GPR1                           00000001
+VB2GPR2                           00000002
+VB2GPR3                           00000003
+VB2GPR4                           00000004
+VB2GPR5                           00000005
+VB2GPR6                           00000006
+VB2GPR7                           00000007
+VB3GPR                            00000E8F
+VB3GPR0                           00000000
+VB3GPR1                           00000001
+VB3GPR2                           00000002
+VB3GPR3                           00000003
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 63
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+VB3GPR4                           00000004
+VB3GPR5                           00000005
+VB3GPR6                           00000006
+VB3GPR7                           00000007
+VBATBOR                           00000000
+W                                 00000000
+WA                                00000004
+WCOL                              00000007
+WDALRM0                           00000000
+WDALRM1                           00000001
+WDALRM2                           00000002
+WDAY0                             00000000
+WDAY1                             00000001
+WDAY2                             00000002
+WDTCON0                           0000080C
+WDTCON1                           0000080D
+WDTCS0                            00000004
+WDTCS1                            00000005
+WDTCS2                            00000006
+WDTPS0                            00000001
+WDTPS1                            00000002
+WDTPS2                            00000003
+WDTPS3                            00000004
+WDTPS4                            00000005
+WDTPSCNT0                         00000000
+WDTPSCNT1                         00000001
+WDTPSCNT10                        00000002
+WDTPSCNT11                        00000003
+WDTPSCNT12                        00000004
+WDTPSCNT13                        00000005
+WDTPSCNT14                        00000006
+WDTPSCNT15                        00000007
+WDTPSCNT16                        00000000
+WDTPSCNT17                        00000001
+WDTPSCNT2                         00000002
+WDTPSCNT3                         00000003
+WDTPSCNT4                         00000004
+WDTPSCNT5                         00000005
+WDTPSCNT6                         00000006
+WDTPSCNT7                         00000007
+WDTPSCNT8                         00000000
+WDTPSCNT9                         00000001
+WDTPSH                            0000080F
+WDTPSL                            0000080E
+WDTSEN                            00000000
+WDTSTATE                          00000002
+WDTTMR                            00000810
+WDTTMR0                           00000003
+WDTTMR1                           00000004
+WDTTMR2                           00000005
+WDTTMR3                           00000006
+WDTWINDOW0                        00000000
+WDTWINDOW1                        00000001
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 64
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+WDTWINDOW2                        00000002
+WEEKDAY                           00000C12
+WERR                              00000005
+WFT                               00000007
+WINDOW0                           00000000
+WINDOW1                           00000001
+WINDOW2                           00000002
+WPOL                              00000004
+WPUA                              00001F39
+WPUA0                             00000000
+WPUA1                             00000001
+WPUA2                             00000002
+WPUA3                             00000003
+WPUA4                             00000004
+WPUA5                             00000005
+WPUA6                             00000006
+WPUA7                             00000007
+WPUB                              00001F44
+WPUB0                             00000000
+WPUB1                             00000001
+WPUB2                             00000002
+WPUB3                             00000003
+WPUB4                             00000004
+WPUB5                             00000005
+WPUB6                             00000006
+WPUB7                             00000007
+WPUC                              00001F4F
+WPUC0                             00000000
+WPUC1                             00000001
+WPUC2                             00000002
+WPUC3                             00000003
+WPUC4                             00000004
+WPUC6                             00000006
+WPUC7                             00000007
+WPUE                              00001F65
+WPUE0                             00000000
+WPUE1                             00000001
+WPUE2                             00000002
+WPUE3                             00000003
+WR                                00000001
+WREG                              00000009
+WREG_SHAD                         00001FE5
+WREN                              00000002
+WRERR                             00000003
+WS                                00000001
+WSEL0                             00000000
+WSEL1                             00000001
+WSEL2                             00000002
+WSEL3                             00000003
+WSEL4                             00000004
+WUE                               00000001
+YEAR                              00000C10
+YEARH0                            00000004
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 65
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+YEARH1                            00000005
+YEARH2                            00000006
+YEARH3                            00000007
+YEARL0                            00000000
+YEARL1                            00000001
+YEARL2                            00000002
+YEARL3                            00000003
+Z                                 00000002
+ZCDCON                            0000091F
+ZCDIE                             00000006
+ZCDIF                             00000006
+ZCDINTN                           00000000
+ZCDINTP                           00000001
+ZCDMD                             00000000
+ZCDOUT                            00000005
+ZCDPOL                            00000004
+ZCDSEN                            00000007
+Z_SHAD                            00000002
+_BBEN_OFF                         00003FFF
+_BBEN_ON                          00003FF7
+_BBSIZE_1024                      00003FFE
+_BBSIZE_16384                     00003FFA
+_BBSIZE_2048                      00003FFD
+_BBSIZE_32768                     00003FF9
+_BBSIZE_4096                      00003FFC
+_BBSIZE_512                       00003FFF
+_BBSIZE_65536                     00003FF8
+_BBSIZE_8192                      00003FFB
+_BOREN_NSLEEP                     00003FBF
+_BOREN_OFF                        00003F3F
+_BOREN_ON                         00003FFF
+_BOREN_SBOREN                     00003F7F
+_BORV_HI                          00003DFF
+_BORV_LO                          00003FFF
+_CLKOUTEN_OFF                     00003FFF
+_CLKOUTEN_ON                      00003EFF
+_CONFIG1                          00008007
+_CONFIG2                          00008008
+_CONFIG3                          00008009
+_CONFIG4                          0000800A
+_CONFIG5                          0000800B
+_CP_OFF                           00003FFF
+_CP_ON                            00003FFE
+_CSWEN_OFF                        000037FF
+_CSWEN_ON                         00003FFF
+_DEVID1                           00008006
+_FCMEN_OFF                        00001FFF
+_FCMEN_ON                         00003FFF
+_FEXTOSC_ECH                      00003FFF
+_FEXTOSC_ECL                      00003FFD
+_FEXTOSC_ECM                      00003FFE
+_FEXTOSC_OFF                      00003FF8
+_IDLOC0                           00008000
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 66
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_IDLOC1                           00008001
+_IDLOC2                           00008002
+_IDLOC3                           00008003
+_LCDPEN_OFF                       00003BFF
+_LCDPEN_ON                        00003FFF
+_LPBOREN_OFF                      00003FFF
+_LPBOREN_ON                       00003FDF
+_LVP_OFF                          00001FFF
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FFE
+_MCLRE_ON                         00003FFF
+_Main_0005                        00000005
+_Main_0008                        00000008
+_PPS1WAY_OFF                      000037FF
+_PPS1WAY_ON                       00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_PWRT_1                     00003FF9
+_PWRTE_PWRT_16                    00003FFB
+_PWRTE_PWRT_64                    00003FFD
+_RSTOSC_EXT1X                     00003FFF
+_RSTOSC_EXT4X                     00003FAF
+_RSTOSC_HFINT1                    00003FEF
+_RSTOSC_HFINT32                   00003F8F
+_RSTOSC_HFINTPLL                  00003F9F
+_RSTOSC_LFINT                     00003FDF
+_RSTOSC_Reserved                  00003FBF
+_RSTOSC_SOSC                      00003FCF
+_SAFEN_OFF                        00003FFF
+_SAFEN_ON                         00003FEF
+_STVREN_OFF                       00002FFF
+_STVREN_ON                        00003FFF
+_VBATEN_OFF                       00003FFF
+_VBATEN_ON                        00003DFF
+_WDTCCS_HFINTOSC                  00000FFF
+_WDTCCS_LFINTOSC                  000007FF
+_WDTCCS_SC                        00003FFF
+_WDTCCS_SOSC                      000017FF
+_WDTCPS_WDTCPS_0                  00003FE0
+_WDTCPS_WDTCPS_1                  00003FE1
+_WDTCPS_WDTCPS_10                 00003FEA
+_WDTCPS_WDTCPS_11                 00003FEB
+_WDTCPS_WDTCPS_12                 00003FEC
+_WDTCPS_WDTCPS_13                 00003FED
+_WDTCPS_WDTCPS_14                 00003FEE
+_WDTCPS_WDTCPS_15                 00003FEF
+_WDTCPS_WDTCPS_16                 00003FF0
+_WDTCPS_WDTCPS_17                 00003FF1
+_WDTCPS_WDTCPS_18                 00003FF2
+_WDTCPS_WDTCPS_19                 00003FF3
+_WDTCPS_WDTCPS_2                  00003FE2
+_WDTCPS_WDTCPS_20                 00003FF4
+_WDTCPS_WDTCPS_21                 00003FF5
+_WDTCPS_WDTCPS_22                 00003FF6
+MPASM 5.84                     16LF19156.ASM   6-19-2020  17:37:19         PAGE 67
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_WDTCPS_WDTCPS_23                 00003FF7
+_WDTCPS_WDTCPS_24                 00003FF8
+_WDTCPS_WDTCPS_25                 00003FF9
+_WDTCPS_WDTCPS_26                 00003FFA
+_WDTCPS_WDTCPS_27                 00003FFB
+_WDTCPS_WDTCPS_28                 00003FFC
+_WDTCPS_WDTCPS_29                 00003FFD
+_WDTCPS_WDTCPS_3                  00003FE3
+_WDTCPS_WDTCPS_30                 00003FFE
+_WDTCPS_WDTCPS_31                 00003FFF
+_WDTCPS_WDTCPS_4                  00003FE4
+_WDTCPS_WDTCPS_5                  00003FE5
+_WDTCPS_WDTCPS_6                  00003FE6
+_WDTCPS_WDTCPS_7                  00003FE7
+_WDTCPS_WDTCPS_8                  00003FE8
+_WDTCPS_WDTCPS_9                  00003FE9
+_WDTCWS_WDTCWS_0                  000038FF
+_WDTCWS_WDTCWS_1                  000039FF
+_WDTCWS_WDTCWS_2                  00003AFF
+_WDTCWS_WDTCWS_3                  00003BFF
+_WDTCWS_WDTCWS_4                  00003CFF
+_WDTCWS_WDTCWS_5                  00003DFF
+_WDTCWS_WDTCWS_6                  00003EFF
+_WDTCWS_WDTCWS_7                  00003FFF
+_WDTE_NSLEEP                      00003FDF
+_WDTE_OFF                         00003F9F
+_WDTE_ON                          00003FFF
+_WDTE_SWDTEN                      00003FBF
+_WRTAPP_OFF                       00003FFF
+_WRTAPP_ON                        00003F7F
+_WRTB_OFF                         00003FFF
+_WRTB_ON                          00003EFF
+_WRTC_OFF                         00003FFF
+_WRTC_ON                          00003DFF
+_WRTD_OFF                         00003FFF
+_WRTD_ON                          00003BFF
+_WRTSAF_OFF                       00003FFF
+_WRTSAF_ON                        000037FF
+_ZCD_OFF                          00003FFF
+_ZCD_ON                           00003BFF
+__16LF19156                       00000001
+checkSwitch                       00000018
+oneSecondDelay_0                  00000004
+startBlink                        0000001C
+stopBlink                         00000025
+
+Errors   :     0
+Warnings :     1 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

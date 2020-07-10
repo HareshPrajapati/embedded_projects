@@ -1,0 +1,267 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF19156 ]
+[d frameptr 6 ]
+"24 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\newmain.c
+[e E10365 . `uc
+channel_RC4 20
+channel_VLCD3_div_4 57
+channel_VBAT_div_3 58
+channel_Vss 59
+channel_Temp_Sensor 60
+channel_DAC1_Output 61
+channel_FVR_Buffer1 62
+channel_FVR_Buffer2 63
+]
+"76 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\ADC.c
+[e E10361 . `uc
+channel_RC4 20
+channel_VLCD3_div_4 57
+channel_VBAT_div_3 58
+channel_Vss 59
+channel_Temp_Sensor 60
+channel_DAC1_Output 61
+channel_FVR_Buffer1 62
+channel_FVR_Buffer2 63
+]
+"13
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+"88
+[v _ADC_GetSingleValue ADC_GetSingleValue `(us  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"17 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\newmain.c
+[v _main main `(v  1 e 1 0 ]
+"15 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\PWM.c
+[v _PWM1_init PWM1_init `(v  1 e 1 0 ]
+"63
+[v _PWM1_Duty PWM1_Duty `(v  1 e 1 0 ]
+"15 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\TMR2.c
+[v _timer2_init timer2_init `(v  1 e 1 0 ]
+"767 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf19156.h
+[v _TRISC TRISC `VEuc  1 e 1 @20 ]
+"943
+[v _LATC LATC `VEuc  1 e 1 @26 ]
+"1034
+[v _ADLTHL ADLTHL `VEuc  1 e 1 @140 ]
+"1162
+[v _ADLTHH ADLTHH `VEuc  1 e 1 @141 ]
+"1297
+[v _ADUTHL ADUTHL `VEuc  1 e 1 @142 ]
+"1425
+[v _ADUTHH ADUTHH `VEuc  1 e 1 @143 ]
+"1823
+[v _ADSTPTL ADSTPTL `VEuc  1 e 1 @146 ]
+"1951
+[v _ADSTPTH ADSTPTH `VEuc  1 e 1 @147 ]
+"2086
+[v _ADFLTRL ADFLTRL `VEuc  1 e 1 @148 ]
+"2214
+[v _ADFLTRH ADFLTRH `VEuc  1 e 1 @149 ]
+"2607
+[v _ADACCU ADACCU `VEuc  1 e 1 @152 ]
+"2863
+[v _ADRPT ADRPT `VEuc  1 e 1 @154 ]
+"2998
+[v _ADPREVL ADPREVL `VEuc  1 e 1 @155 ]
+"3126
+[v _ADPREVH ADPREVH `VEuc  1 e 1 @156 ]
+"3261
+[v _ADRESL ADRESL `VEuc  1 e 1 @157 ]
+"3389
+[v _ADRESH ADRESH `VEuc  1 e 1 @158 ]
+"3509
+[v _ADPCH ADPCH `VEuc  1 e 1 @159 ]
+"3574
+[v _ADACQL ADACQL `VEuc  1 e 1 @268 ]
+"3702
+[v _ADACQH ADACQH `VEuc  1 e 1 @269 ]
+"3794
+[v _ADCAP ADCAP `VEuc  1 e 1 @270 ]
+"3853
+[v _ADPREL ADPREL `VEuc  1 e 1 @271 ]
+"3981
+[v _ADPREH ADPREH `VEuc  1 e 1 @272 ]
+"4073
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @273 ]
+[s S96 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CONT 1 0 :1:6 
+`uc 1 ON 1 0 :1:7 
+]
+"4106
+[s S105 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+[s S114 . 1 `uc 1 DONE 1 0 :1:0 
+]
+[s S116 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+]
+[u S118 . 1 `S96 1 . 1 0 `S105 1 . 1 0 `S114 1 . 1 0 `S116 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES118  1 e 1 @273 ]
+"4171
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @274 ]
+"4237
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @275 ]
+"4407
+[v _ADCON3 ADCON3 `VEuc  1 e 1 @276 ]
+"4537
+[v _ADSTAT ADSTAT `VEuc  1 e 1 @277 ]
+"4655
+[v _ADREF ADREF `VEuc  1 e 1 @278 ]
+"4711
+[v _ADACT ADACT `VEuc  1 e 1 @279 ]
+"4803
+[v _ADCLK ADCLK `VEuc  1 e 1 @280 ]
+[s S186 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
+]
+"7615
+[s S191 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
+]
+[u S200 . 1 `S186 1 . 1 0 `S191 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES200  1 e 1 @542 ]
+"7680
+[v _T2TMR T2TMR `VEuc  1 e 1 @652 ]
+"7718
+[v _T2PR T2PR `VEuc  1 e 1 @653 ]
+"7756
+[v _T2CON T2CON `VEuc  1 e 1 @654 ]
+"7902
+[v _T2HLT T2HLT `VEuc  1 e 1 @655 ]
+"8030
+[v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
+"8188
+[v _T2RST T2RST `VEuc  1 e 1 @657 ]
+"8887
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @780 ]
+"8907
+[v _CCPR1H CCPR1H `VEuc  1 e 1 @781 ]
+"8927
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @782 ]
+[s S218 . 1 `uc 1 MODE 1 0 :4:0 
+`uc 1 FMT 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 OE 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"8965
+[s S224 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+]
+[s S229 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+`uc 1 CCP1FMT 1 0 :1:4 
+`uc 1 CCP1OUT 1 0 :1:5 
+`uc 1 CCP1OE 1 0 :1:6 
+`uc 1 CCP1EN 1 0 :1:7 
+]
+[s S235 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+`uc 1 CCP1MODE1 1 0 :1:1 
+`uc 1 CCP1MODE2 1 0 :1:2 
+`uc 1 CCP1MODE3 1 0 :1:3 
+]
+[s S240 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 P1M0 1 0 :1:6 
+`uc 1 P1M1 1 0 :1:7 
+]
+[u S244 . 1 `S218 1 . 1 0 `S224 1 . 1 0 `S229 1 . 1 0 `S235 1 . 1 0 `S240 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES244  1 e 1 @782 ]
+[s S301 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR4IF 1 0 :1:3 
+]
+"13153
+[u S306 . 1 `S301 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES306  1 e 1 @1808 ]
+"14907
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
+"15047
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2191 ]
+"15087
+[v _OSCSTAT OSCSTAT `VEuc  1 e 1 @2192 ]
+"15144
+[v _OSCEN OSCEN `VEuc  1 e 1 @2193 ]
+"15195
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2194 ]
+"15253
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"15293
+[v _ACTCON ACTCON `VEuc  1 e 1 @2196 ]
+"24982
+[v _T2INPPS T2INPPS `VEuc  1 e 1 @7836 ]
+"25554
+[v _ADCACTPPS ADCACTPPS `VEuc  1 e 1 @7875 ]
+"26770
+[v _RC0PPS RC0PPS `VEuc  1 e 1 @7968 ]
+"28097
+[v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
+"28268
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @8017 ]
+"28325
+[v _INLVLC INLVLC `VEuc  1 e 1 @8018 ]
+"17 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\newmain.c
+[v _main main `(v  1 e 1 0 ]
+{
+"24
+[v main@PotVal PotVal `us  1 a 2 4 ]
+"27
+} 0
+"15 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\TMR2.c
+[v _timer2_init timer2_init `(v  1 e 1 0 ]
+{
+"52
+} 0
+"15 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\PWM.c
+[v _PWM1_init PWM1_init `(v  1 e 1 0 ]
+{
+"61
+} 0
+"63
+[v _PWM1_Duty PWM1_Duty `(v  1 e 1 0 ]
+{
+[v PWM1_Duty@dutyValue dutyValue `us  1 p 2 0 ]
+"79
+} 0
+"13 C:\Users\Haesh_MikoToniks\MPLABXProjects\pic16_led_adc_pwm_tmr.X\ADC.c
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+{
+"72
+} 0
+"88
+[v _ADC_GetSingleValue ADC_GetSingleValue `(us  1 e 2 0 ]
+{
+[v ADC_GetSingleValue@channel channel `E10361  1 a 1 wreg ]
+[v ADC_GetSingleValue@channel channel `E10361  1 a 1 wreg ]
+"91
+[v ADC_GetSingleValue@channel channel `E10361  1 a 1 3 ]
+"111
+} 0
