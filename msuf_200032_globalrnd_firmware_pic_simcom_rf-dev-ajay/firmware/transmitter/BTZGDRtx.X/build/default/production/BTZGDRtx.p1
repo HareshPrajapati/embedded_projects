@@ -1,0 +1,2088 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"126 ./BTZGDRtx.h
+[; ;./BTZGDRtx.h: 126: typedef struct __attribute__((packed)){
+[s S441 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 ]
+[n S441 . word0 word1 word2 word3 word4 word5 word6 word7 ]
+"9 BTZGDRtx.c
+[; ;BTZGDRtx.c: 9: static button_t buttons[(4)];
+[; ;BTZGDRtx.c: 9: 
+[c E3515 161 162 163 164 .. ]
+[n E3515 . BUTTON_1 BUTTON_2 BUTTON_3 BUTTON_4  ]
+"52 ./BTZGDRtx.h
+[; ;./BTZGDRtx.h: 52: typedef struct __attribute__((packed)){
+[s S440 `a 1 `E3515 1 `ul 1 `ul 1 ]
+[n S440 . event id pressed_time duration ]
+"1334 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1334: extern volatile unsigned char OSCCON __attribute__((address(0x099)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
+"1276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1276: extern volatile unsigned char OSCTUNE __attribute__((address(0x098)));
+[v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
+"1914
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1914: extern volatile unsigned char BORCON __attribute__((address(0x116)));
+[v _BORCON `Vuc ~T0 @X0 0 e@278 ]
+"1217
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1217: extern volatile unsigned char WDTCON __attribute__((address(0x097)));
+[v _WDTCON `Vuc ~T0 @X0 0 e@151 ]
+"1712
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1712: extern volatile unsigned char LATA __attribute__((address(0x10C)));
+[v _LATA `Vuc ~T0 @X0 0 e@268 ]
+"914
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 914: extern volatile unsigned char TRISA __attribute__((address(0x08C)));
+[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
+"2242
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2242: extern volatile unsigned char ANSELA __attribute__((address(0x18C)));
+[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
+"2722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2722: extern volatile unsigned char WPUA __attribute__((address(0x20C)));
+[v _WPUA `Vuc ~T0 @X0 0 e@524 ]
+"1083
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1083:     struct {
+[s S71 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S71 . PS0 PS1 PS2 PSA TMR0SE TMR0CS INTEDG nWPUEN ]
+"1093
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1093:     struct {
+[s S72 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S72 . PS . T0SE T0CS ]
+"1082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1082: typedef union {
+[u S70 `S71 1 `S72 1 ]
+[n S70 . . . ]
+"1100
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1100: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x095)));
+[v _OPTION_REGbits `VS70 ~T0 @X0 0 e@149 ]
+"2780
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2780: extern volatile unsigned char ODCONA __attribute__((address(0x28C)));
+[v _ODCONA `Vuc ~T0 @X0 0 e@652 ]
+"2833
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2833: extern volatile unsigned char SLRCONA __attribute__((address(0x30C)));
+[v _SLRCONA `Vuc ~T0 @X0 0 e@780 ]
+"2886
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2886: extern volatile unsigned char INLVLA __attribute__((address(0x38C)));
+[v _INLVLA `Vuc ~T0 @X0 0 e@908 ]
+"2130
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2130: extern volatile unsigned char APFCON __attribute__((address(0x11D)));
+[v _APFCON `Vuc ~T0 @X0 0 e@285 ]
+"1077
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1077: extern volatile unsigned char OPTION_REG __attribute__((address(0x095)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
+"592
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 592: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
+"357
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 357:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"367
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 367:     struct {
+[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S32 . . T0IF . T0IE ]
+"356
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 356: typedef union {
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
+"374
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
+"2670
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2670: extern volatile unsigned char BAUDCON __attribute__((address(0x19F)));
+[v _BAUDCON `Vuc ~T0 @X0 0 e@415 ]
+"2546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2546: extern volatile unsigned char RCSTA __attribute__((address(0x19D)));
+[v _RCSTA `Vuc ~T0 @X0 0 e@413 ]
+"2608
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2608: extern volatile unsigned char TXSTA __attribute__((address(0x19E)));
+[v _TXSTA `Vuc ~T0 @X0 0 e@414 ]
+"2506
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2506: extern volatile unsigned char SPBRGL __attribute__((address(0x19B)));
+[v _SPBRGL `Vuc ~T0 @X0 0 e@411 ]
+"2526
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2526: extern volatile unsigned char SPBRGH __attribute__((address(0x19C)));
+[v _SPBRGH `Vuc ~T0 @X0 0 e@412 ]
+"435
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 435:     struct {
+[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . RA0 RA1 RA2 RA3 RA4 RA5 ]
+"443
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 443:     struct {
+[s S35 :6 `uc 1 ]
+[n S35 . PORTA ]
+"434
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 434: typedef union {
+[u S33 `S34 1 `S35 1 ]
+[n S33 . . . ]
+"447
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 447: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
+[v _PORTAbits `VS33 ~T0 @X0 0 e@12 ]
+"29 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
+"27
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
+[v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
+"111 ./BTZGDRtx.h
+[; ;./BTZGDRtx.h: 111: int rf_send_packet(uint8_t *data, uint8_t len);
+[v _rf_send_packet `(i ~T0 @X0 0 ef2`*uc`uc ]
+"493 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 493:     struct {
+[s S37 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . TMR1IF TMR2IF . TXIF RCIF ADIF TMR1GIF ]
+"492
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 492: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"503
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 503: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
+[v _PIR1bits `VS36 ~T0 @X0 0 e@17 ]
+"2479
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2479: extern volatile unsigned char TXREG __attribute__((address(0x19A)));
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
+"41 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h: 41: int rand (void);
+[v _rand `(i ~T0 @X0 0 ef ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"2296 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2296: extern volatile unsigned char PMADRL __attribute__((address(0x191)));
+[v _PMADRL `Vuc ~T0 @X0 0 e@401 ]
+"2316
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2316: extern volatile unsigned char PMADRH __attribute__((address(0x192)));
+[v _PMADRH `Vuc ~T0 @X0 0 e@402 ]
+"2389
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2389:     struct {
+[s S138 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S138 . RD WR WREN WRERR FREE LWLO CFGS ]
+"2388
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2388: typedef union {
+[u S137 `S138 1 ]
+[n S137 . . ]
+"2399
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2399: extern volatile PMCON1bits_t PMCON1bits __attribute__((address(0x195)));
+[v _PMCON1bits `VS137 ~T0 @X0 0 e@405 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"2363 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2363: extern volatile unsigned char PMDATH __attribute__((address(0x194)));
+[v _PMDATH `Vuc ~T0 @X0 0 e@404 ]
+"2343
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2343: extern volatile unsigned char PMDATL __attribute__((address(0x193)));
+[v _PMDATL `Vuc ~T0 @X0 0 e@403 ]
+"2439
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2439: extern volatile unsigned char PMCON2 __attribute__((address(0x196)));
+[v _PMCON2 `Vuc ~T0 @X0 0 e@406 ]
+[p mainexit ]
+"42 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c99\stdlib.h: 42: void srand (unsigned);
+[v _srand `(v ~T0 @X0 0 ef1`ui ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 54: __asm("INDF0 equ 00h");
+[; <" INDF0 equ 00h ;# ">
+"74
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 74: __asm("INDF1 equ 01h");
+[; <" INDF1 equ 01h ;# ">
+"94
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 94: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"114
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 114: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"177
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 177: __asm("FSR0L equ 04h");
+[; <" FSR0L equ 04h ;# ">
+"197
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 197: __asm("FSR0H equ 05h");
+[; <" FSR0H equ 05h ;# ">
+"221
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 221: __asm("FSR1L equ 06h");
+[; <" FSR1L equ 06h ;# ">
+"241
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 241: __asm("FSR1H equ 07h");
+[; <" FSR1H equ 07h ;# ">
+"261
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 261: __asm("BSR equ 08h");
+[; <" BSR equ 08h ;# ">
+"313
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 313: __asm("WREG equ 09h");
+[; <" WREG equ 09h ;# ">
+"333
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 333: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"353
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 353: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"431
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 431: __asm("PORTA equ 0Ch");
+[; <" PORTA equ 0Ch ;# ">
+"489
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 489: __asm("PIR1 equ 011h");
+[; <" PIR1 equ 011h ;# ">
+"540
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 540: __asm("PIR2 equ 012h");
+[; <" PIR2 equ 012h ;# ">
+"561
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 561: __asm("PIR3 equ 013h");
+[; <" PIR3 equ 013h ;# ">
+"594
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 594: __asm("TMR0 equ 015h");
+[; <" TMR0 equ 015h ;# ">
+"614
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 614: __asm("TMR1 equ 016h");
+[; <" TMR1 equ 016h ;# ">
+"621
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 621: __asm("TMR1L equ 016h");
+[; <" TMR1L equ 016h ;# ">
+"641
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 641: __asm("TMR1H equ 017h");
+[; <" TMR1H equ 017h ;# ">
+"661
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 661: __asm("T1CON equ 018h");
+[; <" T1CON equ 018h ;# ">
+"728
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 728: __asm("T1GCON equ 019h");
+[; <" T1GCON equ 019h ;# ">
+"805
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 805: __asm("TMR2 equ 01Ah");
+[; <" TMR2 equ 01Ah ;# ">
+"825
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 825: __asm("PR2 equ 01Bh");
+[; <" PR2 equ 01Bh ;# ">
+"845
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 845: __asm("T2CON equ 01Ch");
+[; <" T2CON equ 01Ch ;# ">
+"916
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 916: __asm("TRISA equ 08Ch");
+[; <" TRISA equ 08Ch ;# ">
+"974
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 974: __asm("PIE1 equ 091h");
+[; <" PIE1 equ 091h ;# ">
+"1025
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1025: __asm("PIE2 equ 092h");
+[; <" PIE2 equ 092h ;# ">
+"1046
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1046: __asm("PIE3 equ 093h");
+[; <" PIE3 equ 093h ;# ">
+"1079
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1079: __asm("OPTION_REG equ 095h");
+[; <" OPTION_REG equ 095h ;# ">
+"1162
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1162: __asm("PCON equ 096h");
+[; <" PCON equ 096h ;# ">
+"1219
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1219: __asm("WDTCON equ 097h");
+[; <" WDTCON equ 097h ;# ">
+"1278
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1278: __asm("OSCTUNE equ 098h");
+[; <" OSCTUNE equ 098h ;# ">
+"1336
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1336: __asm("OSCCON equ 099h");
+[; <" OSCCON equ 099h ;# ">
+"1408
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1408: __asm("OSCSTAT equ 09Ah");
+[; <" OSCSTAT equ 09Ah ;# ">
+"1464
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1464: __asm("ADRES equ 09Bh");
+[; <" ADRES equ 09Bh ;# ">
+"1471
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1471: __asm("ADRESL equ 09Bh");
+[; <" ADRESL equ 09Bh ;# ">
+"1491
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1491: __asm("ADRESH equ 09Ch");
+[; <" ADRESH equ 09Ch ;# ">
+"1511
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1511: __asm("ADCON0 equ 09Dh");
+[; <" ADCON0 equ 09Dh ;# ">
+"1600
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1600: __asm("ADCON1 equ 09Eh");
+[; <" ADCON1 equ 09Eh ;# ">
+"1666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1666: __asm("ADCON2 equ 09Fh");
+[; <" ADCON2 equ 09Fh ;# ">
+"1714
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1714: __asm("LATA equ 010Ch");
+[; <" LATA equ 010Ch ;# ">
+"1767
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1767: __asm("CM1CON0 equ 0111h");
+[; <" CM1CON0 equ 0111h ;# ">
+"1824
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1824: __asm("CM1CON1 equ 0112h");
+[; <" CM1CON1 equ 0112h ;# ">
+"1896
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1896: __asm("CMOUT equ 0115h");
+[; <" CMOUT equ 0115h ;# ">
+"1916
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1916: __asm("BORCON equ 0116h");
+[; <" BORCON equ 0116h ;# ">
+"1949
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 1949: __asm("FVRCON equ 0117h");
+[; <" FVRCON equ 0117h ;# ">
+"2025
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2025: __asm("DACCON0 equ 0118h");
+[; <" DACCON0 equ 0118h ;# ">
+"2080
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2080: __asm("DACCON1 equ 0119h");
+[; <" DACCON1 equ 0119h ;# ">
+"2132
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2132: __asm("APFCON equ 011Dh");
+[; <" APFCON equ 011Dh ;# ">
+"2137
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2137: __asm("APFCON0 equ 011Dh");
+[; <" APFCON0 equ 011Dh ;# ">
+"2244
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2244: __asm("ANSELA equ 018Ch");
+[; <" ANSELA equ 018Ch ;# ">
+"2291
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2291: __asm("PMADR equ 0191h");
+[; <" PMADR equ 0191h ;# ">
+"2298
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2298: __asm("PMADRL equ 0191h");
+[; <" PMADRL equ 0191h ;# ">
+"2318
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2318: __asm("PMADRH equ 0192h");
+[; <" PMADRH equ 0192h ;# ">
+"2338
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2338: __asm("PMDAT equ 0193h");
+[; <" PMDAT equ 0193h ;# ">
+"2345
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2345: __asm("PMDATL equ 0193h");
+[; <" PMDATL equ 0193h ;# ">
+"2365
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2365: __asm("PMDATH equ 0194h");
+[; <" PMDATH equ 0194h ;# ">
+"2385
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2385: __asm("PMCON1 equ 0195h");
+[; <" PMCON1 equ 0195h ;# ">
+"2441
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2441: __asm("PMCON2 equ 0196h");
+[; <" PMCON2 equ 0196h ;# ">
+"2461
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2461: __asm("RCREG equ 0199h");
+[; <" RCREG equ 0199h ;# ">
+"2481
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2481: __asm("TXREG equ 019Ah");
+[; <" TXREG equ 019Ah ;# ">
+"2501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2501: __asm("SPBRG equ 019Bh");
+[; <" SPBRG equ 019Bh ;# ">
+"2508
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2508: __asm("SPBRGL equ 019Bh");
+[; <" SPBRGL equ 019Bh ;# ">
+"2528
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2528: __asm("SPBRGH equ 019Ch");
+[; <" SPBRGH equ 019Ch ;# ">
+"2548
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2548: __asm("RCSTA equ 019Dh");
+[; <" RCSTA equ 019Dh ;# ">
+"2610
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2610: __asm("TXSTA equ 019Eh");
+[; <" TXSTA equ 019Eh ;# ">
+"2672
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2672: __asm("BAUDCON equ 019Fh");
+[; <" BAUDCON equ 019Fh ;# ">
+"2724
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2724: __asm("WPUA equ 020Ch");
+[; <" WPUA equ 020Ch ;# ">
+"2782
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2782: __asm("ODCONA equ 028Ch");
+[; <" ODCONA equ 028Ch ;# ">
+"2835
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2835: __asm("SLRCONA equ 030Ch");
+[; <" SLRCONA equ 030Ch ;# ">
+"2888
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2888: __asm("INLVLA equ 038Ch");
+[; <" INLVLA equ 038Ch ;# ">
+"2946
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 2946: __asm("IOCAP equ 0391h");
+[; <" IOCAP equ 0391h ;# ">
+"3004
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3004: __asm("IOCAN equ 0392h");
+[; <" IOCAN equ 0392h ;# ">
+"3062
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3062: __asm("IOCAF equ 0393h");
+[; <" IOCAF equ 0393h ;# ">
+"3120
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3120: __asm("CWG1DBR equ 0691h");
+[; <" CWG1DBR equ 0691h ;# ">
+"3178
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3178: __asm("CWG1DBF equ 0692h");
+[; <" CWG1DBF equ 0692h ;# ">
+"3236
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3236: __asm("CWG1CON0 equ 0693h");
+[; <" CWG1CON0 equ 0693h ;# ">
+"3295
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3295: __asm("CWG1CON1 equ 0694h");
+[; <" CWG1CON1 equ 0694h ;# ">
+"3372
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3372: __asm("CWG1CON2 equ 0695h");
+[; <" CWG1CON2 equ 0695h ;# ">
+"3412
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3412: __asm("PWMEN equ 0D8Eh");
+[; <" PWMEN equ 0D8Eh ;# ">
+"3464
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3464: __asm("PWMLD equ 0D8Fh");
+[; <" PWMLD equ 0D8Fh ;# ">
+"3516
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3516: __asm("PWMOUT equ 0D90h");
+[; <" PWMOUT equ 0D90h ;# ">
+"3568
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3568: __asm("PWM1PH equ 0D91h");
+[; <" PWM1PH equ 0D91h ;# ">
+"3575
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3575: __asm("PWM1PHL equ 0D91h");
+[; <" PWM1PHL equ 0D91h ;# ">
+"3653
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3653: __asm("PWM1PHH equ 0D92h");
+[; <" PWM1PHH equ 0D92h ;# ">
+"3731
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3731: __asm("PWM1DC equ 0D93h");
+[; <" PWM1DC equ 0D93h ;# ">
+"3738
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3738: __asm("PWM1DCL equ 0D93h");
+[; <" PWM1DCL equ 0D93h ;# ">
+"3816
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3816: __asm("PWM1DCH equ 0D94h");
+[; <" PWM1DCH equ 0D94h ;# ">
+"3894
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3894: __asm("PWM1PR equ 0D95h");
+[; <" PWM1PR equ 0D95h ;# ">
+"3901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3901: __asm("PWM1PRL equ 0D95h");
+[; <" PWM1PRL equ 0D95h ;# ">
+"3979
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 3979: __asm("PWM1PRH equ 0D96h");
+[; <" PWM1PRH equ 0D96h ;# ">
+"4057
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4057: __asm("PWM1OF equ 0D97h");
+[; <" PWM1OF equ 0D97h ;# ">
+"4064
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4064: __asm("PWM1OFL equ 0D97h");
+[; <" PWM1OFL equ 0D97h ;# ">
+"4142
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4142: __asm("PWM1OFH equ 0D98h");
+[; <" PWM1OFH equ 0D98h ;# ">
+"4220
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4220: __asm("PWM1TMR equ 0D99h");
+[; <" PWM1TMR equ 0D99h ;# ">
+"4227
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4227: __asm("PWM1TMRL equ 0D99h");
+[; <" PWM1TMRL equ 0D99h ;# ">
+"4305
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4305: __asm("PWM1TMRH equ 0D9Ah");
+[; <" PWM1TMRH equ 0D9Ah ;# ">
+"4383
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4383: __asm("PWM1CON equ 0D9Bh");
+[; <" PWM1CON equ 0D9Bh ;# ">
+"4491
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4491: __asm("PWM1INTE equ 0D9Ch");
+[; <" PWM1INTE equ 0D9Ch ;# ">
+"4496
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4496: __asm("PWM1INTCON equ 0D9Ch");
+[; <" PWM1INTCON equ 0D9Ch ;# ">
+"4617
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4617: __asm("PWM1INTF equ 0D9Dh");
+[; <" PWM1INTF equ 0D9Dh ;# ">
+"4622
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4622: __asm("PWM1INTFLG equ 0D9Dh");
+[; <" PWM1INTFLG equ 0D9Dh ;# ">
+"4743
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4743: __asm("PWM1CLKCON equ 0D9Eh");
+[; <" PWM1CLKCON equ 0D9Eh ;# ">
+"4851
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4851: __asm("PWM1LDCON equ 0D9Fh");
+[; <" PWM1LDCON equ 0D9Fh ;# ">
+"4933
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 4933: __asm("PWM1OFCON equ 0DA0h");
+[; <" PWM1OFCON equ 0DA0h ;# ">
+"5041
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5041: __asm("PWM2PH equ 0DA1h");
+[; <" PWM2PH equ 0DA1h ;# ">
+"5048
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5048: __asm("PWM2PHL equ 0DA1h");
+[; <" PWM2PHL equ 0DA1h ;# ">
+"5126
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5126: __asm("PWM2PHH equ 0DA2h");
+[; <" PWM2PHH equ 0DA2h ;# ">
+"5204
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5204: __asm("PWM2DC equ 0DA3h");
+[; <" PWM2DC equ 0DA3h ;# ">
+"5211
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5211: __asm("PWM2DCL equ 0DA3h");
+[; <" PWM2DCL equ 0DA3h ;# ">
+"5289
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5289: __asm("PWM2DCH equ 0DA4h");
+[; <" PWM2DCH equ 0DA4h ;# ">
+"5367
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5367: __asm("PWM2PR equ 0DA5h");
+[; <" PWM2PR equ 0DA5h ;# ">
+"5374
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5374: __asm("PWM2PRL equ 0DA5h");
+[; <" PWM2PRL equ 0DA5h ;# ">
+"5452
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5452: __asm("PWM2PRH equ 0DA6h");
+[; <" PWM2PRH equ 0DA6h ;# ">
+"5530
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5530: __asm("PWM2OF equ 0DA7h");
+[; <" PWM2OF equ 0DA7h ;# ">
+"5537
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5537: __asm("PWM2OFL equ 0DA7h");
+[; <" PWM2OFL equ 0DA7h ;# ">
+"5615
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5615: __asm("PWM2OFH equ 0DA8h");
+[; <" PWM2OFH equ 0DA8h ;# ">
+"5693
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5693: __asm("PWM2TMR equ 0DA9h");
+[; <" PWM2TMR equ 0DA9h ;# ">
+"5700
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5700: __asm("PWM2TMRL equ 0DA9h");
+[; <" PWM2TMRL equ 0DA9h ;# ">
+"5778
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5778: __asm("PWM2TMRH equ 0DAAh");
+[; <" PWM2TMRH equ 0DAAh ;# ">
+"5856
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5856: __asm("PWM2CON equ 0DABh");
+[; <" PWM2CON equ 0DABh ;# ">
+"5964
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5964: __asm("PWM2INTE equ 0DACh");
+[; <" PWM2INTE equ 0DACh ;# ">
+"5969
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 5969: __asm("PWM2INTCON equ 0DACh");
+[; <" PWM2INTCON equ 0DACh ;# ">
+"6090
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6090: __asm("PWM2INTF equ 0DADh");
+[; <" PWM2INTF equ 0DADh ;# ">
+"6095
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6095: __asm("PWM2INTFLG equ 0DADh");
+[; <" PWM2INTFLG equ 0DADh ;# ">
+"6216
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6216: __asm("PWM2CLKCON equ 0DAEh");
+[; <" PWM2CLKCON equ 0DAEh ;# ">
+"6324
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6324: __asm("PWM2LDCON equ 0DAFh");
+[; <" PWM2LDCON equ 0DAFh ;# ">
+"6406
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6406: __asm("PWM2OFCON equ 0DB0h");
+[; <" PWM2OFCON equ 0DB0h ;# ">
+"6514
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6514: __asm("PWM3PH equ 0DB1h");
+[; <" PWM3PH equ 0DB1h ;# ">
+"6521
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6521: __asm("PWM3PHL equ 0DB1h");
+[; <" PWM3PHL equ 0DB1h ;# ">
+"6599
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6599: __asm("PWM3PHH equ 0DB2h");
+[; <" PWM3PHH equ 0DB2h ;# ">
+"6677
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6677: __asm("PWM3DC equ 0DB3h");
+[; <" PWM3DC equ 0DB3h ;# ">
+"6684
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6684: __asm("PWM3DCL equ 0DB3h");
+[; <" PWM3DCL equ 0DB3h ;# ">
+"6762
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6762: __asm("PWM3DCH equ 0DB4h");
+[; <" PWM3DCH equ 0DB4h ;# ">
+"6840
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6840: __asm("PWM3PR equ 0DB5h");
+[; <" PWM3PR equ 0DB5h ;# ">
+"6847
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6847: __asm("PWM3PRL equ 0DB5h");
+[; <" PWM3PRL equ 0DB5h ;# ">
+"6925
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 6925: __asm("PWM3PRH equ 0DB6h");
+[; <" PWM3PRH equ 0DB6h ;# ">
+"7003
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7003: __asm("PWM3OF equ 0DB7h");
+[; <" PWM3OF equ 0DB7h ;# ">
+"7010
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7010: __asm("PWM3OFL equ 0DB7h");
+[; <" PWM3OFL equ 0DB7h ;# ">
+"7088
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7088: __asm("PWM3OFH equ 0DB8h");
+[; <" PWM3OFH equ 0DB8h ;# ">
+"7166
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7166: __asm("PWM3TMR equ 0DB9h");
+[; <" PWM3TMR equ 0DB9h ;# ">
+"7173
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7173: __asm("PWM3TMRL equ 0DB9h");
+[; <" PWM3TMRL equ 0DB9h ;# ">
+"7251
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7251: __asm("PWM3TMRH equ 0DBAh");
+[; <" PWM3TMRH equ 0DBAh ;# ">
+"7329
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7329: __asm("PWM3CON equ 0DBBh");
+[; <" PWM3CON equ 0DBBh ;# ">
+"7437
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7437: __asm("PWM3INTE equ 0DBCh");
+[; <" PWM3INTE equ 0DBCh ;# ">
+"7442
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7442: __asm("PWM3INTCON equ 0DBCh");
+[; <" PWM3INTCON equ 0DBCh ;# ">
+"7563
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7563: __asm("PWM3INTF equ 0DBDh");
+[; <" PWM3INTF equ 0DBDh ;# ">
+"7568
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7568: __asm("PWM3INTFLG equ 0DBDh");
+[; <" PWM3INTFLG equ 0DBDh ;# ">
+"7689
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7689: __asm("PWM3CLKCON equ 0DBEh");
+[; <" PWM3CLKCON equ 0DBEh ;# ">
+"7797
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7797: __asm("PWM3LDCON equ 0DBFh");
+[; <" PWM3LDCON equ 0DBFh ;# ">
+"7879
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7879: __asm("PWM3OFCON equ 0DC0h");
+[; <" PWM3OFCON equ 0DC0h ;# ">
+"7987
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 7987: __asm("STATUS_SHAD equ 0FE4h");
+[; <" STATUS_SHAD equ 0FE4h ;# ">
+"8019
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8019: __asm("WREG_SHAD equ 0FE5h");
+[; <" WREG_SHAD equ 0FE5h ;# ">
+"8039
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8039: __asm("BSR_SHAD equ 0FE6h");
+[; <" BSR_SHAD equ 0FE6h ;# ">
+"8059
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8059: __asm("PCLATH_SHAD equ 0FE7h");
+[; <" PCLATH_SHAD equ 0FE7h ;# ">
+"8079
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8079: __asm("FSR0_SHAD equ 0FE8h");
+[; <" FSR0_SHAD equ 0FE8h ;# ">
+"8086
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8086: __asm("FSR0L_SHAD equ 0FE8h");
+[; <" FSR0L_SHAD equ 0FE8h ;# ">
+"8106
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8106: __asm("FSR0H_SHAD equ 0FE9h");
+[; <" FSR0H_SHAD equ 0FE9h ;# ">
+"8126
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8126: __asm("FSR1_SHAD equ 0FEAh");
+[; <" FSR1_SHAD equ 0FEAh ;# ">
+"8133
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8133: __asm("FSR1L_SHAD equ 0FEAh");
+[; <" FSR1L_SHAD equ 0FEAh ;# ">
+"8153
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8153: __asm("FSR1H_SHAD equ 0FEBh");
+[; <" FSR1H_SHAD equ 0FEBh ;# ">
+"8173
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8173: __asm("STKPTR equ 0FEDh");
+[; <" STKPTR equ 0FEDh ;# ">
+"8193
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8193: __asm("TOS equ 0FEEh");
+[; <" TOS equ 0FEEh ;# ">
+"8200
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8200: __asm("TOSL equ 0FEEh");
+[; <" TOSL equ 0FEEh ;# ">
+"8220
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic12lf1572.h: 8220: __asm("TOSH equ 0FEFh");
+[; <" TOSH equ 0FEFh ;# ">
+"79 ./BTZGDRtx.h
+[; ;./BTZGDRtx.h: 79: static const uint8_t encrypt_key = 10;
+[v _encrypt_key `Cuc ~T0 @X0 1 s ]
+[i _encrypt_key
+-> -> 10 `i `uc
+]
+"4 BTZGDRtx.c
+[; ;BTZGDRtx.c: 4: const uint8_t __attribute__((address((0x7E0)))) reserve_location[32] = {0};
+[; ;BTZGDRtx.c: 4: 
+[v _reserve_location `Cuc ~T0 @X0 -> 32 `i e@2016 ]
+[i _reserve_location
+:U ..
+-> -> 0 `i `uc
+..
+]
+"6
+[; ;BTZGDRtx.c: 6: static counter_t counter;
+[; ;BTZGDRtx.c: 6: 
+[v _counter `S441 ~T0 @X0 1 s ]
+"7
+[; ;BTZGDRtx.c: 7: static volatile uint8_t timer0ReloadVal;
+[; ;BTZGDRtx.c: 7:     BORCON = 0x00;
+[v _timer0ReloadVal `Vuc ~T0 @X0 1 s ]
+"8
+[; ;BTZGDRtx.c: 8: static volatile uint32_t tick = 0;
+[; ;BTZGDRtx.c: 8: 
+[v _tick `Vul ~T0 @X0 1 s ]
+[i _tick
+-> -> -> 0 `i `l `ul
+]
+"9
+[; ;BTZGDRtx.c: 9: static button_t buttons[(4)];
+[; ;BTZGDRtx.c: 9: 
+[v _buttons `S440 ~T0 @X0 -> 4 `i s ]
+"10
+[; ;BTZGDRtx.c: 10: static uint8_t button_packet[5] = {0};
+[; ;BTZGDRtx.c: 10:     WDTCON = 0x16;
+[v _button_packet `uc ~T0 @X0 -> 5 `i s ]
+[i _button_packet
+:U ..
+-> -> 0 `i `uc
+..
+]
+"11
+[; ;BTZGDRtx.c: 11: static uint32_t last_tick = 0;
+[; ;BTZGDRtx.c: 11: 
+[v _last_tick `ul ~T0 @X0 1 s ]
+[i _last_tick
+-> -> -> 0 `i `l `ul
+]
+"12
+[; ;BTZGDRtx.c: 12: static uint32_t combo0_pressed = 0;
+[; ;BTZGDRtx.c: 12: 
+[v _combo0_pressed `ul ~T0 @X0 1 s ]
+[i _combo0_pressed
+-> -> -> 0 `i `l `ul
+]
+"13
+[; ;BTZGDRtx.c: 13: static uint32_t combo1_pressed = 0;
+[; ;BTZGDRtx.c: 13:     LATA = 0b00000000;
+[v _combo1_pressed `ul ~T0 @X0 1 s ]
+[i _combo1_pressed
+-> -> -> 0 `i `l `ul
+]
+"21
+[; ;BTZGDRtx.c: 21:     ODCONA = 0x00;
+[p x FOSC = INTOSC ]
+"22
+[; ;BTZGDRtx.c: 22: 
+[p x WDTE = OFF ]
+"23
+[; ;BTZGDRtx.c: 23: 
+[p x PWRTE = OFF ]
+"24
+[; ;BTZGDRtx.c: 24:     SLRCONA = 0x37;
+[p x MCLRE = ON ]
+"25
+[; ;BTZGDRtx.c: 25: 
+[p x CP = OFF ]
+"26
+[; ;BTZGDRtx.c: 26: 
+[p x BOREN = ON ]
+"27
+[; ;BTZGDRtx.c: 27:     INLVLA = 0x3F;
+[p x CLKOUTEN = OFF ]
+"30
+[; ;BTZGDRtx.c: 30:     APFCON = 0x84;
+[p x WRT = OFF ]
+"31
+[; ;BTZGDRtx.c: 31: 
+[p x PLLEN = OFF ]
+"32
+[; ;BTZGDRtx.c: 32: 
+[p x STVREN = ON ]
+"33
+[; ;BTZGDRtx.c: 33: 
+[p x BORV = LO ]
+"34
+[; ;BTZGDRtx.c: 34:     OPTION_REG = (uint8_t) ((OPTION_REG & 0xC0) | (0xD4 & 0x3F));
+[p x LPBOREN = OFF ]
+"35
+[; ;BTZGDRtx.c: 35: 
+[p x LVP = ON ]
+"37
+[; ;BTZGDRtx.c: 37:     TMR0 = 0x83;
+[v _system_initialize `(v ~T0 @X0 1 ef ]
+{
+[e :U _system_initialize ]
+[f ]
+"40
+[; ;BTZGDRtx.c: 40:     timer0ReloadVal = 131;
+[e = _OSCCON -> -> 122 `i `uc ]
+"42
+[; ;BTZGDRtx.c: 42: 
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"44
+[; ;BTZGDRtx.c: 44: 
+[e = _BORCON -> -> 0 `i `uc ]
+"47
+[; ;BTZGDRtx.c: 47: 
+[e = _WDTCON -> -> 22 `i `uc ]
+"50
+[; ;BTZGDRtx.c: 50:     BAUDCON = 0x08;
+[e = _LATA -> -> 0 `i `uc ]
+"51
+[; ;BTZGDRtx.c: 51: 
+[e = _TRISA -> -> 47 `i `uc ]
+"52
+[; ;BTZGDRtx.c: 52: 
+[e = _ANSELA -> -> 0 `i `uc ]
+"54
+[; ;BTZGDRtx.c: 54: 
+[e = _WPUA -> -> 0 `i `uc ]
+"55
+[; ;BTZGDRtx.c: 55: 
+[e = . . _OPTION_REGbits 0 7 -> -> 1 `i `uc ]
+"58
+[; ;BTZGDRtx.c: 58: 
+[e = _ODCONA -> -> 0 `i `uc ]
+"61
+[; ;BTZGDRtx.c: 61: 
+[e = _SLRCONA -> -> 55 `i `uc ]
+"64
+[e = _INLVLA -> -> 63 `i `uc ]
+"67
+[e = _APFCON -> -> 132 `i `uc ]
+"71
+[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i & -> 212 `i -> 63 `i `uc ]
+"74
+[e = _TMR0 -> -> 131 `i `uc ]
+"77
+[e = _timer0ReloadVal -> -> 131 `i `uc ]
+"80
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"83
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"87
+[e = _BAUDCON -> -> 8 `i `uc ]
+"90
+[e = _RCSTA -> -> 128 `i `uc ]
+"93
+[e = _TXSTA -> -> 36 `i `uc ]
+"96
+[e = _SPBRGL -> -> 64 `i `uc ]
+"99
+[e = _SPBRGH -> -> 3 `i `uc ]
+"100
+[e :UE 442 ]
+}
+"109
+[; ;BTZGDRtx.c: 109: static void timer_interrupt_handler(void) {
+[v _timer_interrupt_handler `(v ~T0 @X0 1 sf ]
+{
+[e :U _timer_interrupt_handler ]
+[f ]
+"110
+[; ;BTZGDRtx.c: 110:     tick++;
+[e ++ _tick -> -> 1 `i `Vul ]
+"111
+[; ;BTZGDRtx.c: 111: }
+[e :UE 443 ]
+}
+"117
+[; ;BTZGDRtx.c: 117: uint32_t millis() {
+[v _millis `(ul ~T0 @X0 1 ef ]
+{
+[e :U _millis ]
+[f ]
+"118
+[; ;BTZGDRtx.c: 118:     return tick;
+[e ) _tick ]
+[e $UE 444  ]
+"119
+[; ;BTZGDRtx.c: 119: }
+[e :UE 444 ]
+}
+"125
+[; ;BTZGDRtx.c: 125: void delay_ms(uint32_t ms) {
+[v _delay_ms `(v ~T0 @X0 1 ef1`ul ]
+{
+[e :U _delay_ms ]
+[v _ms `ul ~T0 @X0 1 r1 ]
+[f ]
+"126
+[; ;BTZGDRtx.c: 126:     uint32_t wait = millis() + ms;
+[v _wait `ul ~T0 @X0 1 a ]
+[e = _wait + ( _millis ..  _ms ]
+"127
+[; ;BTZGDRtx.c: 127:     while (millis() < wait);
+[e $U 446  ]
+[e :U 447 ]
+[e :U 446 ]
+[e $ < ( _millis ..  _wait 447  ]
+[e :U 448 ]
+"128
+[; ;BTZGDRtx.c: 128: }
+[e :UE 445 ]
+}
+"139
+[; ;BTZGDRtx.c: 139: _Bool button_get_state(uint8_t btn) {
+[v _button_get_state `(a ~T0 @X0 1 ef1`uc ]
+{
+[e :U _button_get_state ]
+[v _btn `uc ~T0 @X0 1 r1 ]
+[f ]
+"140
+[; ;BTZGDRtx.c: 140:     _Bool state = 0;
+[v _state `a ~T0 @X0 1 a ]
+[e = _state -> -> 0 `i `a ]
+"141
+[; ;BTZGDRtx.c: 141:     switch (btn) {
+[e $U 451  ]
+{
+"142
+[; ;BTZGDRtx.c: 142:         case 0:
+[e :U 452 ]
+"143
+[; ;BTZGDRtx.c: 143:         {
+{
+"144
+[; ;BTZGDRtx.c: 144:             state = (PORTAbits.RA2);
+[e = _state -> . . _PORTAbits 0 2 `a ]
+"145
+[; ;BTZGDRtx.c: 145:         }
+}
+"146
+[; ;BTZGDRtx.c: 146:             break;
+[e $U 450  ]
+"147
+[; ;BTZGDRtx.c: 147:         case 1:
+[e :U 453 ]
+"148
+[; ;BTZGDRtx.c: 148:         {
+{
+"149
+[; ;BTZGDRtx.c: 149:             state = (PORTAbits.RA5);
+[e = _state -> . . _PORTAbits 0 5 `a ]
+"150
+[; ;BTZGDRtx.c: 150:         }
+}
+"151
+[; ;BTZGDRtx.c: 151:             break;
+[e $U 450  ]
+"152
+[; ;BTZGDRtx.c: 152:         case 2:
+[e :U 454 ]
+"153
+[; ;BTZGDRtx.c: 153:         {
+{
+"154
+[; ;BTZGDRtx.c: 154:             state = (PORTAbits.RA1);
+[e = _state -> . . _PORTAbits 0 1 `a ]
+"155
+[; ;BTZGDRtx.c: 155:         }
+}
+"156
+[; ;BTZGDRtx.c: 156:             break;
+[e $U 450  ]
+"157
+[; ;BTZGDRtx.c: 157:         case 3:
+[e :U 455 ]
+"158
+[; ;BTZGDRtx.c: 158:         {
+{
+"159
+[; ;BTZGDRtx.c: 159:             state = (PORTAbits.RA0);
+[e = _state -> . . _PORTAbits 0 0 `a ]
+"160
+[; ;BTZGDRtx.c: 160:         }
+}
+"161
+[; ;BTZGDRtx.c: 161:             break;
+[e $U 450  ]
+"162
+[; ;BTZGDRtx.c: 162:         default:break;
+[e :U 456 ]
+[e $U 450  ]
+"163
+[; ;BTZGDRtx.c: 163:     }
+}
+[e $U 450  ]
+[e :U 451 ]
+[e [\ -> _btn `i , $ -> 0 `i 452
+ , $ -> 1 `i 453
+ , $ -> 2 `i 454
+ , $ -> 3 `i 455
+ 456 ]
+[e :U 450 ]
+"164
+[; ;BTZGDRtx.c: 164:     return state;
+[e ) _state ]
+[e $UE 449  ]
+"165
+[; ;BTZGDRtx.c: 165: }
+[e :UE 449 ]
+}
+"170
+[; ;BTZGDRtx.c: 170: void button_init(void) {
+[v _button_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _button_init ]
+[f ]
+"172
+[; ;BTZGDRtx.c: 172:     memset(&buttons[0], 0, sizeof (button_t));
+[e ( _memset (3 , , -> &U *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux `*v -> 0 `i -> # `S440 `ui ]
+"173
+[; ;BTZGDRtx.c: 173:     memset(&buttons[1], 0, sizeof (button_t));
+[e ( _memset (3 , , -> &U *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux `*v -> 0 `i -> # `S440 `ui ]
+"174
+[; ;BTZGDRtx.c: 174:     memset(&buttons[2], 0, sizeof (button_t));
+[e ( _memset (3 , , -> &U *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux `*v -> 0 `i -> # `S440 `ui ]
+"175
+[; ;BTZGDRtx.c: 175:     memset(&buttons[3], 0, sizeof (button_t));
+[e ( _memset (3 , , -> &U *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux `*v -> 0 `i -> # `S440 `ui ]
+"177
+[; ;BTZGDRtx.c: 177:     buttons[0].id = BUTTON_1;
+[e = . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 . `E3515 0 ]
+"178
+[; ;BTZGDRtx.c: 178:     buttons[1].id = BUTTON_2;
+[e = . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 . `E3515 1 ]
+"179
+[; ;BTZGDRtx.c: 179:     buttons[2].id = BUTTON_3;
+[e = . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 . `E3515 2 ]
+"180
+[; ;BTZGDRtx.c: 180:     buttons[3].id = BUTTON_4;
+[e = . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 . `E3515 3 ]
+"182
+[; ;BTZGDRtx.c: 182:     last_tick = 0;
+[e = _last_tick -> -> -> 0 `i `l `ul ]
+"183
+[; ;BTZGDRtx.c: 183: }
+[e :UE 457 ]
+}
+"188
+[; ;BTZGDRtx.c: 188: void button_task(void) {
+[v _button_task `(v ~T0 @X0 1 ef ]
+{
+[e :U _button_task ]
+[f ]
+"190
+[; ;BTZGDRtx.c: 190:     if ((uint32_t) (millis() - last_tick) >= 50) {
+[e $ ! >= - ( _millis ..  _last_tick -> -> -> 50 `i `l `ul 459  ]
+{
+"191
+[; ;BTZGDRtx.c: 191:         for (uint8_t i = 0; i < 4; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 460  ]
+[e $U 461  ]
+[e :U 460 ]
+{
+"193
+[; ;BTZGDRtx.c: 193:             if(i == 1 ){
+[e $ ! == -> _i `i -> 1 `i 463  ]
+{
+"194
+[; ;BTZGDRtx.c: 194:                 continue;
+[e $U 462  ]
+"195
+[; ;BTZGDRtx.c: 195:             }
+}
+[e :U 463 ]
+"197
+[; ;BTZGDRtx.c: 197:             if (button_get_state(i) == 1) {
+[e $ ! == -> ( _button_get_state (1 _i `i -> 1 `i 464  ]
+{
+"199
+[; ;BTZGDRtx.c: 199:                 button_packet[0] = buttons[i].id;
+[e = *U + &U _button_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_packet `ui `ux -> . *U + &U _buttons * -> _i `ux -> -> # *U &U _buttons `ui `ux 1 `uc ]
+"201
+[; ;BTZGDRtx.c: 201:                 if (buttons[i].pressed_time == 0) {
+[e $ ! == . *U + &U _buttons * -> _i `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul 465  ]
+{
+"202
+[; ;BTZGDRtx.c: 202:                     buttons[i].pressed_time = millis();
+[e = . *U + &U _buttons * -> _i `ux -> -> # *U &U _buttons `ui `ux 2 ( _millis ..  ]
+"203
+[; ;BTZGDRtx.c: 203:                 }
+}
+[e :U 465 ]
+"205
+[; ;BTZGDRtx.c: 205:             } else {
+}
+[e $U 466  ]
+[e :U 464 ]
+{
+"206
+[; ;BTZGDRtx.c: 206:                 buttons[i].pressed_time = 0;
+[e = . *U + &U _buttons * -> _i `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul ]
+"207
+[; ;BTZGDRtx.c: 207:                 buttons[i].duration = 0;
+[e = . *U + &U _buttons * -> _i `ux -> -> # *U &U _buttons `ui `ux 3 -> -> -> 0 `i `l `ul ]
+"208
+[; ;BTZGDRtx.c: 208:             }
+}
+[e :U 466 ]
+"209
+[; ;BTZGDRtx.c: 209:         }
+}
+[e :U 462 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 460  ]
+[e :U 461 ]
+}
+"210
+[; ;BTZGDRtx.c: 210:         if (buttons[0].pressed_time > 0 && buttons[1].pressed_time > 0) {
+[e $ ! && > . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul > . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul 467  ]
+{
+"211
+[; ;BTZGDRtx.c: 211:             if (combo0_pressed == 0) {
+[e $ ! == _combo0_pressed -> -> -> 0 `i `l `ul 468  ]
+{
+"212
+[; ;BTZGDRtx.c: 212:                 combo0_pressed = millis();
+[e = _combo0_pressed ( _millis ..  ]
+"213
+[; ;BTZGDRtx.c: 213:             }
+}
+[e :U 468 ]
+"214
+[; ;BTZGDRtx.c: 214:             uint32_t combo0_pressed_now = millis() - combo0_pressed;
+[v _combo0_pressed_now `ul ~T0 @X0 1 a ]
+[e = _combo0_pressed_now - ( _millis ..  _combo0_pressed ]
+"215
+[; ;BTZGDRtx.c: 215:             button_packet[0] = (0xAA);
+[e = *U + &U _button_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_packet `ui `ux -> -> 170 `i `uc ]
+"216
+[; ;BTZGDRtx.c: 216:             memcpy(&button_packet[1], &combo0_pressed_now, sizeof (combo0_pressed_now));
+[e ( _memcpy (3 , , -> &U *U + &U _button_packet * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_packet `ui `ux `*v -> &U _combo0_pressed_now `*Cv -> # _combo0_pressed_now `ui ]
+"217
+[; ;BTZGDRtx.c: 217:             rf_send_packet(button_packet, 5);
+[e ( _rf_send_packet (2 , &U _button_packet -> -> 5 `i `uc ]
+"218
+[; ;BTZGDRtx.c: 218:         } else if (buttons[0].pressed_time > 0) {
+}
+[e $U 469  ]
+[e :U 467 ]
+[e $ ! > . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul 470  ]
+{
+"219
+[; ;BTZGDRtx.c: 219:             combo0_pressed = 0;
+[e = _combo0_pressed -> -> -> 0 `i `l `ul ]
+"220
+[; ;BTZGDRtx.c: 220:             button_packet[0] = buttons[0].id;
+[e = *U + &U _button_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_packet `ui `ux -> . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 `uc ]
+"221
+[; ;BTZGDRtx.c: 221:             buttons[0].duration = millis() - buttons[0].pressed_time;
+[e = . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 - ( _millis ..  . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 ]
+"222
+[; ;BTZGDRtx.c: 222:             memcpy(&button_packet[1], &buttons[0].duration, sizeof (buttons[0].duration));
+[e ( _memcpy (3 , , -> &U *U + &U _button_packet * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_packet `ui `ux `*v -> &U . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `*Cv -> # . *U + &U _buttons * -> -> -> 0 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `ui ]
+"223
+[; ;BTZGDRtx.c: 223:             rf_send_packet(button_packet, 5);
+[e ( _rf_send_packet (2 , &U _button_packet -> -> 5 `i `uc ]
+"224
+[; ;BTZGDRtx.c: 224:         } else if (buttons[1].pressed_time > 0) {
+}
+[e $U 471  ]
+[e :U 470 ]
+[e $ ! > . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul 472  ]
+{
+"225
+[; ;BTZGDRtx.c: 225:             combo0_pressed = 0;
+[e = _combo0_pressed -> -> -> 0 `i `l `ul ]
+"226
+[; ;BTZGDRtx.c: 226:             button_packet[0] = buttons[1].id;
+[e = *U + &U _button_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_packet `ui `ux -> . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 `uc ]
+"227
+[; ;BTZGDRtx.c: 227:             buttons[1].duration = millis() - buttons[1].pressed_time;
+[e = . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 - ( _millis ..  . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 ]
+"228
+[; ;BTZGDRtx.c: 228:             memcpy(&button_packet[1], &buttons[1].duration, sizeof (buttons[1].duration));
+[e ( _memcpy (3 , , -> &U *U + &U _button_packet * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_packet `ui `ux `*v -> &U . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `*Cv -> # . *U + &U _buttons * -> -> -> 1 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `ui ]
+"229
+[; ;BTZGDRtx.c: 229:             rf_send_packet(button_packet, 5);
+[e ( _rf_send_packet (2 , &U _button_packet -> -> 5 `i `uc ]
+"230
+[; ;BTZGDRtx.c: 230:         }
+}
+[e :U 472 ]
+[e :U 471 ]
+[e :U 469 ]
+"232
+[; ;BTZGDRtx.c: 232:         if (buttons[2].pressed_time > 0 && buttons[3].pressed_time > 0) {
+[e $ ! && > . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul > . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul 473  ]
+{
+"233
+[; ;BTZGDRtx.c: 233:             if (combo1_pressed == 0) {
+[e $ ! == _combo1_pressed -> -> -> 0 `i `l `ul 474  ]
+{
+"234
+[; ;BTZGDRtx.c: 234:                 combo1_pressed = millis();
+[e = _combo1_pressed ( _millis ..  ]
+"235
+[; ;BTZGDRtx.c: 235:             }
+}
+[e :U 474 ]
+"236
+[; ;BTZGDRtx.c: 236:             uint32_t combo1_pressed_now = millis() - combo1_pressed;
+[v _combo1_pressed_now `ul ~T0 @X0 1 a ]
+[e = _combo1_pressed_now - ( _millis ..  _combo1_pressed ]
+"237
+[; ;BTZGDRtx.c: 237:             button_packet[0] = (0xAB);
+[e = *U + &U _button_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_packet `ui `ux -> -> 171 `i `uc ]
+"238
+[; ;BTZGDRtx.c: 238:             memcpy(&button_packet[1], &combo1_pressed_now, sizeof (combo1_pressed_now));
+[e ( _memcpy (3 , , -> &U *U + &U _button_packet * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_packet `ui `ux `*v -> &U _combo1_pressed_now `*Cv -> # _combo1_pressed_now `ui ]
+"239
+[; ;BTZGDRtx.c: 239:             rf_send_packet(button_packet, 5);
+[e ( _rf_send_packet (2 , &U _button_packet -> -> 5 `i `uc ]
+"240
+[; ;BTZGDRtx.c: 240:         } else if (buttons[2].pressed_time > 0) {
+}
+[e $U 475  ]
+[e :U 473 ]
+[e $ ! > . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul 476  ]
+{
+"241
+[; ;BTZGDRtx.c: 241:             combo1_pressed = 0;
+[e = _combo1_pressed -> -> -> 0 `i `l `ul ]
+"242
+[; ;BTZGDRtx.c: 242:             button_packet[0] = buttons[2].id;
+[e = *U + &U _button_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_packet `ui `ux -> . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 `uc ]
+"243
+[; ;BTZGDRtx.c: 243:             buttons[2].duration = millis() - buttons[2].pressed_time;
+[e = . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 - ( _millis ..  . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 ]
+"244
+[; ;BTZGDRtx.c: 244:             memcpy(&button_packet[1], &buttons[2].duration, sizeof (buttons[2].duration));
+[e ( _memcpy (3 , , -> &U *U + &U _button_packet * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_packet `ui `ux `*v -> &U . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `*Cv -> # . *U + &U _buttons * -> -> -> 2 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `ui ]
+"245
+[; ;BTZGDRtx.c: 245:             rf_send_packet(button_packet, 5);
+[e ( _rf_send_packet (2 , &U _button_packet -> -> 5 `i `uc ]
+"246
+[; ;BTZGDRtx.c: 246:         } else if (buttons[3].pressed_time > 0) {
+}
+[e $U 477  ]
+[e :U 476 ]
+[e $ ! > . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 -> -> -> 0 `i `l `ul 478  ]
+{
+"247
+[; ;BTZGDRtx.c: 247:             combo1_pressed = 0;
+[e = _combo1_pressed -> -> -> 0 `i `l `ul ]
+"248
+[; ;BTZGDRtx.c: 248:             button_packet[0] = buttons[3].id;
+[e = *U + &U _button_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _button_packet `ui `ux -> . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 1 `uc ]
+"249
+[; ;BTZGDRtx.c: 249:             buttons[3].duration = millis() - buttons[3].pressed_time;
+[e = . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 - ( _millis ..  . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 2 ]
+"250
+[; ;BTZGDRtx.c: 250:             memcpy(&button_packet[1], &buttons[3].duration, sizeof (buttons[3].duration));
+[e ( _memcpy (3 , , -> &U *U + &U _button_packet * -> -> -> 1 `i `ui `ux -> -> # *U &U _button_packet `ui `ux `*v -> &U . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `*Cv -> # . *U + &U _buttons * -> -> -> 3 `i `ui `ux -> -> # *U &U _buttons `ui `ux 3 `ui ]
+"251
+[; ;BTZGDRtx.c: 251:             rf_send_packet(button_packet, 5);
+[e ( _rf_send_packet (2 , &U _button_packet -> -> 5 `i `uc ]
+"252
+[; ;BTZGDRtx.c: 252:         }
+}
+[e :U 478 ]
+[e :U 477 ]
+[e :U 475 ]
+"253
+[; ;BTZGDRtx.c: 253:         last_tick = millis();
+[e = _last_tick ( _millis ..  ]
+"254
+[; ;BTZGDRtx.c: 254:     }
+}
+[e :U 459 ]
+"256
+[; ;BTZGDRtx.c: 256: }
+[e :UE 458 ]
+}
+"261
+[; ;BTZGDRtx.c: 261: void usart_write(uint8_t data) {
+[v _usart_write `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _usart_write ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"262
+[; ;BTZGDRtx.c: 262:     while (0 == PIR1bits.TXIF) {
+[e $U 480  ]
+[e :U 481 ]
+{
+"263
+[; ;BTZGDRtx.c: 263:     }
+}
+[e :U 480 ]
+"262
+[; ;BTZGDRtx.c: 262:     while (0 == PIR1bits.TXIF) {
+[e $ == -> 0 `i -> . . _PIR1bits 0 3 `i 481  ]
+[e :U 482 ]
+"265
+[; ;BTZGDRtx.c: 265:     TXREG = data;
+[e = _TXREG _data ]
+"266
+[; ;BTZGDRtx.c: 266: }
+[e :UE 479 ]
+}
+"272
+[; ;BTZGDRtx.c: 272: const uint8_t bit_convt_4to6[] = {
+[v _bit_convt_4to6 `Cuc ~T0 @X0 -> 16 `i e ]
+[i _bit_convt_4to6
+:U ..
+-> -> 45 `i `uc
+-> -> 46 `i `uc
+-> -> 51 `i `uc
+-> -> 53 `i `uc
+-> -> 54 `i `uc
+-> -> 41 `i `uc
+-> -> 42 `i `uc
+-> -> 60 `i `uc
+-> -> 35 `i `uc
+-> -> 37 `i `uc
+-> -> 38 `i `uc
+-> -> 57 `i `uc
+-> -> 58 `i `uc
+-> -> 50 `i `uc
+-> -> 62 `i `uc
+-> -> 63 `i `uc
+..
+]
+"277
+[; ;BTZGDRtx.c: 277: void rf_encrypt_and_send(uint8_t data) {
+[v _rf_encrypt_and_send `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _rf_encrypt_and_send ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"278
+[; ;BTZGDRtx.c: 278:     uint8_t enc[2];
+[v _enc `uc ~T0 @X0 -> 2 `i a ]
+"279
+[; ;BTZGDRtx.c: 279:     uint8_t mbyte = data^encrypt_key;
+[v _mbyte `uc ~T0 @X0 1 a ]
+[e = _mbyte -> ^ -> _data `i -> _encrypt_key `i `uc ]
+"280
+[; ;BTZGDRtx.c: 280:     enc[0] = bit_convt_4to6[mbyte >> 4];
+[e = *U + &U _enc * -> -> -> 0 `i `ui `ux -> -> # *U &U _enc `ui `ux *U + &U _bit_convt_4to6 * -> -> >> -> _mbyte `i -> 4 `i `ui `ux -> -> # *U &U _bit_convt_4to6 `ui `ux ]
+"281
+[; ;BTZGDRtx.c: 281:     enc[1] = bit_convt_4to6[mbyte & 0x0f];
+[e = *U + &U _enc * -> -> -> 1 `i `ui `ux -> -> # *U &U _enc `ui `ux *U + &U _bit_convt_4to6 * -> -> & -> _mbyte `i -> 15 `i `ui `ux -> -> # *U &U _bit_convt_4to6 `ui `ux ]
+"282
+[; ;BTZGDRtx.c: 282:     usart_write(enc[0]);
+[e ( _usart_write (1 *U + &U _enc * -> -> -> 0 `i `ui `ux -> -> # *U &U _enc `ui `ux ]
+"283
+[; ;BTZGDRtx.c: 283:     usart_write(enc[1]);
+[e ( _usart_write (1 *U + &U _enc * -> -> -> 1 `i `ui `ux -> -> # *U &U _enc `ui `ux ]
+"284
+[; ;BTZGDRtx.c: 284: }
+[e :UE 483 ]
+}
+"299
+[; ;BTZGDRtx.c: 299: uint8_t crc8(uint8_t *buffer, uint8_t len) {
+[v _crc8 `(uc ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _crc8 ]
+[v _buffer `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[f ]
+"300
+[; ;BTZGDRtx.c: 300:     uint8_t crc = 0;
+[v _crc `uc ~T0 @X0 1 a ]
+[e = _crc -> -> 0 `i `uc ]
+"301
+[; ;BTZGDRtx.c: 301:     for (uint8_t i = 0; i < len; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 488  ]
+[e :U 485 ]
+{
+"302
+[; ;BTZGDRtx.c: 302:         crc += buffer[i];
+[e =+ _crc -> *U + _buffer * -> _i `ux -> -> # *U _buffer `ui `ux `uc ]
+"303
+[; ;BTZGDRtx.c: 303:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 488 ]
+[e $ < -> _i `i -> _len `i 485  ]
+[e :U 486 ]
+}
+"304
+[; ;BTZGDRtx.c: 304:     crc = (~crc) + 1;
+[e = _crc -> + ~ -> _crc `i -> 1 `i `uc ]
+"305
+[; ;BTZGDRtx.c: 305:     return crc;
+[e ) _crc ]
+[e $UE 484  ]
+"306
+[; ;BTZGDRtx.c: 306: }
+[e :UE 484 ]
+}
+"314
+[; ;BTZGDRtx.c: 314: int rf_send_packet(uint8_t *data, uint8_t len) {
+[v _rf_send_packet `(i ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _rf_send_packet ]
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[f ]
+"315
+[; ;BTZGDRtx.c: 315:     uint8_t index = 0;
+[v _index `uc ~T0 @X0 1 a ]
+[e = _index -> -> 0 `i `uc ]
+"316
+[; ;BTZGDRtx.c: 316:     uint32_t tx_id = 0x22554411;
+[v _tx_id `ul ~T0 @X0 1 a ]
+[e = _tx_id -> -> 576013329 `l `ul ]
+"319
+[; ;BTZGDRtx.c: 319:     uint8_t plain_msg[31];
+[v _plain_msg `uc ~T0 @X0 -> 31 `i a ]
+"320
+[; ;BTZGDRtx.c: 320:     memset(plain_msg, 0xf0, sizeof (plain_msg));
+[e ( _memset (3 , , -> &U _plain_msg `*v -> 240 `i -> # _plain_msg `ui ]
+"322
+[; ;BTZGDRtx.c: 322:     index = 0;
+[e = _index -> -> 0 `i `uc ]
+"324
+[; ;BTZGDRtx.c: 324:     memcpy(&plain_msg[index], &counter, sizeof (counter_t));
+[e ( _memcpy (3 , , -> &U *U + &U _plain_msg * -> _index `ux -> -> # *U &U _plain_msg `ui `ux `*v -> &U _counter `*Cv -> # `S441 `ui ]
+"325
+[; ;BTZGDRtx.c: 325:     index += sizeof (counter);
+[e =+ _index -> -> # _counter `ui `uc ]
+"327
+[; ;BTZGDRtx.c: 327:     plain_msg[index++] = (uint8_t) ((tx_id >> 0)&0xFF);
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> & >> _tx_id -> 0 `i -> -> -> 255 `i `l `ul `uc ]
+"328
+[; ;BTZGDRtx.c: 328:     plain_msg[index++] = (uint8_t) rand();
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> ( _rand ..  `uc ]
+"329
+[; ;BTZGDRtx.c: 329:     plain_msg[index++] = (uint8_t) ((tx_id >> 8)&0xFF);
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> & >> _tx_id -> 8 `i -> -> -> 255 `i `l `ul `uc ]
+"330
+[; ;BTZGDRtx.c: 330:     plain_msg[index++] = (uint8_t) rand();
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> ( _rand ..  `uc ]
+"331
+[; ;BTZGDRtx.c: 331:     plain_msg[index++] = (uint8_t) ((tx_id >> 16)&0xFF);
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> & >> _tx_id -> 16 `i -> -> -> 255 `i `l `ul `uc ]
+"332
+[; ;BTZGDRtx.c: 332:     plain_msg[index++] = (uint8_t) rand();
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> ( _rand ..  `uc ]
+"333
+[; ;BTZGDRtx.c: 333:     plain_msg[index++] = (uint8_t) ((tx_id >> 24)&0xFF);
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> & >> _tx_id -> 24 `i -> -> -> 255 `i `l `ul `uc ]
+"334
+[; ;BTZGDRtx.c: 334:     plain_msg[index++] = (uint8_t) rand();
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux -> ( _rand ..  `uc ]
+"336
+[; ;BTZGDRtx.c: 336:     plain_msg[index++] = len;
+[e = *U + &U _plain_msg * -> ++ _index -> -> 1 `i `uc `ux -> -> # *U &U _plain_msg `ui `ux _len ]
+"338
+[; ;BTZGDRtx.c: 338:     memcpy(&plain_msg[index], data, len);
+[e ( _memcpy (3 , , -> &U *U + &U _plain_msg * -> _index `ux -> -> # *U &U _plain_msg `ui `ux `*v -> _data `*Cv -> _len `ui ]
+"339
+[; ;BTZGDRtx.c: 339:     index += len;
+[e =+ _index -> _len `uc ]
+"341
+[; ;BTZGDRtx.c: 341:     plain_msg[sizeof (plain_msg) - 1] = crc8(plain_msg, sizeof (plain_msg) - 1);
+[e = *U + &U _plain_msg * -> - -> # _plain_msg `ui -> -> 1 `i `ui `ux -> -> # *U &U _plain_msg `ui `ux ( _crc8 (2 , &U _plain_msg -> - -> # _plain_msg `ui -> -> 1 `i `ui `uc ]
+"343
+[; ;BTZGDRtx.c: 343:     uint32_t random_nm0 = rand();
+[v _random_nm0 `ul ~T0 @X0 1 a ]
+[e = _random_nm0 -> -> ( _rand ..  `l `ul ]
+"344
+[; ;BTZGDRtx.c: 344:     uint32_t random_nm1 = rand();
+[v _random_nm1 `ul ~T0 @X0 1 a ]
+[e = _random_nm1 -> -> ( _rand ..  `l `ul ]
+"345
+[; ;BTZGDRtx.c: 345:     uint32_t random_nm2 = rand();
+[v _random_nm2 `ul ~T0 @X0 1 a ]
+[e = _random_nm2 -> -> ( _rand ..  `l `ul ]
+"347
+[; ;BTZGDRtx.c: 347:     usart_write(0xF0);
+[e ( _usart_write (1 -> -> 240 `i `uc ]
+"348
+[; ;BTZGDRtx.c: 348:     usart_write(random_nm0 >> 0);
+[e ( _usart_write (1 -> >> _random_nm0 -> 0 `i `uc ]
+"349
+[; ;BTZGDRtx.c: 349:     usart_write(random_nm0 >> 8);
+[e ( _usart_write (1 -> >> _random_nm0 -> 8 `i `uc ]
+"350
+[; ;BTZGDRtx.c: 350:     usart_write(random_nm0 >> 16);
+[e ( _usart_write (1 -> >> _random_nm0 -> 16 `i `uc ]
+"352
+[; ;BTZGDRtx.c: 352:     usart_write(0xFE);
+[e ( _usart_write (1 -> -> 254 `i `uc ]
+"353
+[; ;BTZGDRtx.c: 353:     usart_write(random_nm1 >> 0);
+[e ( _usart_write (1 -> >> _random_nm1 -> 0 `i `uc ]
+"354
+[; ;BTZGDRtx.c: 354:     usart_write(random_nm1 >> 8);
+[e ( _usart_write (1 -> >> _random_nm1 -> 8 `i `uc ]
+"355
+[; ;BTZGDRtx.c: 355:     usart_write(random_nm1 >> 16);
+[e ( _usart_write (1 -> >> _random_nm1 -> 16 `i `uc ]
+"357
+[; ;BTZGDRtx.c: 357:     usart_write(0x5A);
+[e ( _usart_write (1 -> -> 90 `i `uc ]
+"358
+[; ;BTZGDRtx.c: 358:     usart_write(random_nm2 >> 0);
+[e ( _usart_write (1 -> >> _random_nm2 -> 0 `i `uc ]
+"359
+[; ;BTZGDRtx.c: 359:     usart_write(random_nm2 >> 8);
+[e ( _usart_write (1 -> >> _random_nm2 -> 8 `i `uc ]
+"360
+[; ;BTZGDRtx.c: 360:     usart_write((random_nm0 >> 0)+(random_nm0 >> 8)+(random_nm0 >> 16)+
+[e ( _usart_write (1 -> + + + + + + + >> _random_nm0 -> 0 `i >> _random_nm0 -> 8 `i >> _random_nm0 -> 16 `i >> _random_nm1 -> 0 `i >> _random_nm1 -> 8 `i >> _random_nm1 -> 16 `i >> _random_nm2 -> 0 `i >> _random_nm2 -> 8 `i `uc ]
+"366
+[; ;BTZGDRtx.c: 366:     for (uint8_t i = 0; i < sizeof (plain_msg); i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `ui -> # _plain_msg `ui 490  ]
+[e $U 491  ]
+[e :U 490 ]
+{
+"367
+[; ;BTZGDRtx.c: 367:         rf_encrypt_and_send(plain_msg[i]);
+[e ( _rf_encrypt_and_send (1 *U + &U _plain_msg * -> _i `ux -> -> # *U &U _plain_msg `ui `ux ]
+"368
+[; ;BTZGDRtx.c: 368:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `ui -> # _plain_msg `ui 490  ]
+[e :U 491 ]
+}
+"369
+[; ;BTZGDRtx.c: 369:     return 1;
+[e ) -> 1 `i ]
+[e $UE 489  ]
+"371
+[; ;BTZGDRtx.c: 371: }
+[e :UE 489 ]
+}
+[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
+"377
+[; ;BTZGDRtx.c: 377: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager(void) {
+[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
+{
+[e :U _INTERRUPT_InterruptManager ]
+[f ]
+"379
+[; ;BTZGDRtx.c: 379:     if (INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1) {
+[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 494  ]
+{
+"382
+[; ;BTZGDRtx.c: 382:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"384
+[; ;BTZGDRtx.c: 384:         TMR0 = timer0ReloadVal;
+[e = _TMR0 _timer0ReloadVal ]
+"386
+[; ;BTZGDRtx.c: 386:         timer_interrupt_handler();
+[e ( _timer_interrupt_handler ..  ]
+"388
+[; ;BTZGDRtx.c: 388:     } else if (INTCONbits.IOCIE == 1 && INTCONbits.IOCIF == 1) {
+}
+[e $U 495  ]
+[e :U 494 ]
+[e $ ! && == -> . . _INTCONbits 0 3 `i -> 1 `i == -> . . _INTCONbits 0 0 `i -> 1 `i 496  ]
+{
+"390
+[; ;BTZGDRtx.c: 390:     } else {
+}
+[e $U 497  ]
+[e :U 496 ]
+{
+"392
+[; ;BTZGDRtx.c: 392:     }
+}
+[e :U 497 ]
+[e :U 495 ]
+"393
+[; ;BTZGDRtx.c: 393: }
+[e :UE 493 ]
+}
+"404
+[; ;BTZGDRtx.c: 404: static void counter_inc(counter_t *ctx) {
+[v _counter_inc `(v ~T0 @X0 1 sf1`*S441 ]
+{
+[e :U _counter_inc ]
+[v _ctx `*S441 ~T0 @X0 1 r1 ]
+[f ]
+"405
+[; ;BTZGDRtx.c: 405:     ctx->word0++;
+[e ++ . *U _ctx 0 -> -> 1 `i `us ]
+"406
+[; ;BTZGDRtx.c: 406:     if (ctx->word0 == 0) {
+[e $ ! == -> . *U _ctx 0 `ui -> -> 0 `i `ui 499  ]
+{
+"407
+[; ;BTZGDRtx.c: 407:         ctx->word1++;
+[e ++ . *U _ctx 1 -> -> 1 `i `us ]
+"408
+[; ;BTZGDRtx.c: 408:         if (ctx->word1 == 0) {
+[e $ ! == -> . *U _ctx 1 `ui -> -> 0 `i `ui 500  ]
+{
+"409
+[; ;BTZGDRtx.c: 409:             ctx->word2++;
+[e ++ . *U _ctx 2 -> -> 1 `i `us ]
+"410
+[; ;BTZGDRtx.c: 410:             if (ctx->word2 == 0) {
+[e $ ! == -> . *U _ctx 2 `ui -> -> 0 `i `ui 501  ]
+{
+"411
+[; ;BTZGDRtx.c: 411:                 ctx->word3++;
+[e ++ . *U _ctx 3 -> -> 1 `i `us ]
+"412
+[; ;BTZGDRtx.c: 412:                 if (ctx->word3 == 0) {
+[e $ ! == -> . *U _ctx 3 `ui -> -> 0 `i `ui 502  ]
+{
+"413
+[; ;BTZGDRtx.c: 413:                     ctx->word4++;
+[e ++ . *U _ctx 4 -> -> 1 `i `us ]
+"414
+[; ;BTZGDRtx.c: 414:                     if (ctx->word4 == 0) {
+[e $ ! == -> . *U _ctx 4 `ui -> -> 0 `i `ui 503  ]
+{
+"415
+[; ;BTZGDRtx.c: 415:                         ctx->word5++;
+[e ++ . *U _ctx 5 -> -> 1 `i `us ]
+"416
+[; ;BTZGDRtx.c: 416:                         if (ctx->word5 == 0) {
+[e $ ! == -> . *U _ctx 5 `ui -> -> 0 `i `ui 504  ]
+{
+"417
+[; ;BTZGDRtx.c: 417:                             ctx->word6++;
+[e ++ . *U _ctx 6 -> -> 1 `i `us ]
+"418
+[; ;BTZGDRtx.c: 418:                             if (ctx->word6 == 0) {
+[e $ ! == -> . *U _ctx 6 `ui -> -> 0 `i `ui 505  ]
+{
+"419
+[; ;BTZGDRtx.c: 419:                                 ctx->word7++;
+[e ++ . *U _ctx 7 -> -> 1 `i `us ]
+"420
+[; ;BTZGDRtx.c: 420:                                 if (ctx->word7 == 0) {
+[e $ ! == -> . *U _ctx 7 `ui -> -> 0 `i `ui 506  ]
+{
+"421
+[; ;BTZGDRtx.c: 421:                                     ctx->word0 = 0;
+[e = . *U _ctx 0 -> -> 0 `i `us ]
+"422
+[; ;BTZGDRtx.c: 422:                                     ctx->word1 = 0;
+[e = . *U _ctx 1 -> -> 0 `i `us ]
+"423
+[; ;BTZGDRtx.c: 423:                                     ctx->word2 = 0;
+[e = . *U _ctx 2 -> -> 0 `i `us ]
+"424
+[; ;BTZGDRtx.c: 424:                                     ctx->word3 = 0;
+[e = . *U _ctx 3 -> -> 0 `i `us ]
+"425
+[; ;BTZGDRtx.c: 425:                                     ctx->word4 = 0;
+[e = . *U _ctx 4 -> -> 0 `i `us ]
+"426
+[; ;BTZGDRtx.c: 426:                                     ctx->word5 = 0;
+[e = . *U _ctx 5 -> -> 0 `i `us ]
+"427
+[; ;BTZGDRtx.c: 427:                                     ctx->word6 = 0;
+[e = . *U _ctx 6 -> -> 0 `i `us ]
+"428
+[; ;BTZGDRtx.c: 428:                                     ctx->word7 = 0;
+[e = . *U _ctx 7 -> -> 0 `i `us ]
+"429
+[; ;BTZGDRtx.c: 429:                                 }
+}
+[e :U 506 ]
+"430
+[; ;BTZGDRtx.c: 430:                             }
+}
+[e :U 505 ]
+"431
+[; ;BTZGDRtx.c: 431:                         }
+}
+[e :U 504 ]
+"432
+[; ;BTZGDRtx.c: 432:                     }
+}
+[e :U 503 ]
+"433
+[; ;BTZGDRtx.c: 433:                 }
+}
+[e :U 502 ]
+"434
+[; ;BTZGDRtx.c: 434:             }
+}
+[e :U 501 ]
+"435
+[; ;BTZGDRtx.c: 435:         }
+}
+[e :U 500 ]
+"436
+[; ;BTZGDRtx.c: 436:     }
+}
+[e :U 499 ]
+"437
+[; ;BTZGDRtx.c: 437: }
+[e :UE 498 ]
+}
+"444
+[; ;BTZGDRtx.c: 444: void counter_inc_by_n(counter_t *ctx, uint16_t val) {
+[v _counter_inc_by_n `(v ~T0 @X0 1 ef2`*S441`us ]
+{
+[e :U _counter_inc_by_n ]
+[v _ctx `*S441 ~T0 @X0 1 r1 ]
+[v _val `us ~T0 @X0 1 r2 ]
+[f ]
+"445
+[; ;BTZGDRtx.c: 445:     for (uint16_t i = 0; i < val; i++)
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $U 511  ]
+[e :U 508 ]
+"446
+[; ;BTZGDRtx.c: 446:         counter_inc(ctx);
+[e ( _counter_inc (1 _ctx ]
+[e ++ _i -> -> 1 `i `us ]
+[e :U 511 ]
+[e $ < -> _i `ui -> _val `ui 508  ]
+[e :U 509 ]
+}
+"447
+[; ;BTZGDRtx.c: 447: }
+[e :UE 507 ]
+}
+"473
+[; ;BTZGDRtx.c: 473: static uint16_t FLASH_ReadWord(uint16_t flashAddr) {
+[v _FLASH_ReadWord `(us ~T0 @X0 1 sf1`us ]
+{
+[e :U _FLASH_ReadWord ]
+[v _flashAddr `us ~T0 @X0 1 r1 ]
+[f ]
+"474
+[; ;BTZGDRtx.c: 474:     uint8_t GIEBitValue = INTCONbits.GIE;
+[v _GIEBitValue `uc ~T0 @X0 1 a ]
+[e = _GIEBitValue . . _INTCONbits 0 7 ]
+"476
+[; ;BTZGDRtx.c: 476:     INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+"477
+[; ;BTZGDRtx.c: 477:     PMADRL = (flashAddr & 0x00FF);
+[e = _PMADRL -> & -> _flashAddr `ui -> -> 255 `i `ui `uc ]
+"478
+[; ;BTZGDRtx.c: 478:     PMADRH = ((flashAddr & 0xFF00) >> 8);
+[e = _PMADRH -> >> & -> _flashAddr `ui -> 65280 `ui -> 8 `i `uc ]
+"480
+[; ;BTZGDRtx.c: 480:     PMCON1bits.CFGS = 0;
+[e = . . _PMCON1bits 0 6 -> -> 0 `i `uc ]
+"481
+[; ;BTZGDRtx.c: 481:     PMCON1bits.RD = 1;
+[e = . . _PMCON1bits 0 0 -> -> 1 `i `uc ]
+"482
+[; ;BTZGDRtx.c: 482:     __nop();
+[e ( ___nop ..  ]
+"483
+[; ;BTZGDRtx.c: 483:     __nop();
+[e ( ___nop ..  ]
+"484
+[; ;BTZGDRtx.c: 484:     INTCONbits.GIE = GIEBitValue;
+[e = . . _INTCONbits 0 7 _GIEBitValue ]
+"486
+[; ;BTZGDRtx.c: 486:     return ((uint16_t) ((PMDATH << 8) | PMDATL));
+[e ) -> | << -> _PMDATH `i -> 8 `i -> _PMDATL `i `us ]
+[e $UE 512  ]
+"487
+[; ;BTZGDRtx.c: 487: }
+[e :UE 512 ]
+}
+"512
+[; ;BTZGDRtx.c: 512: void FLASH_EraseBlock(uint16_t startAddr) {
+[v _FLASH_EraseBlock `(v ~T0 @X0 1 ef1`us ]
+{
+[e :U _FLASH_EraseBlock ]
+[v _startAddr `us ~T0 @X0 1 r1 ]
+[f ]
+"513
+[; ;BTZGDRtx.c: 513:     uint8_t GIEBitValue = INTCONbits.GIE;
+[v _GIEBitValue `uc ~T0 @X0 1 a ]
+[e = _GIEBitValue . . _INTCONbits 0 7 ]
+"516
+[; ;BTZGDRtx.c: 516:     INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+"518
+[; ;BTZGDRtx.c: 518:     PMADRL = (startAddr & 0xFF);
+[e = _PMADRL -> & -> _startAddr `ui -> -> 255 `i `ui `uc ]
+"520
+[; ;BTZGDRtx.c: 520:     PMADRH = ((startAddr & 0xFF00) >> 8);
+[e = _PMADRH -> >> & -> _startAddr `ui -> 65280 `ui -> 8 `i `uc ]
+"523
+[; ;BTZGDRtx.c: 523:     PMCON1bits.CFGS = 0;
+[e = . . _PMCON1bits 0 6 -> -> 0 `i `uc ]
+"524
+[; ;BTZGDRtx.c: 524:     PMCON1bits.FREE = 1;
+[e = . . _PMCON1bits 0 4 -> -> 1 `i `uc ]
+"525
+[; ;BTZGDRtx.c: 525:     PMCON1bits.WREN = 1;
+[e = . . _PMCON1bits 0 2 -> -> 1 `i `uc ]
+"528
+[; ;BTZGDRtx.c: 528:     PMCON2 = 0x55;
+[e = _PMCON2 -> -> 85 `i `uc ]
+"529
+[; ;BTZGDRtx.c: 529:     PMCON2 = 0xAA;
+[e = _PMCON2 -> -> 170 `i `uc ]
+"530
+[; ;BTZGDRtx.c: 530:     PMCON1bits.WR = 1;
+[e = . . _PMCON1bits 0 1 -> -> 1 `i `uc ]
+"531
+[; ;BTZGDRtx.c: 531:     __nop();
+[e ( ___nop ..  ]
+"532
+[; ;BTZGDRtx.c: 532:     __nop();
+[e ( ___nop ..  ]
+"534
+[; ;BTZGDRtx.c: 534:     PMCON1bits.WREN = 0;
+[e = . . _PMCON1bits 0 2 -> -> 0 `i `uc ]
+"535
+[; ;BTZGDRtx.c: 535:     INTCONbits.GIE = GIEBitValue;
+[e = . . _INTCONbits 0 7 _GIEBitValue ]
+"536
+[; ;BTZGDRtx.c: 536: }
+[e :UE 513 ]
+}
+"572
+[; ;BTZGDRtx.c: 572: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray) {
+[v _FLASH_WriteBlock `(c ~T0 @X0 1 ef2`us`*us ]
+{
+[e :U _FLASH_WriteBlock ]
+[v _writeAddr `us ~T0 @X0 1 r1 ]
+[v _flashWordArray `*us ~T0 @X0 1 r2 ]
+[f ]
+"573
+[; ;BTZGDRtx.c: 573:     uint16_t blockStartAddr = (uint16_t) (writeAddr & ((0x800 - 1) ^ (16 - 1)));
+[v _blockStartAddr `us ~T0 @X0 1 a ]
+[e = _blockStartAddr -> & -> _writeAddr `ui -> ^ - -> 2048 `i -> 1 `i - -> 16 `i -> 1 `i `ui `us ]
+"574
+[; ;BTZGDRtx.c: 574:     uint8_t GIEBitValue = INTCONbits.GIE;
+[v _GIEBitValue `uc ~T0 @X0 1 a ]
+[e = _GIEBitValue . . _INTCONbits 0 7 ]
+"575
+[; ;BTZGDRtx.c: 575:     uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"578
+[; ;BTZGDRtx.c: 578:     if (writeAddr != blockStartAddr) {
+[e $ ! != -> _writeAddr `ui -> _blockStartAddr `ui 515  ]
+{
+"579
+[; ;BTZGDRtx.c: 579:         return -1;
+[e ) -> -U -> 1 `i `c ]
+[e $UE 514  ]
+"580
+[; ;BTZGDRtx.c: 580:     }
+}
+[e :U 515 ]
+"582
+[; ;BTZGDRtx.c: 582:     INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+"585
+[; ;BTZGDRtx.c: 585:     FLASH_EraseBlock(writeAddr);
+[e ( _FLASH_EraseBlock (1 _writeAddr ]
+"588
+[; ;BTZGDRtx.c: 588:     PMCON1bits.CFGS = 0;
+[e = . . _PMCON1bits 0 6 -> -> 0 `i `uc ]
+"589
+[; ;BTZGDRtx.c: 589:     PMCON1bits.WREN = 1;
+[e = . . _PMCON1bits 0 2 -> -> 1 `i `uc ]
+"590
+[; ;BTZGDRtx.c: 590:     PMCON1bits.LWLO = 1;
+[e = . . _PMCON1bits 0 5 -> -> 1 `i `uc ]
+"592
+[; ;BTZGDRtx.c: 592:     for (i = 0; i < 16; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 16 `i 516  ]
+[e $U 517  ]
+[e :U 516 ]
+{
+"594
+[; ;BTZGDRtx.c: 594:         PMADRL = (writeAddr & 0xFF);
+[e = _PMADRL -> & -> _writeAddr `ui -> -> 255 `i `ui `uc ]
+"596
+[; ;BTZGDRtx.c: 596:         PMADRH = ((writeAddr & 0xFF00) >> 8);
+[e = _PMADRH -> >> & -> _writeAddr `ui -> 65280 `ui -> 8 `i `uc ]
+"599
+[; ;BTZGDRtx.c: 599:         PMDATL = flashWordArray[i];
+[e = _PMDATL -> *U + _flashWordArray * -> _i `ux -> -> # *U _flashWordArray `ui `ux `uc ]
+"600
+[; ;BTZGDRtx.c: 600:         PMDATH = ((flashWordArray[i] & 0xFF00) >> 8);
+[e = _PMDATH -> >> & -> *U + _flashWordArray * -> _i `ux -> -> # *U _flashWordArray `ui `ux `ui -> 65280 `ui -> 8 `i `uc ]
+"602
+[; ;BTZGDRtx.c: 602:         if (i == (16 - 1)) {
+[e $ ! == -> _i `i - -> 16 `i -> 1 `i 519  ]
+{
+"604
+[; ;BTZGDRtx.c: 604:             PMCON1bits.LWLO = 0;
+[e = . . _PMCON1bits 0 5 -> -> 0 `i `uc ]
+"605
+[; ;BTZGDRtx.c: 605:         }
+}
+[e :U 519 ]
+"607
+[; ;BTZGDRtx.c: 607:         PMCON2 = 0x55;
+[e = _PMCON2 -> -> 85 `i `uc ]
+"608
+[; ;BTZGDRtx.c: 608:         PMCON2 = 0xAA;
+[e = _PMCON2 -> -> 170 `i `uc ]
+"609
+[; ;BTZGDRtx.c: 609:         PMCON1bits.WR = 1;
+[e = . . _PMCON1bits 0 1 -> -> 1 `i `uc ]
+"610
+[; ;BTZGDRtx.c: 610:         __nop();
+[e ( ___nop ..  ]
+"611
+[; ;BTZGDRtx.c: 611:         __nop();
+[e ( ___nop ..  ]
+"613
+[; ;BTZGDRtx.c: 613:         writeAddr++;
+[e ++ _writeAddr -> -> 1 `i `us ]
+"614
+[; ;BTZGDRtx.c: 614:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 16 `i 516  ]
+[e :U 517 ]
+}
+"616
+[; ;BTZGDRtx.c: 616:     PMCON1bits.WREN = 0;
+[e = . . _PMCON1bits 0 2 -> -> 0 `i `uc ]
+"617
+[; ;BTZGDRtx.c: 617:     INTCONbits.GIE = GIEBitValue;
+[e = . . _INTCONbits 0 7 _GIEBitValue ]
+"619
+[; ;BTZGDRtx.c: 619:     return 0;
+[e ) -> -> 0 `i `c ]
+[e $UE 514  ]
+"620
+[; ;BTZGDRtx.c: 620: }
+[e :UE 514 ]
+}
+"622
+[; ;BTZGDRtx.c: 622: void counter_read(counter_t *ctx) {
+[v _counter_read `(v ~T0 @X0 1 ef1`*S441 ]
+{
+[e :U _counter_read ]
+[v _ctx `*S441 ~T0 @X0 1 r1 ]
+[f ]
+"623
+[; ;BTZGDRtx.c: 623:     uint16_t temp[8];
+[v _temp `us ~T0 @X0 -> 8 `i a ]
+"624
+[; ;BTZGDRtx.c: 624:     memset(temp, 0x00, sizeof (temp));
+[e ( _memset (3 , , -> &U _temp `*v -> 0 `i -> # _temp `ui ]
+"626
+[; ;BTZGDRtx.c: 626:     for (uint8_t i = 0; i < 8; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 521  ]
+[e $U 522  ]
+[e :U 521 ]
+{
+"627
+[; ;BTZGDRtx.c: 627:         temp[i] = FLASH_ReadWord((0x7E0) + (2 * i) + 1) & 0xFF;
+[e = *U + &U _temp * -> _i `ux -> -> # *U &U _temp `ui `ux -> & -> ( _FLASH_ReadWord (1 -> + + -> 2016 `i * -> 2 `i -> _i `i -> 1 `i `us `ui -> -> 255 `i `ui `us ]
+"628
+[; ;BTZGDRtx.c: 628:         temp[i] = temp[i] << 8;
+[e = *U + &U _temp * -> _i `ux -> -> # *U &U _temp `ui `ux -> << -> *U + &U _temp * -> _i `ux -> -> # *U &U _temp `ui `ux `ui -> 8 `i `us ]
+"629
+[; ;BTZGDRtx.c: 629:         temp[i] |= FLASH_ReadWord((0x7E0) + (2 * i)) & 0xFF;
+[e =| *U + &U _temp * -> _i `ux -> -> # *U &U _temp `ui `ux -> & -> ( _FLASH_ReadWord (1 -> + -> 2016 `i * -> 2 `i -> _i `i `us `ui -> -> 255 `i `ui `us ]
+"630
+[; ;BTZGDRtx.c: 630:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 521  ]
+[e :U 522 ]
+}
+"632
+[; ;BTZGDRtx.c: 632:     memcpy(ctx, temp, sizeof (counter_t));
+[e ( _memcpy (3 , , -> _ctx `*v -> &U _temp `*Cv -> # `S441 `ui ]
+"633
+[; ;BTZGDRtx.c: 633: }
+[e :UE 520 ]
+}
+"635
+[; ;BTZGDRtx.c: 635: void counter_save(counter_t *ctx) {
+[v _counter_save `(v ~T0 @X0 1 ef1`*S441 ]
+{
+[e :U _counter_save ]
+[v _ctx `*S441 ~T0 @X0 1 r1 ]
+[f ]
+"636
+[; ;BTZGDRtx.c: 636:     uint16_t block[32];
+[v _block `us ~T0 @X0 -> 32 `i a ]
+"637
+[; ;BTZGDRtx.c: 637:     uint16_t *temp = (uint16_t*) ctx;
+[v _temp `*us ~T0 @X0 1 a ]
+[e = _temp -> _ctx `*us ]
+"638
+[; ;BTZGDRtx.c: 638:     uint8_t i = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+"639
+[; ;BTZGDRtx.c: 639:     memset(block, 0x00, sizeof (block));
+[e ( _memset (3 , , -> &U _block `*v -> 0 `i -> # _block `ui ]
+"641
+[; ;BTZGDRtx.c: 641:     for (i = 0; i < 8; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 525  ]
+[e $U 526  ]
+[e :U 525 ]
+{
+"642
+[; ;BTZGDRtx.c: 642:         block[2 * i] = (temp[i] >> 0)&0xFF;
+[e = *U + &U _block * -> -> * -> 2 `i -> _i `i `ui `ux -> -> # *U &U _block `ui `ux -> & >> -> *U + _temp * -> _i `ux -> -> # *U _temp `ui `ux `ui -> 0 `i -> -> 255 `i `ui `us ]
+"643
+[; ;BTZGDRtx.c: 643:         block[(2 * i) + 1] = (temp[i] >> 8)&0xFF;
+[e = *U + &U _block * -> -> + * -> 2 `i -> _i `i -> 1 `i `ui `ux -> -> # *U &U _block `ui `ux -> & >> -> *U + _temp * -> _i `ux -> -> # *U _temp `ui `ux `ui -> 8 `i -> -> 255 `i `ui `us ]
+"644
+[; ;BTZGDRtx.c: 644:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 525  ]
+[e :U 526 ]
+}
+"646
+[; ;BTZGDRtx.c: 646:     FLASH_WriteBlock((0x7E0), block);
+[e ( _FLASH_WriteBlock (2 , -> -> 2016 `i `us &U _block ]
+"647
+[; ;BTZGDRtx.c: 647: }
+[e :UE 524 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"653
+[; ;BTZGDRtx.c: 653: void main() {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"654
+[; ;BTZGDRtx.c: 654:     uint32_t seed = 0;
+[v _seed `ul ~T0 @X0 1 a ]
+[e = _seed -> -> -> 0 `i `l `ul ]
+"656
+[; ;BTZGDRtx.c: 656:     system_initialize();
+[e ( _system_initialize ..  ]
+"658
+[; ;BTZGDRtx.c: 658:     memset(&counter, 0, sizeof (counter_t));
+[e ( _memset (3 , , -> &U _counter `*v -> 0 `i -> # `S441 `ui ]
+"659
+[; ;BTZGDRtx.c: 659:     counter_read(&counter);
+[e ( _counter_read (1 &U _counter ]
+"660
+[; ;BTZGDRtx.c: 660:     counter_inc_by_n(&counter, 5);
+[e ( _counter_inc_by_n (2 , &U _counter -> -> 5 `i `us ]
+"661
+[; ;BTZGDRtx.c: 661:     counter_save(&counter);
+[e ( _counter_save (1 &U _counter ]
+"663
+[; ;BTZGDRtx.c: 663:     button_init();
+[e ( _button_init ..  ]
+"665
+[; ;BTZGDRtx.c: 665:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"667
+[; ;BTZGDRtx.c: 667:     seed = counter.word0 + counter.word1 + counter.word2 + counter.word3 +
+[e = _seed + -> + + + + + + + -> . _counter 0 `ui -> . _counter 1 `ui -> . _counter 2 `ui -> . _counter 3 `ui -> . _counter 4 `ui -> . _counter 5 `ui -> . _counter 6 `ui -> . _counter 7 `ui `ul ( _millis ..  ]
+"670
+[; ;BTZGDRtx.c: 670:     srand((unsigned) seed);
+[e ( _srand (1 -> _seed `ui ]
+"672
+[; ;BTZGDRtx.c: 672:     last_tick = 0;
+[e = _last_tick -> -> -> 0 `i `l `ul ]
+"674
+[; ;BTZGDRtx.c: 674:     while (1) {
+[e :U 530 ]
+{
+"675
+[; ;BTZGDRtx.c: 675:         button_task();
+[e ( _button_task ..  ]
+"676
+[; ;BTZGDRtx.c: 676:     }
+}
+[e :U 529 ]
+[e $U 530  ]
+[e :U 531 ]
+"677
+[; ;BTZGDRtx.c: 677: }
+[e :UE 528 ]
+}

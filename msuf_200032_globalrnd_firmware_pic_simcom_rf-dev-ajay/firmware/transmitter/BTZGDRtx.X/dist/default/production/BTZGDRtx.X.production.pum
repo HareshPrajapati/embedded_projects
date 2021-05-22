@@ -1,0 +1,53 @@
+
+Psect Usage Map:
+
+ Psect      | Contents                           | Memory Range  | Size
+------------|------------------------------------|---------------|-------------
+ reset_vec  | Reset vector                       | 0000h - 0000h |   1 word   
+ intentry   | Interrupt context entry code       | 0004h - 0013h |  16 words  
+ end_init   | Initialization code                | 0014h - 0014h |   1 word   
+ cinit      | Initialization code                | 0015h - 0023h |  15 words  
+ text10     | Program and library code           | 0024h - 01ECh | 457 words  
+ text11     | Program and library code           | 01EDh - 029Ch | 176 words  
+ text22     | Program and library code           | 029Dh - 0321h | 133 words  
+ text14     | Program and library code           | 0322h - 03A2h | 129 words  
+ text9      | Program and library code           | 03A3h - 0405h |  99 words  
+ maintext   | Program code for main() function   | 0406h - 045Fh |  90 words  
+ text4      | Program and library code           | 0460h - 04B0h |  81 words  
+ text6      | Program and library code           | 04B1h - 04FCh |  76 words  
+ text15     | Program and library code           | 04FDh - 0543h |  71 words  
+ text3      | Program and library code           | 0544h - 0585h |  66 words  
+ text1      | Program and library code           | 0586h - 05BBh |  54 words  
+ text19     | Program and library code           | 05BCh - 05EEh |  51 words  
+ text21     | Program and library code           | 05EFh - 0618h |  42 words  
+ text16     | Program and library code           | 0619h - 0638h |  32 words  
+ text7      | Program and library code           | 0639h - 0652h |  26 words  
+ text5      | Program and library code           | 0653h - 066Ah |  24 words  
+ text12     | Program and library code           | 066Bh - 0680h |  22 words  
+ text17     | Program and library code           | 0681h - 0694h |  20 words  
+ text2      | Program and library code           | 0695h - 06A5h |  17 words  
+ text8      | Program and library code           | 06A6h - 06B6h |  17 words  
+ text20     | Program and library code           | 06C7h - 06D2h |  12 words  
+ text18     | Program and library code           | 06D3h - 06DCh |  10 words  
+ text13     | Program and library code           | 06DDh - 06E4h |   8 words  
+ text24     | Program and library code           | 06E5h - 06ECh |   8 words  
+ clrtext    | Memory clearing code               | 06EDh - 06F2h |   6 words  
+            |                                    |               |             
+ stringtext | Strings and constant data          | 06B7h - 06C6h |  16 words  
+ _reserve_l |                                    | 07E0h - 07FFh |  32 words  
+------------|------------------------------------|---------------|-------------
+ cstackCOMM | Stack in common memory             | 0070h - 007Ch |  13 bytes  
+ nvCOMMON   | Persistent RAM variables in common | 007Dh - 007Dh |   1 byte   
+            |                                    |               |             
+ cstackBANK | Stack in bank 0                    | 0020h - 006Dh |  78 bytes  
+            |                                    |               |             
+ bssBANK1   | BSS variables in bank 1            | 00A0h - 00CCh |  45 bytes  
+ cstackBANK | Stack in bank 1                    | 00CDh - 00E5h |  25 bytes  
+            |                                    |               |             
+ bssBANK2   | BSS variables in bank 2            | 0120h - 0147h |  40 bytes  
+            |                                    |               |             
+ abs_s1     | Absolute RAM variables             | 007Eh - 007Fh |   2 bytes  
+------------|------------------------------------|---------------|-------------
+ config     |                                    | 8007h - 8008h |   2 words  
+------------|------------------------------------|---------------|-------------
+
